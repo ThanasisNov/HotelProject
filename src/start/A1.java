@@ -5,5 +5,6 @@ public class A1 {
         System.out.println("Hello Fck!");
         int k;
         int kala;
+        int kl;
     }
 }
