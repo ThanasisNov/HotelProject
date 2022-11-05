@@ -47,39 +47,39 @@ public class room {
         this.parking=parking;
     }
 
-    String setView()
+    String getView()
     {
         return view;
     }
-    String setBathroom()
+    String getBathroom()
     {
         return bathroom;
     }
-    String setClothes()
+    String getClothes()
     {
         return  clothes;
     }
-    String setEntertainment()
+    String getEntertainment()
     {
         return entertainment;
     }
-    String setHeat()
+    String getHeat()
     {
         return heat;
     }
-    String setWifi()
+    String getWifi()
     {
         return wifi;
     }
-    String setKitchen()
+    String getKitchen()
     {
         return kitchen;
     }
-    String  setOutside()
+    String  getOutside()
     {
         return outside;
     }
-    String  setParking()
+    String  getParking()
     {
         return parking;
     }
