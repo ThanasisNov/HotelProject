@@ -7,26 +7,39 @@ public class Feedback {
     private int rating;
     private int numofwords = 0;
 
-    char[] feed = new char[500];
 
     Feedback() {
-        feedback = new String();
+        feedback = "";
         rating = -1;
     }
 
     Scanner forinput = new Scanner(System.in);
 
     public void setFeedback() {
-        System.out.println("Give us your feedback: ");
-        while(feedback.isEmpty()) {
+        String answer;
 
-            if (feedback == null)
+        while(feedback.equals("")) {
+            System.out.println("Καταχωρήστε την αξιολόγηση σας: ");
+            feedback = forinput.next();
+            if (feedback.equals(""))
             {
-                System.out.println("Giving a feedback is necessary!");
+                System.out.println("Η καταχώρηση κειμένου αξιολόγησης είναι υποχρεωτική!");
+            }
+            else if(feedback.length()>10)
+            {
+                System.out.println("Έχετε ξεπεράσει το όριο χαρακτήρων , θα θέλατε να καταχωρήσετε νέο κείμενο(Πληκτρολογήστε: ΝΑΙ) ή να τερματήσετε την διαδικασία(Πληκτρολογήστε: ΟΧΙ) ;");
+                answer = forinput.next();
+                if(answer.equals("OXI"))
+                {
+                    System.exit(0);
+                }
+                else if(answer.equals("ΝΑΙ"))
+                {
+                    feedback = "";
+                }
             }
         }
     }
-
 
     public String getFeedback() {
         return feedback;

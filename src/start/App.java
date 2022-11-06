@@ -11,7 +11,8 @@ public class App {
      static UserBase u = new UserBase();
 
     public static void main(String[] args) {
-        boolean check3=true;
+
+       boolean check3=true;
         while(check3==true){
         System.out.println("Καλησπέρα σας,έχετε ήδη λογαριασμό;Αν ΝΑΙ πληκτρολογήστε ΝΑΙ ,διαφορετικά ΟΧΙ");
         Scanner input= new Scanner(System.in);
