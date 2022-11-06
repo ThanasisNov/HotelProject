@@ -18,5 +18,5 @@ public class TestTest {
     @Test
     public void testMethod() {
         assertTrue(true);
-    }
+
 }
