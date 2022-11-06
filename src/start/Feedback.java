@@ -7,6 +7,7 @@ public class Feedback {
     private int rating;
     private int numofwords = 0;
 
+    char[] feed = new char[500];
 
     Feedback() {
         feedback = new String();
@@ -18,7 +19,7 @@ public class Feedback {
     public void setFeedback() {
         System.out.println("Give us your feedback: ");
         while(feedback.isEmpty()) {
-            feedback = forinput.nextLine();
+
             if (feedback == null)
             {
                 System.out.println("Giving a feedback is necessary!");
