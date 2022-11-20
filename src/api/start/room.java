@@ -1,10 +1,6 @@
-package start;
+package api.start;
 
-public class room {
-    private String name;
-    private String hoteltype;
-    private String area;
-    private String description;
+public class room extends hotel {
     private  String view,bathroom,clothes,entertainment,heat,wifi,kitchen,outside,parking;
 
     /**

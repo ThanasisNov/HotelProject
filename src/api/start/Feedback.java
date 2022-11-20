@@ -1,4 +1,4 @@
-package start;
+package api.start;
 
 import java.util.Scanner;
 
