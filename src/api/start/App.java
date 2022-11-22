@@ -53,17 +53,17 @@ public class App {
         BufferedWriter bw = null;
 
 
-        boolean found = false;
+        boolean found = true;
 
         try {
 
 
             check = new Scanner(new File("UserBase.txt"));
             check.useDelimiter("[,\n]");
-            while (check.hasNext() && !found) {
+            while (check.hasNext() && found) {
                 tempUsername = check.next();
                 if (tempUsername.trim().equals(username) ) {
-                    found = true;
+                    found = false;
                    System.out.println(tempUsername.trim() +" -->"+username);
                 }
                 check.nextLine();
@@ -72,8 +72,15 @@ public class App {
 
            System.out.println("Error");
         }
-        if(!found)
+
+        if(found)
         {
+
+            if(!(type.equals("A") || type.equals("B")))
+            {
+
+                return false;
+            }
 
             File file = new File("UserBase.txt");
             FileWriter fr = new FileWriter(file, true);
@@ -83,7 +90,9 @@ public class App {
 
             br.close();
             fr.close();
+
         }
+
         return found;
     }
 

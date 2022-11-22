@@ -76,7 +76,7 @@ public class  Register implements ActionListener {
         panel.add(surnameText);
 
 
-        AccountLabel = new JLabel("Type");
+        AccountLabel = new JLabel("Type(A or B)");
         AccountLabel.setBounds(10, 140, 80, 25);
         panel.add(AccountLabel);
         AccountText = new JTextField();
@@ -118,11 +118,18 @@ public class  Register implements ActionListener {
         if (e.getActionCommand().equals(button1.getText())) {
             try {
 
-                object.Register(user,pass,name,surname,Type);
-                success.setText("Register Successful");
+               if(object.Register(user,pass,name,surname,Type)) {
+                   success.setText("Register Successful");
+               }
+               else
+               {
+
+                   success.setText("Mystake found either in name or type!");
+
+               }
 
             } catch (IOException ex) {
-                System.out.println("Change Username");
+                System.out.println("Error!");
             }
 
         } else if (e.getActionCommand().equals(button2.getText())) {
