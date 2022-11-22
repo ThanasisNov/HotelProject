@@ -2,6 +2,8 @@ package api.start;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
@@ -27,18 +29,99 @@ public class App {
                     check = new Scanner(new File("UserBase.txt"));
                     check.useDelimiter("[,\n]");
                     while (check.hasNext() && !found) {
+
                         tempUsername = check.next();
                         tempPassword = check.next();
+
                         if (tempUsername.trim().equals(username) && tempPassword.trim().equals(password)) {
                             found = true;
 
                         }
+                        check.nextLine();
+
                     }
                 } catch (Exception e) {
 
                     found = false;
                 }
         return found;
+    }
+    public boolean Register(String username, String password,String name,String surname,String type) throws IOException {
+        String tempUsername = "";
+        String tempPassword = "";
+
+        BufferedWriter bw = null;
+
+
+        boolean found = false;
+
+        try {
+
+
+            check = new Scanner(new File("UserBase.txt"));
+            check.useDelimiter("[,\n]");
+            while (check.hasNext() && !found) {
+                tempUsername = check.next();
+                if (tempUsername.trim().equals(username) ) {
+                    found = true;
+                   System.out.println(tempUsername.trim() +" -->"+username);
+                }
+                check.nextLine();
+            }
+        } catch (Exception e) {
+
+           System.out.println("Error");
+        }
+        if(!found)
+        {
+
+            File file = new File("UserBase.txt");
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            br.newLine();
+            br.write(username+","+password+","+name+","+surname+","+type);
+
+            br.close();
+            fr.close();
+        }
+        return found;
+    }
+
+    public String Type(String username) {
+        String tempUsername = "";
+        String tempPassword = "";
+        String tempName="";
+        String tempSurname="";
+        String tempType="";
+        BufferedWriter bw = null;
+
+
+        boolean found = false;
+
+        try {
+
+
+            check = new Scanner(new File("UserBase.txt"));
+            check.useDelimiter("[,\n]");
+            while (check.hasNext() && !found) {
+
+                tempUsername = check.next();
+                tempPassword = check.next();
+                 tempName= check.next();
+                 tempSurname=check.next();
+                 tempType=check.next();
+                if (tempUsername.trim().equals(username) ) {
+                    found = true;
+
+                }
+
+
+            }
+        } catch (Exception e) {
+
+            found = false;
+        }
+        return tempType;
     }
     /*
     OLD
