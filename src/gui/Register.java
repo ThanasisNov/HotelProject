@@ -124,7 +124,7 @@ public class  Register implements ActionListener {
                else
                {
 
-                   success.setText("Mystake found either in name or type!");
+                   success.setText("Mistake found either in name or type!");
 
                }
 
@@ -132,7 +132,8 @@ public class  Register implements ActionListener {
                 System.out.println("Error!");
             }
 
-        } else if (e.getActionCommand().equals(button2.getText())) {
+        }
+        else if (e.getActionCommand().equals(button2.getText())) {
 
             userText.setText("");
             passwordText.setText("");

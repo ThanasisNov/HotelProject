@@ -1,5 +1,6 @@
 package api.start;
 
+import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -121,8 +122,8 @@ public class App {
                  tempType=check.next();
                 if (tempUsername.trim().equals(username) ) {
                     found = true;
-
                 }
+
 
 
             }
@@ -132,8 +133,27 @@ public class App {
         }
         return tempType;
     }
-    /*
-    OLD
+
+    public void  add(String name, String tp, String loc, String des,room fac) throws IOException {
+
+
+
+            File file = new File("AddBase.txt");
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            br.newLine();
+            br.write("Hotel Name:"+name+"\n"+"Type:"+tp+"\n"+"Location:"+loc+"\n"+"Description:"+des+"\n" + "View:"+fac.getView()+"\n"+"Bathroom:"+fac.getBathroom()+"\n"+"Clothing Wash:"+fac.getClothes()+"\n"+"Entertainment:"+fac.getEntertainment()+"\n"+"Heat:"+fac.getHeat()+"\n"+"Wifi:"+fac.getWifi()+"\n"+"Kitchen:"+fac.getKitchen()+"\n"+"Outside:"+fac.getOutside()+"\n"+"Parking:"+fac.getParking()+"\n");
+
+            br.close();
+            fr.close();
+
+    }
+
+
+
+
+
+    //OLD
     public void LoginSystem(String username ,String password) throws IOException {
 
         System.out.println();
@@ -286,5 +306,5 @@ public class App {
         }
 
         }
-    }*/
     }
+

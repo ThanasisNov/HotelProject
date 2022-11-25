@@ -1,44 +1,46 @@
 package api.start;
 
+import javax.swing.*;
+
 public class room extends hotel {
     private  String view,bathroom,clothes,entertainment,heat,wifi,kitchen,outside,parking;
 
     /**
      Setters and Getters for the variables of the class.
      */
-    void setView(String view)
+    public void setView(String viewText)
     {
         this.view=view;
     }
-    void setBathroom(String bathroom)
+    public void setBathroom(String bathroom)
     {
         this.bathroom=bathroom;
     }
-    void setClothes(String clothes)
+    public void setClothes(String clothes)
     {
         this.clothes=clothes;
     }
-    void setEntertainment(String entertainment)
+    public void setEntertainment(String entertainment)
     {
         this.entertainment=entertainment;
     }
-    void setHeat(String heat)
+    public  void setHeat(String heat)
     {
         this.heat=heat;
     }
-    void setWifi(String wifi)
+    public void setWifi(String wifi)
     {
         this.wifi=wifi;
     }
-    void setKitchen(String kitchen)
+    public void setKitchen(String kitchen)
     {
         this.kitchen=kitchen;
     }
-    void setOutside(String outside)
+    public void setOutside(String outside)
     {
         this.outside=outside;
     }
-    void  setParking(String parking)
+    public void  setParking(String parking)
     {
         this.parking=parking;
     }
