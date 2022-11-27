@@ -18,6 +18,7 @@ public class  Login implements ActionListener {
     private static JButton button3;
     private static JLabel success;
 
+
     private static JFrame frame = new JFrame();
  void setFrame(JFrame frame)
  {
@@ -116,7 +117,6 @@ void setUser(JTextField userText)
                 if (object.Login(user, pass) == true) {
                     getUserText().setText("");
                     getPasswordText().setText("");
-
                     getFrame().setVisible(false);
                     if(object.Type(user).trim().equals("A"))
                     {
@@ -143,8 +143,9 @@ void setUser(JTextField userText)
                 getPasswordText().setText("");
 
                getFrame().setVisible(false);
-                Register wow= new Register();
+               Register wow= new Register();
                 wow.Register();
+
 
 
             }

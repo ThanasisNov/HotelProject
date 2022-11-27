@@ -5,21 +5,23 @@ import api.start.App;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class  Search implements ActionListener {
 
 
-    private static JLabel userLabel;
-    private static JTextField userText;
-    private static JLabel passwordLabel;
-    private static JPasswordField passwordText;
+
+
     private static JLabel nameLabel;
     private static JTextField nameText;
     private static JLabel surnameLabel;
     private static JTextField surnameText;
-    private static JLabel AccountLabel;
-    private static JTextField AccountText;
+
+    private static JLabel typeLabel;
+    private static JTextField typeText;
+    private static JLabel locationLabel;
+    private static JTextField locationText;
+    private static JLabel facilitiesLabel;
+    private static JTextField facilitiesText;
 
     private static JButton button1;
     private static JButton button2;
@@ -46,40 +48,40 @@ public class  Search implements ActionListener {
 
         frame.add(panel);
         panel.setLayout(null);
-        userLabel = new JLabel("Name");
-        userLabel.setBounds(10, 20, 80, 25);
-        panel.add(userLabel);
-        userText = new JTextField();
-        userText.setBounds(100, 20, 165, 25);
-        panel.add(userText);
-
-        passwordLabel = new JLabel("Type");
-        passwordLabel.setBounds(10, 50, 80, 25);
-        panel.add(passwordLabel);
-        passwordText = new JPasswordField();
-        passwordText.setBounds(100, 50, 165, 25);
-        panel.add(passwordText);
-
-        nameLabel = new JLabel("Location");
-        nameLabel.setBounds(10, 80, 80, 25);
+        nameLabel = new JLabel("Name");
+        nameLabel.setBounds(10, 20, 80, 25);
         panel.add(nameLabel);
         nameText = new JTextField();
-        nameText.setBounds(100, 80, 165, 25);
+        nameText.setBounds(100, 20, 165, 25);
         panel.add(nameText);
 
+      typeLabel = new JLabel("Type");
+        typeLabel.setBounds(10, 50, 80, 25);
+        panel.add(typeLabel);
+       typeText = new JPasswordField();
+        typeText.setBounds(100, 50, 165, 25);
+        panel.add(typeText);
 
-        surnameLabel = new JLabel("Facilities");
-        surnameLabel.setBounds(10, 110, 80, 25);
-        panel.add(surnameLabel);
-        surnameText = new JTextField();
-        surnameText.setBounds(100, 110, 165, 25);
-        panel.add(surnameText);
+        locationLabel = new JLabel("Location");
+        locationLabel.setBounds(10, 80, 80, 25);
+        panel.add(locationLabel);
+        locationText = new JTextField();
+        locationText.setBounds(100, 80, 165, 25);
+        panel.add(locationText);
+
+
+        facilitiesLabel = new JLabel("Facilities");
+        facilitiesLabel.setBounds(10, 110, 80, 25);
+        panel.add(facilitiesLabel);
+        facilitiesText = new JTextField();
+        facilitiesText.setBounds(100, 110, 165, 25);
+        panel.add(facilitiesText);
 
 
 
-        button1 = new JButton("Register");
+        button1 = new JButton("Search");
         button1.setBounds(10, 170, 85, 25);
-        button1.addActionListener(new Register());
+        button1.addActionListener(new Search());
         panel.add(button1);
         button2 = new JButton("Clear");
         button2.setBounds(100, 170, 80, 25);
@@ -96,54 +98,40 @@ public class  Search implements ActionListener {
 
         frame.setVisible(true);
     }
+    JTextField getNameText()
+    {
+        return  nameText;
+    }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String user =  userText.getText();
-        String pass = passwordText.getText();
-        String name = nameText.getText();
-        String  surname = surnameText.getText();
-        String Type = AccountText.getText();
+       String name =  nameText.getText();
+        String type = typeText.getText();
+        String location = locationText.getText();
+        String  facilities = facilitiesText.getText();
         App object = new App();
-
         if (e.getActionCommand().equals(button1.getText())) {
-            try {
-
-                if(object.Register(user,pass,name,surname,Type)) {
-                    success.setText("Register Successful");
-                }
-                else
-                {
-
-                    success.setText("Mistake found either in name or type!");
-
-                }
-
-            } catch (IOException ex) {
-                System.out.println("Error!");
-            }
 
         }
         else if (e.getActionCommand().equals(button2.getText())) {
+System.out.println("WOW");
 
-            userText.setText("");
-            passwordText.setText("");
-            nameText.setText("");
-            surnameText.setText("");
-            AccountText.setText("");
+            getNameText().setText("");
+            typeText.setText("");
+            locationText.setText("");
+            facilitiesText.setText("");
             success.setText("");
         }
         else if(e.getActionCommand().equals(button3.getText()))
         {
 
-            userText.setText("");
-            passwordText.setText("");
-            nameText.setText("");
-            surnameText.setText("");
-            AccountText.setText("");
+           getNameText().setText("");
+            typeText.setText("");
+            locationText.setText("");
+            facilitiesText.setText("");
             frame.setVisible(false);
-            Login wow= new Login();
+            UserA wow= new UserA();
             wow.getFrame().setVisible(true);
 
 

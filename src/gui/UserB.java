@@ -12,7 +12,7 @@
         private static JButton button3;
         private static JButton button4;
         private static JLabel Welcome;
-
+        private static JTextField userText;
         private static JFrame frame = new JFrame();
         void setFrame(JFrame frame)
         {
@@ -25,12 +25,15 @@
 
         void UserB(String name2)    {
             setFrame(frame);
+
             JPanel panel = new JPanel();
             frame.setSize(100, 100);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+            userText = new JTextField();
+            userText.setText(name2);
             frame.add(panel);
             panel.setLayout(null);
+
             Welcome = new JLabel("Hi "+name2+"!");
             Welcome.setBounds(10, 20, 100, 25);
             panel.add(Welcome);
@@ -72,6 +75,7 @@
         @Override
         public void actionPerformed(ActionEvent e) {
             App object = new App();
+
             if (e.getActionCommand().equals(button1.getText())) {
 
 
