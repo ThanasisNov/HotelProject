@@ -8,7 +8,7 @@ public class room extends hotel {
     /**
      Setters and Getters for the variables of the class.
      */
-    public void setView(String viewText)
+    public void setView(String view)
     {
         this.view=view;
     }

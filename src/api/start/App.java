@@ -1,5 +1,7 @@
 package api.start;
 
+import gui.Login;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -153,23 +155,25 @@ public class App {
      * @param fac αντικείμενο του room
      * @throws IOException
      */
-    public void add(String name, String tp, String loc, String des, room fac) throws IOException {
+    public void add(String name, String tp, String loc, String des, room fac,String n) throws IOException {
 
 
         File file = new File("AddBase.txt");
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         br.newLine();
-        br.write("Hotel Name:" + name + "\n" + "Type:" + tp + "\n" + "Location:" + loc + "\n" + "Description:" + des + "\n" + "View:" + fac.getView() + "\n" + "Bathroom:" + fac.getBathroom() + "\n" + "Clothing Wash:" + fac.getClothes() + "\n" + "Entertainment:" + fac.getEntertainment() + "\n" + "Heat:" + fac.getHeat() + "\n" + "Wifi:" + fac.getWifi() + "\n" + "Kitchen:" + fac.getKitchen() + "\n" + "Outside:" + fac.getOutside() + "\n" + "Parking:" + fac.getParking() + "\n");
+        br.write("Username:"+n+"\n"+"Hotel Name:" + name + "\n" + "Type:" + tp + "\n" + "Location:" + loc + "\n" + "Description:" + des + "\n" + "View:" + fac.getView() + "\n" + "Bathroom:" + fac.getBathroom() + "\n" + "Clothing Wash:" + fac.getClothes() + "\n" + "Entertainment:" + fac.getEntertainment() + "\n" + "Heat:" + fac.getHeat() + "\n" + "Wifi:" + fac.getWifi() + "\n" + "Kitchen:" + fac.getKitchen() + "\n" + "Outside:" + fac.getOutside() + "\n" + "Parking:" + fac.getParking() + "\n");
+        System.out.println(fac.getOutside());
+        System.out.println(fac.getParking());
 
         br.close();
         fr.close();
 
     }
-}
 
 
-/*
+
+
 
     //OLD
     public void LoginSystem(String username ,String password) throws IOException {
@@ -325,4 +329,4 @@ public class App {
 
         }
     }
- */
+

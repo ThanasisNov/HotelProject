@@ -39,13 +39,15 @@ public class  add implements ActionListener {
     private static JLabel parking;
     private static JTextField parkingText;
 
+    private static JTextField username;
+
 
     private static JButton button1;
     private static JButton button2;
     private static JButton button3;
     private static JLabel success;
 
-    //room fac = new room();
+    Login l = new Login();
 
     private static JFrame frame = new JFrame();
     void setFrame(JFrame frame)
@@ -57,11 +59,13 @@ public class  add implements ActionListener {
         return frame;
     }
 
-    void add()    {
+    void add(String name)    {
         setFrame(frame);
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        username = new JTextField();
+        username.setText(name);
 
         frame.add(panel);
         panel.setLayout(null);
@@ -232,8 +236,8 @@ public class  add implements ActionListener {
         fac.setHeat(heatText.getText());
         fac.setWifi(wifiText.getText());
         fac.setKitchen(kitchenText.getText());
-        fac.setOutside(outside.getText());
-        fac.setParking(parking.getText());
+        fac.setOutside(outsideText.getText());
+        fac.setParking(parkingText.getText());
 
 
         if (e.getActionCommand().equals(button1.getText())) {
@@ -244,7 +248,7 @@ public class  add implements ActionListener {
                 }
                 else
                 {
-                  object.add(HNText.getText(),typeText.getText(),locText.getText(),descriptionText.getText(),fac);
+                  object.add(HNText.getText(),typeText.getText(),locText.getText(),descriptionText.getText(),fac,username.getText());
                   success.setText("Add successful");
                 }
 
@@ -273,7 +277,7 @@ public class  add implements ActionListener {
         }
         else if(e.getActionCommand().equals(button3.getText()))
         {
-            frame.setVisible(false);
+            frame.getContentPane().removeAll();
             UserB wow= new UserB();
             wow.getFrame().setVisible(true);
         }
