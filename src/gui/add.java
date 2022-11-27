@@ -277,6 +277,19 @@ public class  add implements ActionListener {
         }
         else if(e.getActionCommand().equals(button3.getText()))
         {
+            HNText.setText("");
+            typeText.setText("");
+            locText.setText("");
+            descriptionText.setText("");
+            viewText.setText("");
+            bathroomText.setText("");
+            clothingWashText.setText("");
+            entertainmentText.setText("");
+            heatText.setText("");
+            wifiText.setText("");
+            kitchenText.setText("");
+            outsideText.setText("");
+            parkingText.setText("");
             frame.setVisible(false);
             frame.getContentPane().removeAll();
             UserB wow= new UserB();

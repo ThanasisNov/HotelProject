@@ -1,11 +1,10 @@
 package api.start;
 
-import gui.Login;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -15,7 +14,71 @@ public class App {
 
     private static Scanner check;
 
+public ArrayList Search(String name, String type, String loc, String view, String bathroom , String wash,  String en,String heat, String Wifi, String area,String outside,String parking)
+{
+    String realname="";
+    String tempUsername = "";
+    String tempType = "";
+   String temploc="";
+    String tempview="";
+    String tempWifi="" ;
+    String tempparking="";
+    String tempbathroom="";
+    String temparea="" ;
+    String tempwash="";
+    String tempen="";
+    String tempheat="";
+    String tempoutside="";
+    BufferedWriter bw = null;
+  ArrayList<String>hotels=new ArrayList<>();
 
+
+    try {
+
+
+        check = new Scanner(new File("AddBase.txt"));
+        check.useDelimiter("[,\n]");
+        while (check.hasNext() ) {
+            realname=check.next();
+            tempUsername = check.next();
+            tempType = check.next();
+            temploc=check.next();
+            String tempde=check.next();
+            tempview=check.next();
+            tempbathroom=check.next();
+            tempwash=check.next();
+            tempen=check.next();
+            tempheat=check.next();
+            tempWifi=check.next();
+            temparea=check.next();
+            tempoutside=check.next();
+            tempparking=check.next();
+            if ((tempUsername.trim().equals(name) ||name.equals("")) &&
+                    (tempType.trim().equals(type)||type.equals("") )&&
+                    (temploc.trim().equals(loc)||loc.equals(""))
+                    &&(tempview.trim().equals(view)||view.equals(""))
+                    &&(temparea.trim().equals(area)||area.equals(""))
+                    &&(tempen.trim().equals(en)||area.equals(""))&&
+                    (tempbathroom.trim().equals(bathroom)||bathroom.equals(""))
+                    &&     (tempwash.trim().equals(wash)||wash.equals(""))
+                    &&(tempheat.trim().equals(heat)||heat.equals(""))
+                    &&(tempoutside.trim().equals(outside)||outside.equals(""))
+                    &&(tempparking.trim().equals(parking)||parking.equals(""))
+                    &&(tempwash.trim().equals(wash)||wash.equals(""))
+                    &&(tempWifi.trim().equals(Wifi)||Wifi.equals("")))
+            {
+              hotels.add(tempUsername+","+tempview+","+temploc);
+            System.out.println("FOUND");
+            }
+            check.nextLine();
+
+        }
+    } catch (Exception e) {
+System.out.println("Error");
+    }
+    return hotels;
+
+}
     /**
      * @param username όνομα χρήστη
      * @param password κωδικός χρήστη
@@ -160,8 +223,9 @@ public class App {
         File file = new File("AddBase.txt");
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
+
+        br.write(n+","+name+","+ tp +"," + loc + "," + des +","+ fac.getView() + ","+ fac.getBathroom() + "," + fac.getClothes() + ","+ fac.getEntertainment() + "," + fac.getHeat() +","+ fac.getWifi() + "," + fac.getKitchen() + "," + fac.getOutside() + "," + fac.getParking() );
         br.newLine();
-        br.write("Username:"+n+"\n"+"Hotel Name:" + name + "\n" + "Type:" + tp + "\n" + "Location:" + loc + "\n" + "Description:" + des + "\n" + "View:" + fac.getView() + "\n" + "Bathroom:" + fac.getBathroom() + "\n" + "Clothing Wash:" + fac.getClothes() + "\n" + "Entertainment:" + fac.getEntertainment() + "\n" + "Heat:" + fac.getHeat() + "\n" + "Wifi:" + fac.getWifi() + "\n" + "Kitchen:" + fac.getKitchen() + "\n" + "Outside:" + fac.getOutside() + "\n" + "Parking:" + fac.getParking() + "\n");
         System.out.println(fac.getOutside());
         System.out.println(fac.getParking());
 
