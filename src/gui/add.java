@@ -277,6 +277,7 @@ public class  add implements ActionListener {
         }
         else if(e.getActionCommand().equals(button3.getText()))
         {
+            frame.setVisible(false);
             frame.getContentPane().removeAll();
             UserB wow= new UserB();
             wow.getFrame().setVisible(true);

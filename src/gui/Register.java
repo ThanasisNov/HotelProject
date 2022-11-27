@@ -150,6 +150,7 @@ public class  Register implements ActionListener {
             nameText.setText("");
             surnameText.setText("");
             AccountText.setText("");
+            frame.setVisible(false);
             frame.getContentPane().removeAll();
             Login wow= new Login();
             wow.getFrame().setVisible(true);

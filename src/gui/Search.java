@@ -115,7 +115,7 @@ public class  Search implements ActionListener {
 
         }
         else if (e.getActionCommand().equals(button2.getText())) {
-System.out.println("WOW");
+
 
             getNameText().setText("");
             typeText.setText("");

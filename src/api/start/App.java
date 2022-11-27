@@ -79,7 +79,6 @@ public class App {
             tempUsername = check.next();
             if (tempUsername.trim().equals(username)) {
                 found = false;
-                System.out.println(tempUsername.trim() + " -->" + username);
             }
             check.nextLine();
         }
