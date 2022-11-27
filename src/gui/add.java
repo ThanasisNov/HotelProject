@@ -2,14 +2,9 @@ package gui;
 
 import api.start.App;
 import api.start.room;
-import gui.Login;
-import gui.Register;
-import gui.UserA;
-import gui.UserB;
-import jdk.jfr.Description;
-import org.w3c.dom.Text;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -65,7 +60,7 @@ public class  add implements ActionListener {
     void add()    {
         setFrame(frame);
         JPanel panel = new JPanel();
-        frame.setSize(500, 500);
+        frame.setMinimumSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.add(panel);
@@ -94,7 +89,7 @@ public class  add implements ActionListener {
         panel.add(locText);
 
         description = new JLabel("Description*");
-        description.setBounds(10, 110, 80, 25);
+        description.setBounds(10, 110, 150, 25);
         panel.add(description);
         descriptionText = new JTextField();
         descriptionText.setBounds(100, 110, 190, 25);
@@ -116,7 +111,7 @@ public class  add implements ActionListener {
         panel.add(bathroomText);
 
         clothingWash = new JLabel("Clothing Wash");
-        clothingWash.setBounds(10, 200, 80, 25);
+        clothingWash.setBounds(10, 200, 160, 25);
         panel.add(clothingWash);
         clothingWashText = new JTextField();
         clothingWashText.setBounds(100, 200, 165, 25);
@@ -223,6 +218,7 @@ public class  add implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         App object = new App();
         room fac = new room();
         setHotelName(HNText);

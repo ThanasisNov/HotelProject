@@ -1,6 +1,5 @@
 package api.start;
 
-import javax.swing.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,95 +13,15 @@ public class App {
 
     private static Scanner check;
 
-
+    /**
+     * @param username όνομα χρήστη
+     * @param password κωδικός χρήστη
+     * @return Η κλάση ελέγχει αν υπάρχει όντως ο χρήστης με αυτό το username και password και αν ναι επιστρέφει true διαφορετικά false.
+     */
     public boolean Login(String username, String password) {
         String tempUsername = "";
         String tempPassword = "";
 
-        BufferedWriter bw = null;
-
-
-            boolean found = false;
-
-                try {
-
-
-                    check = new Scanner(new File("UserBase.txt"));
-                    check.useDelimiter("[,\n]");
-                    while (check.hasNext() && !found) {
-
-                        tempUsername = check.next();
-                        tempPassword = check.next();
-
-                        if (tempUsername.trim().equals(username) && tempPassword.trim().equals(password)) {
-                            found = true;
-
-                        }
-                        check.nextLine();
-
-                    }
-                } catch (Exception e) {
-
-                    found = false;
-                }
-        return found;
-    }
-    public boolean Register(String username, String password,String name,String surname,String type) throws IOException {
-        String tempUsername = "";
-        String tempPassword = "";
-
-        BufferedWriter bw = null;
-
-
-        boolean found = true;
-
-        try {
-
-
-            check = new Scanner(new File("UserBase.txt"));
-            check.useDelimiter("[,\n]");
-            while (check.hasNext() && found) {
-                tempUsername = check.next();
-                if (tempUsername.trim().equals(username) ) {
-                    found = false;
-                   System.out.println(tempUsername.trim() +" -->"+username);
-                }
-                check.nextLine();
-            }
-        } catch (Exception e) {
-
-           System.out.println("Error");
-        }
-
-        if(found)
-        {
-
-            if(!(type.equals("A") || type.equals("B")))
-            {
-
-                return false;
-            }
-
-            File file = new File("UserBase.txt");
-            FileWriter fr = new FileWriter(file, true);
-            BufferedWriter br = new BufferedWriter(fr);
-            br.newLine();
-            br.write(username+","+password+","+name+","+surname+","+type);
-
-            br.close();
-            fr.close();
-
-        }
-
-        return found;
-    }
-
-    public String Type(String username) {
-        String tempUsername = "";
-        String tempPassword = "";
-        String tempName="";
-        String tempSurname="";
-        String tempType="";
         BufferedWriter bw = null;
 
 
@@ -117,13 +36,103 @@ public class App {
 
                 tempUsername = check.next();
                 tempPassword = check.next();
-                 tempName= check.next();
-                 tempSurname=check.next();
-                 tempType=check.next();
-                if (tempUsername.trim().equals(username) ) {
+
+                if (tempUsername.trim().equals(username) && tempPassword.trim().equals(password)) {
+                    found = true;
+
+                }
+                check.nextLine();
+
+            }
+        } catch (Exception e) {
+
+            found = false;
+        }
+        return found;
+    }
+
+    /**
+     * @param username όνομα χρήστη
+     * @param password κωδικός χρήστη
+     * @param name     πραγματικό όνομα
+     * @param surname  επίθετο
+     * @param type     τύπος λογαριασμού
+     * @return το πρόγραμμα για να γίνει καινούργια εγγραφή χρήστη ζητάει username(μοναδικό),password,name,surname,type(Α ή Β) .Αν όλα τα στοιχεία που έδωσε πληρούν τις
+     * προϋποθέσεις τότε προσθέτει τον καινούργιο χρήστη στο UserBase και επιστέφει true για επιβεβαίωση .Διαφορετικά επιστέφει false.
+     */
+    public boolean Register(String username, String password, String name, String surname, String type) throws IOException {
+        String tempUsername = "";
+        String tempPassword = "";
+
+        BufferedWriter bw = null;
+
+
+        boolean found = true;
+
+
+        check = new Scanner(new File("UserBase.txt"));
+        check.useDelimiter("[,\n]");
+        while (check.hasNext() && found) {
+            tempUsername = check.next();
+            if (tempUsername.trim().equals(username)) {
+                found = false;
+                System.out.println(tempUsername.trim() + " -->" + username);
+            }
+            check.nextLine();
+        }
+
+
+        if (found) {
+
+            if (!(type.equals("A") || type.equals("B"))) {
+
+                return false;
+            }
+
+            File file = new File("UserBase.txt");
+            FileWriter fr = new FileWriter(file, true);
+            BufferedWriter br = new BufferedWriter(fr);
+            br.newLine();
+            br.write(username + "," + password + "," + name + "," + surname + "," + type);
+
+            br.close();
+            fr.close();
+
+        }
+
+        return found;
+    }
+
+    /**
+     * @param username όνομα χρήστη για σύνδεση
+     * @return επιστρέφει το είδος λογαριασμού του χρήστη δηλαδή Α(κανονικός)  ή Β(πάροχος)
+     */
+    public String Type(String username) {
+        String tempUsername = "";
+        String tempPassword = "";
+        String tempName = "";
+        String tempSurname = "";
+        String tempType = "";
+        BufferedWriter bw = null;
+
+
+        boolean found = false;
+
+        try {
+
+
+            check = new Scanner(new File("UserBase.txt"));
+            check.useDelimiter("[,\n]");
+            while (check.hasNext() && !found) {
+
+                tempUsername = check.next();
+                tempPassword = check.next();
+                tempName = check.next();
+                tempSurname = check.next();
+                tempType = check.next();
+                if (tempUsername.trim().equals(username)) {
                     found = true;
                 }
-
 
 
             }
@@ -134,24 +143,32 @@ public class App {
         return tempType;
     }
 
-    public void  add(String name, String tp, String loc, String des,room fac) throws IOException {
+    /**
+     *
+     * @param name όνομα καταλύματος
+     * @param tp τύπος καταλύματος
+     * @param loc τοποθεσία καταλύματος
+     * @param des περιγραφή καταλύματος
+     * @param fac αντικείμενο του room
+     * @throws IOException
+     */
+    public void add(String name, String tp, String loc, String des, room fac) throws IOException {
 
 
+        File file = new File("AddBase.txt");
+        FileWriter fr = new FileWriter(file, true);
+        BufferedWriter br = new BufferedWriter(fr);
+        br.newLine();
+        br.write("Hotel Name:" + name + "\n" + "Type:" + tp + "\n" + "Location:" + loc + "\n" + "Description:" + des + "\n" + "View:" + fac.getView() + "\n" + "Bathroom:" + fac.getBathroom() + "\n" + "Clothing Wash:" + fac.getClothes() + "\n" + "Entertainment:" + fac.getEntertainment() + "\n" + "Heat:" + fac.getHeat() + "\n" + "Wifi:" + fac.getWifi() + "\n" + "Kitchen:" + fac.getKitchen() + "\n" + "Outside:" + fac.getOutside() + "\n" + "Parking:" + fac.getParking() + "\n");
 
-            File file = new File("AddBase.txt");
-            FileWriter fr = new FileWriter(file, true);
-            BufferedWriter br = new BufferedWriter(fr);
-            br.newLine();
-            br.write("Hotel Name:"+name+"\n"+"Type:"+tp+"\n"+"Location:"+loc+"\n"+"Description:"+des+"\n" + "View:"+fac.getView()+"\n"+"Bathroom:"+fac.getBathroom()+"\n"+"Clothing Wash:"+fac.getClothes()+"\n"+"Entertainment:"+fac.getEntertainment()+"\n"+"Heat:"+fac.getHeat()+"\n"+"Wifi:"+fac.getWifi()+"\n"+"Kitchen:"+fac.getKitchen()+"\n"+"Outside:"+fac.getOutside()+"\n"+"Parking:"+fac.getParking()+"\n");
-
-            br.close();
-            fr.close();
+        br.close();
+        fr.close();
 
     }
+}
 
 
-
-
+/*
 
     //OLD
     public void LoginSystem(String username ,String password) throws IOException {
@@ -307,4 +324,4 @@ public class App {
 
         }
     }
-
+ */
