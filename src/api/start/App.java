@@ -13,6 +13,11 @@ public class App {
     static UserBase u = new UserBase();
 
     private static Scanner check;
+   private static ArrayList<Integer>found= new ArrayList<>();
+   public ArrayList getfound()
+   {
+       return found;
+   }
 
 public ArrayList Search(String name, String type, String loc, String view, String bathroom , String wash,  String en,String heat, String Wifi, String area,String outside,String parking)
 {
@@ -34,11 +39,11 @@ public ArrayList Search(String name, String type, String loc, String view, Strin
 
 
     try {
-
-
+int lines=0;
         check = new Scanner(new File("AddBase.txt"));
         check.useDelimiter("[,\n]");
         while (check.hasNext() ) {
+
             realname=check.next();
             tempUsername = check.next();
             tempType = check.next();
@@ -60,17 +65,20 @@ public ArrayList Search(String name, String type, String loc, String view, Strin
                     &&(temparea.trim().equals(area)||area.equals(""))
                     &&(tempen.trim().equals(en)||area.equals(""))&&
                     (tempbathroom.trim().equals(bathroom)||bathroom.equals(""))
-                    &&     (tempwash.trim().equals(wash)||wash.equals(""))
                     &&(tempheat.trim().equals(heat)||heat.equals(""))
                     &&(tempoutside.trim().equals(outside)||outside.equals(""))
                     &&(tempparking.trim().equals(parking)||parking.equals(""))
                     &&(tempwash.trim().equals(wash)||wash.equals(""))
-                    &&(tempWifi.trim().equals(Wifi)||Wifi.equals("")))
+                    &&(tempWifi.trim().equals(Wifi)||Wifi.equals(""))
+                    &&!((Wifi.equals("")&&wash.equals(""))&&parking.equals("")&&outside.equals("")&&heat.equals("")&&bathroom.equals("")&&area.equals("")&&view.equals("")
+            &&loc.equals("")&&type.equals("")&&name.equals("")))
+
             {
               hotels.add(tempUsername+","+tempview+","+temploc);
-            System.out.println("FOUND");
+              found.add(lines);
             }
             check.nextLine();
+          lines++;
 
         }
     } catch (Exception e) {

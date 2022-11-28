@@ -195,7 +195,8 @@ HotelList test= new HotelList();
 
             frame.setVisible(false);
             frame.getContentPane().removeAll();
-test.HotelList(temp);
+
+test.HotelList(temp,object.getfound());
 
         }
         else if (e.getActionCommand().equals(button2.getText())) {

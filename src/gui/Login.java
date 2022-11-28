@@ -29,7 +29,7 @@ public class  Login implements ActionListener {
         return frame;
     }
 
-    void Login()    {
+    public void Login()    {
         setFrame(frame);
         JPanel panel = new JPanel();
         frame.setSize(100, 100);

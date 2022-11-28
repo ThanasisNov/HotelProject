@@ -54,29 +54,10 @@ public class UserA  implements ActionListener {
 
 
 
-        button3 = new JButton("Add review ");
-        button3.setBounds(1, 80, 200, 25);
-        button3.addActionListener(new UserA());
-        panel.add(button3);
-        frame.setSize(300, 300);
 
-
-
-        button4 = new JButton("Edit review");
-        button4.setBounds(1, 110, 200, 25);
-        button4.addActionListener(new UserA());
-        panel.add(button4);
-        frame.setSize(300, 300);
-
-        button5 = new JButton("Delete review");
-        button5.setBounds(1, 140, 200, 25);
-        button5.addActionListener(new UserA());
-        panel.add(button5);
-        frame.setSize(300, 300);
-        frame.setVisible(true);
 
         button6 = new JButton("View");
-        button6.setBounds(1, 170, 200, 25);
+        button6.setBounds(1, 80, 200, 25);
         button6.addActionListener(new UserA());
         panel.add(button6);
         frame.setSize(300, 300);

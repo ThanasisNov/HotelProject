@@ -31,10 +31,7 @@ public class  Register implements ActionListener {
     {
         this.frame=frame;
     }
-    JFrame getFrame()
-    {
-        return frame;
-    }
+
 
     void Register()
     {
