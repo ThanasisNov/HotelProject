@@ -296,8 +296,7 @@ System.out.println("Error App");
 
         br.write(n+","+name+","+ tp +"," + loc + "," + des +","+ fac.getView() + ","+ fac.getBathroom() + "," + fac.getClothes() + ","+ fac.getEntertainment() + "," + fac.getHeat() +","+ fac.getWifi() + "," + fac.getKitchen() + "," + fac.getOutside() + "," + fac.getParking() );
         br.newLine();
-        System.out.println(fac.getOutside());
-        System.out.println(fac.getParking());
+
 
         br.close();
         fr.close();
