@@ -1,12 +1,2 @@
-Nikoleta,Wow,we,weq,ee,qwew,qe,qewe,eqwhe,qe,qweh,qwhe,q,qwehj
-Athanasios,A,rewwer,wer,werwe,rwerwer,wer,werwe,rw,,wrer,wre,wer,w
-Athanasios,B,rewwer,wer,werwe,rwerwer,wer,werwe,rw,,wrer,wre,wer,w
-Athanasios,Hotel,type,Greece,wow,amazing,bath,wash,en,heat,wifi,k,o,p
-Nikoleta,name,type,loc,de,view,bath,wash,en,heat,wifi,k,o,p
-Nikoleta,HolidayIn,lavish,Greece,amazing,Great,Something,That,Meh,Good,Great,Nice,Meh,Big
-,wer,,,ewerw,null,null,null,null,null,null,null,null,null
-,ewrwe,,,wer,null,null,null,null,null,null,null,null,null
-,ewrwe,,,wer,null,null,null,null,null,null,null,null,null
-,iopio,,,wer,null,null,null,null,null,null,null,null,null
-,erw,,,ewr,null,null,null,null,null,null,null,null,null
-,r,,,te,null,null,null,null,null,null,null,null,null
+Thanasis,Nikos,Hotel,nullnull,wewqe,qwwqewe,qweqw,eqweqw,null,null,Sea,Port,nullnull,null,null,null,Air Condition,null,Wash Machine,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+Nikoleta,Thanasis,Hotel,Apartment,Maisonette,Limnioti,Kastoria,52100,WoW,Pool,Beach,Sea,Port,Mountain,Road,Hair Dryer,TV,Fireplace,Air Condition,Full house Heat,Wash Machine,Dryer,Wifi,Ethernet,Fridge,Oven,Microwave,cookware,Plates an Cutlery,Dishwasher,Caffe Machine,balcony,Courtyard,Private parking,Road Parking

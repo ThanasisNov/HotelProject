@@ -36,6 +36,7 @@ public class  add implements ActionListener {
     private static JLabel parking;
 
 
+
     private static final JCheckBox hotel = new JCheckBox("Hotel");
     private static final JCheckBox apartment = new JCheckBox("Apartment");
     private static final JCheckBox maisonette = new JCheckBox("Maisonette");
@@ -143,9 +144,7 @@ public class  add implements ActionListener {
         panel.add(cityLabel);
         cityText = new JTextField();
        cityText.setBounds(100, 110, 190, 25);
-
         panel.add(cityText);
-
         postcodeLabel= new JLabel("PostCode:*");
         postcodeLabel.setBounds(10, 135, 150, 25);
         panel.add(postcodeLabel);
@@ -167,6 +166,7 @@ public class  add implements ActionListener {
         panel.add(beach);
         sea.setBounds(200,195,60,25);
         panel.add(sea);
+
 
         port.setBounds(260,195,60,25);
         panel.add(port);
@@ -248,8 +248,6 @@ public class  add implements ActionListener {
 
 
 
-wifi.addActionListener(new add());
-
 
 
         button1 = new JButton("Submit");
@@ -312,19 +310,10 @@ wifi.addActionListener(new add());
 
         App object = new App();
         room fac = new room();
-      /*  setHotelName(HNText);
-        setType(typeText);
-        setLocation(locText);
+        setHotelName(HNText);
         setDescription(descriptionText);
-        // fac.setView(viewText.getText());
-        fac.setBathroom(bathroomText.getText());
-        fac.setClothes(clothingWashText.getText());
-        fac.setEntertainment(entertainmentText.getText());
-        fac.setHeat(heatText.getText());
-        fac.setWifi(wifiText.getText());
-        fac.setKitchen(kitchenText.getText());
-        fac.setOutside(outsideText.getText());
-        fac.setParking(parkingText.getText());*/
+        String[] checkIfExists  =new String[30];
+
 
         if (e.getActionCommand().equals(button1.getText())) {
 
@@ -335,9 +324,47 @@ wifi.addActionListener(new add());
                 }
                 else
                 {
-                    sea.getText();
-                    // Εδώ μπορείς να βάλεις κατευθείαν τα hotel κτλ στα πεδία που έχουμε ασ πουμε στο wifi θα βαλεις wifi+","+"Ethernet" κτλ
-                    object.add(HNText.getText(),"","",descriptionText.getText(),fac,username.getText());
+   if(hotel.isSelected())checkIfExists[0]= hotel.getText();
+   if(apartment.isSelected())checkIfExists[1]=apartment.getText();
+  if(maisonette.isSelected()) checkIfExists[2]=maisonette.getText();
+   if(pool.isSelected())checkIfExists[3]=pool.getText();
+  if(beach.isSelected()) checkIfExists[4]=beach.getText();
+  if(sea.isSelected()) checkIfExists[5]=sea.getText();
+  if(port.isSelected()) checkIfExists[6]=port.getText();
+ if(mountain.isSelected())  checkIfExists[7]= mountain.getText();
+  if(road.isSelected()) checkIfExists[8]=road.getText();
+  if(hair.isSelected())checkIfExists[9]= hair.getText();
+ if(tv.isSelected())  checkIfExists[10]=tv.getText();
+ if(fireplace.isSelected())  checkIfExists[11]=fireplace.getText();
+ if(aircondition.isSelected())  checkIfExists[12]=aircondition.getText();
+   if(fullheat.isSelected())checkIfExists[13]=fullheat.getText();
+   if(washermachine.isSelected()) checkIfExists[14]=washermachine.getText();
+   if(dryer.isSelected())  checkIfExists[15]=dryer.getText();
+  if(wifi.isSelected()) checkIfExists[16]=wifi.getText();
+   if(Ethernet.isSelected())checkIfExists[17]=Ethernet.getText();
+   if(Fridge.isSelected())checkIfExists[18]=Fridge.getText() ;
+   if(oven.isSelected()) checkIfExists[19]=oven.getText();
+   if(microwave.isSelected())checkIfExists[20]=microwave.getText();
+   if(cookware.isSelected())checkIfExists[21]=cookware.getText();
+   if(plates.isSelected())checkIfExists[22]=plates.getText();
+   if(dishwasher.isSelected())checkIfExists[23]=dishwasher.getText();
+   if(caffe.isSelected())checkIfExists[24]=caffe.getText();
+   if(balcony.isSelected())checkIfExists[25]=balcony.getText();
+   if(courtyard.isSelected())checkIfExists[26]=courtyard.getText();
+   if(privateparking.isSelected())checkIfExists[27]=privateparking.getText();
+  if(roadparking.isSelected()) checkIfExists[28]= roadparking.getText();
+        fac.setView(checkIfExists[3]+","+checkIfExists[4]+","+checkIfExists[5]+","+checkIfExists[6]+","+checkIfExists[7]+","+checkIfExists[8]);
+        fac.setBathroom(checkIfExists[9]);
+        fac.setClothes(checkIfExists[10]+","+checkIfExists[11]);
+        fac.setEntertainment(checkIfExists[12]);
+        fac.setHeat(checkIfExists[13]+","+checkIfExists[14]+","+checkIfExists[15]);
+        fac.setWifi(checkIfExists[16]+","+checkIfExists[17]);
+        fac.setKitchen(checkIfExists[18]+","+checkIfExists[19]+","+checkIfExists[20]+","+checkIfExists[21]+","+checkIfExists[22]+","+checkIfExists[23]+","+checkIfExists[24]);
+        fac.setOutside(checkIfExists[25]+","+checkIfExists[26]);
+        fac.setParking(checkIfExists[27]+","+checkIfExists[28]);
+                    object.add(HNText.getText(),checkIfExists[0]+","+checkIfExists[1]+","+checkIfExists[2]
+                            ,addressText.getText()+","+cityText.getText()+","+postCodeText.getText()
+                            ,descriptionText.getText(), fac, username.getText());
                     success.setText("Add successful");
 
                 }

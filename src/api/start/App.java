@@ -19,21 +19,43 @@ public class App {
        return found;
    }
 
-public ArrayList Search(String name, String type, String loc, String view, String bathroom , String wash,  String en,String heat, String Wifi, String area,String outside,String parking)
+public ArrayList Search(String name, String h,String a,String m, String loc, String pool,String  beach,String sea,String port,String mount,String road
+        ,String hair,String Tv,String fire,String air ,String fullheat,String washmach,String dryer,String wif,String ethe,String Fridge,String oven
+        ,String cook,String plates,String dishwash,String caffe,String micro,String balcony,String yard,String privateparking,String roadparking)
 {
-    String realname="";
-    String tempUsername = "";
-    String tempType = "";
-   String temploc="";
-    String tempview="";
-    String tempWifi="" ;
-    String tempparking="";
-    String tempbathroom="";
-    String temparea="" ;
-    String tempwash="";
-    String tempen="";
-    String tempheat="";
-    String tempoutside="";
+
+    String realname=null;
+    String tempname="";
+    String temph=null;
+    String tempa=null;
+    String tempm=null;
+    String temploc=null;
+    String temppool=null;
+    String  tempbeach=null;
+    String tempsea=null;
+    String tempport=null;
+    String tempmount=null;
+    String temproad=null;
+        String temphair=null;
+        String tempTv=null;
+        String tempfire=null;
+        String tempair=null ;
+        String tempfullheat=null;
+        String tempwashmach=null;
+        String tempdryer=null;
+        String tempwif=null;
+        String tempethe=null;
+        String tempFridge=null;
+        String tempoven=null;
+        String tempcook=null;
+        String tempplates=null;
+        String tempdishwash=null;
+        String tempcaffe=null;
+        String tempmicro=null;
+        String tempbalcony=null;
+        String tempyard=null;
+        String tempprivateparking=null;
+        String temproadparking=null;
     BufferedWriter bw = null;
   ArrayList<String>hotels=new ArrayList<>();
 
@@ -45,44 +67,84 @@ int lines=0;
         while (check.hasNext() ) {
 
             realname=check.next();
-            tempUsername = check.next();
-            tempType = check.next();
+            tempname = check.next();
+            temph = check.next();
+            tempa=check.next();
+            tempm=check.next();
             temploc=check.next();
-            String tempde=check.next();
-            tempview=check.next();
-            tempbathroom=check.next();
-            tempwash=check.next();
-            tempen=check.next();
-            tempheat=check.next();
-            tempWifi=check.next();
-            temparea=check.next();
-            tempoutside=check.next();
-            tempparking=check.next();
-            if ((tempUsername.trim().equals(name) ||name.equals("")) &&
-                    (tempType.trim().equals(type)||type.equals("") )&&
-                    (temploc.trim().equals(loc)||loc.equals(""))
-                    &&(tempview.trim().equals(view)||view.equals(""))
-                    &&(temparea.trim().equals(area)||area.equals(""))
-                    &&(tempen.trim().equals(en)||area.equals(""))&&
-                    (tempbathroom.trim().equals(bathroom)||bathroom.equals(""))
-                    &&(tempheat.trim().equals(heat)||heat.equals(""))
-                    &&(tempoutside.trim().equals(outside)||outside.equals(""))
-                    &&(tempparking.trim().equals(parking)||parking.equals(""))
-                    &&(tempwash.trim().equals(wash)||wash.equals(""))
-                    &&(tempWifi.trim().equals(Wifi)||Wifi.equals(""))
-                    &&!((Wifi.equals("")&&wash.equals(""))&&parking.equals("")&&outside.equals("")&&heat.equals("")&&bathroom.equals("")&&area.equals("")&&view.equals("")
-            &&loc.equals("")&&type.equals("")&&name.equals("")))
+            temppool=check.next();
+            tempbeach=check.next();
+            tempsea=check.next();
+            tempport=check.next();
+            tempmount=check.next();
+            temproad=check.next();
+            temphair=check.next();
+            tempTv=check.next();
+            tempfire=check.next();
+            tempair= check.next();
+            tempfullheat = check.next();
+            tempwashmach=check.next();
+            tempdryer=check.next();
+            tempwif=check.next();
+            tempethe=check.next();
+            tempFridge=check.next();
+            tempoven=check.next();
+            tempcook=check.next();
+            tempplates=check.next();
+            tempdishwash=check.next();
+            tempcaffe=check.next();
+            tempmicro=check.next();
+            tempethe=check.next();
+            tempbalcony=check.next();
+            tempyard=check.next();
+            tempprivateparking=check.next();
+            temproadparking=check.next();
+
+            if ((tempname.trim().equals(name) ||name.equals(""))&&
+                    (temph.trim().equals(h)||h.equals("") )&&
+                    (tempa.trim().equals(a)||a.equals(""))
+                    &&(tempm.trim().equals(m)||m.equals(""))
+                    &&(temppool.trim().equals(pool)||pool.equals(""))
+                    &&(temproad.trim().equals(road)||road.equals(""))&&
+                    (tempbeach.trim().equals(beach)||beach.equals(""))
+                    &&(tempport.trim().equals(port)||port.equals(""))
+                    &&(tempmount.trim().equals(mount)||mount.equals(""))
+                    &&(tempsea.trim().equals(sea)||sea.equals(""))
+                    &&(temphair.trim().equals(hair)||hair.equals(""))
+                    &&(tempwif.trim().equals(wif)||wif.equals(""))
+                    &&(tempwashmach.trim().equals(washmach)||washmach.equals(""))&&
+                    (tempdryer.equals(dryer)||dryer.equals(""))&&
+                    (tempethe.equals(ethe)||ethe.equals(""))&&
+                    (tempFridge.equals(Fridge)||Fridge.equals(""))&&
+                    (tempoven.trim().equals(oven)||oven.equals(""))
+                    &&(tempcook.trim().equals(cook)||cook.equals(""))
+                    &&(tempplates.trim().equals(plates)||plates.equals(""))
+                    &&(tempdishwash.trim().equals(dishwash)||dishwash.equals(""))&&
+                    (tempcaffe.trim().equals(caffe)||caffe.equals(""))
+                    &&(tempmicro.trim().equals(micro)||micro.equals(""))
+                    &&(tempbalcony.trim().equals(balcony)||balcony.equals(""))
+                    &&(tempyard.trim().equals(yard)||yard.equals(""))
+                    &&(tempprivateparking.trim().equals(privateparking)||privateparking.equals(""))
+                    &&(temproadparking.trim().equals(roadparking)||roadparking.equals(""))
+                    &&(tempTv.trim().equals(Tv)||Tv.equals(""))
+                    &&(tempfire.trim().equals(fire)||fire.equals(""))
+                    &&(tempfullheat.trim().equals(fullheat)||fullheat.equals(""))
+                    &&(tempair.trim().equals(air)||air.equals("")) &&( tempethe.trim().equals(ethe)||ethe.equals("")))
+
 
             {
-              hotels.add(tempUsername+","+tempview+","+temploc);
+                String tempview=temppool + tempbeach +tempsea +tempport +tempmount +temproad;
+              hotels.add(tempname+","+tempview+","+temploc);
               found.add(lines);
             }
+
             check.nextLine();
           lines++;
 
         }
     } catch (Exception e) {
-System.out.println("Error");
+
+System.out.println("Error App");
     }
     return hotels;
 
