@@ -1,2 +1,3 @@
-Thanasis,Nikos,Hotel,nullnull,wewqe,qwwqewe,qweqw,eqweqw,null,null,Sea,Port,nullnull,null,null,null,Air Condition,null,Wash Machine,null,null,null,null,null,null,null,null,null,null,null,null,null,null
-Nikoleta,Thanasis,Hotel,Apartment,Maisonette,Limnioti,Kastoria,52100,WoW,Pool,Beach,Sea,Port,Mountain,Road,Hair Dryer,TV,Fireplace,Air Condition,Full house Heat,Wash Machine,Dryer,Wifi,Ethernet,Fridge,Oven,Microwave,cookware,Plates an Cutlery,Dishwasher,Caffe Machine,balcony,Courtyard,Private parking,Road Parking
+Nikoleta,kekekeke,Hotel,Apartment,Maisonette,ekekeke,keekeekeke,ekekekkekeke,ekekekekrew,Pool,Beach,Sea,Port,Mountain,Road,Hair Dryer,TV,Fireplace,Air Condition,Full house Heat,Wash Machine,Dryer,Wifi,Ethernet,Fridge,Oven,Microwave,cookware,Plates an Cutlery,Dishwasher,Caffe Machine,balcony,Courtyard,Private parking,Road Parking,
+B,B,,Apartment,,ew,ew,ew,ew,Pool,,,,,,,TV,,Air Condition,,,,,,,,,,,Dishwasher,,,,,,
+B,A,,Apartment,,ew,ew,e3,ew,,Beach,Sea,Port,,,,,,,Full house Heat,,Dryer,,,,,Microwave,,,Dishwasher,,,,,,

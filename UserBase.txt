@@ -13,3 +13,4 @@ atsiloglou,123456,Athanasios,Tsiloglini,A
 e,123,32,23,A
 ,,,,B
 a,,,,B
+B,,,,B

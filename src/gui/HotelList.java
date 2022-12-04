@@ -23,21 +23,24 @@ public class  HotelList implements ActionListener, ListSelectionListener {
         return f;
     }
 
-    void HotelList(ArrayList wow,ArrayList found)    {
-
+    void HotelList(ArrayList wow,ArrayList found) throws IOException {
+temp.clear();
+l1.removeAllElements();
         for(Object i :found)
         {
             temp.add((int)i);
-        }
 
-          for(Object i : wow)
+        }
+        App test= new App();
+
+          for(int i : temp)
           {
-              l1.addElement(i.toString());
+              l1.addElement(test.ListMaker(i));
           }
 
           list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
           list.addListSelectionListener(this);
-          list.setBounds(0,0, 1000,75);
+          list.setBounds(0,0, 1000,110);
           f.add(list);
           f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           f.setSize(500,500);
@@ -48,6 +51,7 @@ public class  HotelList implements ActionListener, ListSelectionListener {
           f.setLayout(null);
           f.setVisible(true);
 
+
         }
 
     @Override
@@ -57,8 +61,8 @@ public class  HotelList implements ActionListener, ListSelectionListener {
         App object = new App();
         if (e.getActionCommand().equals(button1.getText())) {
             f.setVisible(false);
+            l1.removeAllElements();
           f.getContentPane().removeAll();
-
           Search era= new Search();
           era.Search();
         }
@@ -74,7 +78,7 @@ public class  HotelList implements ActionListener, ListSelectionListener {
        f.setVisible(false);
         ViewUserA t= new ViewUserA();
         try {
-            t.ViewUserA(list.getSelectedValue(),temp.get(list.getSelectedIndex()));
+            t.ViewUserA("",temp.get(list.getSelectedIndex()));
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }

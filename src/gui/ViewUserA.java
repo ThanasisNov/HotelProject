@@ -58,44 +58,91 @@ public class  ViewUserA implements ActionListener {
     }
 
     void ViewUserA(String hotels,int lineNumber) throws IOException {
-        String realname="";
-        String tempUsername = "";
-        String tempType = "";
-        String temploc="";
-        String tempview="";
-        String tempWifi="" ;
-        String tempparking="";
-        String tempbathroom="";
-        String temparea="" ;
-        String tempwash="";
-        String tempen="";
-        String tempheat="";
-        String tempoutside="";
+        String realname=null;
+        String tempname="";
+        String temph=null;
+        String tempa=null;
+        String tempm=null;
+        String tempAddress=null;
+        String tempCity=null;
+        String tempPost=null;
+        String tempDe =null;
+        String temppool=null;
+        String  tempbeach=null;
+        String tempsea=null;
+        String tempport=null;
+        String tempmount=null;
+        String temproad=null;
+        String temphair=null;
+        String tempTv=null;
+        String tempfire=null;
+        String tempair=null ;
+        String tempfullheat=null;
+        String tempwashmach=null;
+        String tempdryer=null;
+        String tempwif=null;
+        String tempethe=null;
+        String tempFridge=null;
+        String tempoven=null;
+        String tempcook=null;
+        String tempplates=null;
+        String tempdishwash=null;
+        String tempcaffe=null;
+        String tempmicro=null;
+        String tempbalcony=null;
+        String tempyard=null;
+        String tempprivateparking=null;
+        String temproadparking=null;
 
         String line;
+
         try (Stream<String> lines = Files.lines(Paths.get("AddBase.txt"))) {
             line = lines.skip(lineNumber).findFirst().get();
         }
         Scanner check= new Scanner(line);
 
         check.useDelimiter("[,\n]");
+
         while (check.hasNext() )
         {
             realname=check.next();
-            tempUsername = check.next();
-            tempType = check.next();
-            temploc=check.next();
-            String tempde=check.next();
-            tempview=check.next();
-            tempbathroom=check.next();
-            tempwash=check.next();
-            tempen=check.next();
-            tempheat=check.next();
-            tempWifi=check.next();
-            temparea=check.next();
-            tempoutside=check.next();
-            tempparking=check.next();
+            tempname = check.next();
+            temph = check.next();
+            tempa=check.next();
+            tempm=check.next();
+            tempAddress=check.next();
+            tempCity=check.next();
+            tempPost=check.next();
+            tempDe=check.next();
+            temppool=check.next();
+            tempbeach=check.next();
+            tempsea=check.next();
+            tempport=check.next();
+            tempmount=check.next();
+            temproad=check.next();
+            temphair=check.next();
+            tempTv=check.next();
+            tempfire=check.next();
+            tempair= check.next();
+            tempfullheat = check.next();
+            tempwashmach=check.next();
+            tempdryer=check.next();
+            tempwif=check.next();
+            tempethe=check.next();
+            tempFridge=check.next();
+            tempoven=check.next();
+            tempcook=check.next();
+            tempplates=check.next();
+            tempdishwash=check.next();
+            tempcaffe=check.next();
+            tempmicro=check.next();
+            tempethe=check.next();
+            tempbalcony=check.next();
+            tempyard=check.next();
+            tempprivateparking=check.next();
+            temproadparking=check.next();
         }
+System.out.println("WoW");
             setFrame(frame);
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(400,500));
@@ -103,60 +150,60 @@ public class  ViewUserA implements ActionListener {
 
         frame.add(panel);
         panel.setLayout(null);
-        nameLabel = new JLabel("Hotel:"+tempUsername);
+        nameLabel = new JLabel("Hotel:"+tempname);
         nameLabel.setBounds(10, 20, 300, 25);
         panel.add(nameLabel);
-        typeLabel = new JLabel("Type:"+tempType);
+        typeLabel = new JLabel("Type:"+temph+" "+tempa+" "+tempm);
         typeLabel.setBounds(10, 50, 300, 25);
         panel.add(typeLabel);
 
 
-        locationLabel = new JLabel("Location:"+temploc);
+        locationLabel = new JLabel("Location:"+tempAddress);
         locationLabel.setBounds(10, 80, 300, 25);
         panel.add(locationLabel);
 
 
 
 
-        viewLabel = new JLabel("View:"+tempview);
+        viewLabel = new JLabel("View:"+temppool+" "+tempbeach+" "+tempsea+" "+ tempport+" "+tempmount+" "+temproad );
         viewLabel.setBounds(10, 110, 300, 25);
         panel.add(viewLabel);
 
-        bathroomLabel = new JLabel("Bathroom:"+tempbathroom);
+        bathroomLabel = new JLabel("Bathroom:"+temphair);
         bathroomLabel.setBounds(10, 140, 300, 25);
         panel.add(bathroomLabel);
 
 
-        washLabel = new JLabel("Wash Clothes:"+tempwash);
+        washLabel = new JLabel("Wash Clothes:"+tempwashmach+" "+tempdryer);
         washLabel.setBounds(10, 170, 300, 25);
         panel.add(washLabel);
 
 
-        enLabel = new JLabel("Entertainment:"+tempen);
+        enLabel = new JLabel("Entertainment:"+tempTv);
         enLabel.setBounds(10, 200, 300, 25);
         panel.add(enLabel);
 
 
-        heatLabel = new JLabel("Heat:"+tempheat);
+        heatLabel = new JLabel("Heat:"+tempfire+" "+tempair+" "+tempfullheat);
         heatLabel.setBounds(10, 230, 300, 25);
         panel.add(heatLabel);
 
 
 
-        WifiLabel = new JLabel("Wifi:"+tempWifi);
+        WifiLabel = new JLabel("Wifi:"+tempwif+" "+tempethe);
         WifiLabel.setBounds(10, 260, 300, 25);
         panel.add(   WifiLabel);
 
 
-        areaLabel = new JLabel("Kitchen-Bath:"+temparea);
+        areaLabel = new JLabel("Kitchen-Bath:"+tempFridge+" "+tempmicro+" "+tempcook+" "+tempplates+" "+tempdishwash+" "+tempcaffe);
         areaLabel.setBounds(10, 290, 300, 25);
         panel.add(     areaLabel);
 
-        outsideLabel = new JLabel("Outside:"+tempoutside);
+        outsideLabel = new JLabel("Outside:"+tempbalcony+" "+tempyard);
         outsideLabel .setBounds(10, 320, 300, 25);
         panel.add(     outsideLabel );
 
-        parkingLabel = new JLabel("Parking:"+tempparking);
+        parkingLabel = new JLabel("Parking:"+tempprivateparking+" "+temproadparking);
         parkingLabel .setBounds(10, 350, 300, 25);
         panel.add(     parkingLabel );
 
