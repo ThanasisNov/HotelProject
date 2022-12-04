@@ -26,6 +26,8 @@ public class  HotelList implements ActionListener, ListSelectionListener {
     void HotelList(ArrayList wow,ArrayList found) throws IOException {
 temp.clear();
 l1.removeAllElements();
+
+
         for(Object i :found)
         {
             temp.add((int)i);
@@ -74,14 +76,14 @@ l1.removeAllElements();
     @Override
     public void valueChanged(ListSelectionEvent e)
     {
-       System.out.println(list.getSelectedValue()+temp.get(list.getSelectedIndex()));
+      //System.out.println(list.getSelectedValue()+"-->"+temp.get(list.getSelectedIndex()));
        f.setVisible(false);
         ViewUserA t= new ViewUserA();
-        try {
-            t.ViewUserA("",temp.get(list.getSelectedIndex()));
-        } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
+      //  try {
+           //t.ViewUserA("",temp.get(list.getSelectedIndex()));
+       // } catch (IOException ex) {
+         //   throw new RuntimeException(ex);
+       // }
     }
 
 

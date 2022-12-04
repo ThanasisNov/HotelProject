@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class  Search implements ActionListener {
@@ -105,19 +106,19 @@ public class  Search implements ActionListener {
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        username = new JTextField();
-        username.setText(name);
-
+        username= new JTextField();
+        username.setBounds(100, 20, 190, 25);
+        panel.add(username);
         frame.add(panel);
         panel.setLayout(null);
-        HotelName = new JLabel("Name:*");
+        HotelName = new JLabel("Name:");
         HotelName.setBounds(10, 20, 80, 25);
         panel.add(HotelName);
         HNText = new JTextField();
         HNText.setBounds(100, 20, 165, 25);
         panel.add(HNText);
 
-        type = new JLabel("Type:*");
+        type = new JLabel("Type:");
         type.setBounds(10, 50, 80, 25);
         panel.add(type);
         hotel.setBounds(50,50,60,25);
@@ -130,32 +131,26 @@ public class  Search implements ActionListener {
 
 
 
-        addressLabel = new JLabel("Address:*");
+        addressLabel = new JLabel("Address:");
         addressLabel.setBounds(10, 80, 80, 25);
         panel.add(addressLabel);
         addressText = new JTextField();
-        addressText.setBounds(100, 80, 165, 25);
+        addressText.setBounds(100, 80, 190, 25);
 
         panel.add(addressText);
 
-        cityLabel = new JLabel("City:*");
+        cityLabel = new JLabel("City:");
         cityLabel.setBounds(10, 110, 150, 25);
         panel.add(cityLabel);
         cityText = new JTextField();
         cityText.setBounds(100, 110, 190, 25);
         panel.add(cityText);
-        postcodeLabel= new JLabel("PostCode:*");
-        postcodeLabel.setBounds(10, 135, 150, 25);
+        postcodeLabel= new JLabel("PostCode:");
+        postcodeLabel.setBounds(10, 150, 150, 25);
         panel.add(postcodeLabel);
         postCodeText= new JTextField();
-        postCodeText.setBounds(100, 135, 190, 25);
+        postCodeText.setBounds(100, 150, 190, 25);
         panel.add(postCodeText);
-        description= new JLabel("Description:");
-        description.setBounds(10, 165, 150, 25);
-        panel.add(description);
-        descriptionText= new JTextField();
-        descriptionText.setBounds(100, 165, 190, 25);
-        panel.add(descriptionText);
         view= new JLabel("View:");
         view.setBounds(10, 195, 150, 25);
         panel.add(view);
@@ -308,7 +303,7 @@ public class  Search implements ActionListener {
         for(String x:checkIfExists)
         {
             name="";
-            checkIfExists[i]="";
+            checkIfExists[i]="empty";
             i++;
         }
         name=username.getText();
@@ -341,11 +336,15 @@ public class  Search implements ActionListener {
         if(courtyard.isSelected())checkIfExists[26]=courtyard.getText();
         if(privateparking.isSelected())checkIfExists[27]=privateparking.getText();
         if(roadparking.isSelected()) checkIfExists[28]= roadparking.getText();
-
+if(addressText.getText().equals("")) addressText.setText("empty");
+if(cityText.getText().equals("") ) cityText.setText("empty");
+if(postCodeText.getText().equals("")) postCodeText.setText("empty");
+if(name.equals("")) name="empty";
+;
         App object = new App();
         if (e.getActionCommand().equals(button1.getText())) {
 HotelList test= new HotelList();
-            ArrayList<String> temp=object.Search(name,checkIfExists[0],checkIfExists[1],checkIfExists[2],addressText.getText(),checkIfExists[3],checkIfExists[4]
+            ArrayList<String> temp=object.Search(name,checkIfExists[0],checkIfExists[1],checkIfExists[2],addressText.getText(),cityText.getText(),postCodeText.getText(),checkIfExists[3],checkIfExists[4]
             ,checkIfExists[5],checkIfExists[6],checkIfExists[7],checkIfExists[8],checkIfExists[9],checkIfExists[10],checkIfExists[11],checkIfExists[12]
             ,checkIfExists[13],checkIfExists[14],checkIfExists[15],checkIfExists[16],checkIfExists[17],checkIfExists[18],checkIfExists[19],checkIfExists[20]
             ,checkIfExists[21],checkIfExists[22],checkIfExists[23],checkIfExists[24],checkIfExists[25],checkIfExists[26],checkIfExists[27],checkIfExists[28]);
@@ -353,43 +352,22 @@ HotelList test= new HotelList();
             frame.setVisible(false);
             frame.getContentPane().removeAll();
 
-test.HotelList(temp,object.getfound());
+            try {
+                test.HotelList(temp,object.getfound());
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
 
         }
         else if (e.getActionCommand().equals(button2.getText())) {
 
 
-        /*    nameText.setText("");
-           typeText.setText("");
-            locationText.setText("");
-            viewText.setText("");
-            WifiText.setText("");
-          parkingText.setText("");
-            bathroomText.setText("");
-            areaText.setText("");
-            washText.setText("");
-            enText.setText("");
-            heatText.setText("");
-            outsideText.setText("");
-            success.setText("");*/
+
 
         }
         else if(e.getActionCommand().equals(button3.getText()))
         {
-         /*   getNameText().setText("");
-            typeText.setText("");
-            locationText.setText("");
 
-            viewText.setText("");
-            WifiText.setText("");
-            parkingText.setText("");
-            bathroomText.setText("");
-            areaText.setText("");
-            washText.setText("");
-            enText.setText("");
-            heatText.setText("");
-            outsideText.setText("");
-            success.setText("");*/
             frame.setVisible(false);
             frame.getContentPane().removeAll();
             UserA wow= new UserA();

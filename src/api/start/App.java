@@ -59,13 +59,16 @@ public class App {
 
        return wow;
    }
+
     /**
      *
      * @param name
      * @param h
      * @param a
      * @param m
-     * @param loc
+     * @param address
+     * @param city
+     * @param post
      * @param pool
      * @param beach
      * @param sea
@@ -83,11 +86,11 @@ public class App {
      * @param ethe
      * @param Fridge
      * @param oven
+     * @param micro
      * @param cook
      * @param plates
      * @param dishwash
      * @param caffe
-     * @param micro
      * @param balcony
      * @param yard
      * @param privateparking
@@ -136,8 +139,6 @@ public class App {
     String temproadparking=null;
     BufferedWriter bw = null;
   ArrayList<String>hotels=new ArrayList<>();
-
-
     try {
 int lines=0;
         check = new Scanner(new File("AddBase.txt"));
@@ -184,45 +185,48 @@ int lines=0;
             temproadparking=check.next();
 
 
-System.out.println(caffe);
-            if ((tempname.trim().equals(name) ||name.equals(""))&&
-                    (temph.trim().equals(h)||h.equals("") )&&
-                    (tempa.trim().equals(a)||a.equals(""))
-                    &&(tempm.trim().equals(m)||m.equals(""))
-                    &&(temppool.trim().equals(pool)||pool.equals(""))
-                    &&(temproad.trim().equals(road)||road.equals(""))&&
-                    (tempbeach.trim().equals(beach)||beach.equals(""))
-                    &&(tempport.trim().equals(port)||port.equals(""))
-                    &&(tempmount.trim().equals(mount)||mount.equals(""))
-                    &&(tempsea.trim().equals(sea)||sea.equals(""))
-                    &&(temphair.trim().equals(hair)||hair.equals(""))
-                    &&(tempwif.trim().equals(wif)||wif.equals(""))
-                    &&(tempwashmach.trim().equals(washmach)||washmach.equals(""))&&
-                    (tempdryer.equals(dryer)||dryer.equals(""))&&
-                    (tempethe.equals(ethe)||ethe.equals(""))&&
-                    (tempFridge.equals(Fridge)||Fridge.equals(""))&&
-                    (tempoven.trim().equals(oven)||oven.equals(""))
-                    &&(tempcook.trim().equals(cook)||cook.equals(""))
-                    &&(tempplates.trim().equals(plates)||plates.equals(""))
-                    &&(tempdishwash.trim().equals(dishwash)||dishwash.equals(""))
-                    && (tempcaffe.trim().equals(caffe)||caffe.equals(""))
-                    &&(tempmicro.trim().equals(micro)||micro.equals(""))
-                    &&(tempbalcony.trim().equals(balcony)||balcony.equals(""))
-                    &&(tempyard.trim().equals(yard)||yard.equals(""))
-                    &&(tempprivateparking.trim().equals(privateparking)||privateparking.equals(""))
-                    &&(temproadparking.trim().equals(roadparking)||roadparking.equals(""))
-                    &&(tempTv.trim().equals(Tv)||Tv.equals(""))
-                    &&(tempfire.trim().equals(fire)||fire.equals(""))
-                    &&(tempfullheat.trim().equals(fullheat)||fullheat.equals(""))
-                    &&(tempair.trim().equals(air)||air.equals("")) &&( tempethe.trim().equals(ethe)||ethe.equals(""))
-            &&!(name.equals("")&&h.equals("")&&a.equals("")&&m.equals("")&&pool.equals("")&&road.equals("")&&beach.equals("")&&port.equals("")&&mount.equals("")&&
-                    sea.equals("")&&hair.equals("")&&wif.equals("")&&washmach.equals("")&&dryer.equals("")&&ethe.equals("")&&Fridge.equals("")&&oven.equals("")
-            &&cook.equals("")&&plates.equals("")&&dishwash.equals("")&&caffe.equals("")&&micro.equals("")&&balcony.equals("")&&yard.equals("")&&privateparking.equals("")
-            &&roadparking.equals("")))
+
+            if ((tempname.trim().equals(name) ||name.equals("empty"))&&
+                    (temph.trim().equals(h)||h.equals("empty") )&&
+                    (tempa.trim().equals(a)||a.equals("empty"))
+                    &&(tempm.trim().equals(m)||m.equals("empty"))
+                    &&(temppool.trim().equals(pool)||pool.equals("empty"))
+                    &&(temproad.trim().equals(road)||road.equals("empty"))&&
+                    (tempbeach.trim().equals(beach)||beach.equals("empty"))
+
+                    &&(tempport.trim().equals(port)||port.equals("empty"))
+                    &&(tempmount.trim().equals(mount)||mount.equals("empty"))
+                    &&(tempsea.trim().equals(sea)||sea.equals("empty"))
+                    &&(temphair.trim().equals(hair)||hair.equals("empty"))
+                    &&(tempwif.trim().equals(wif)||wif.equals("empty"))
+                    &&(tempwashmach.trim().equals(washmach)||washmach.equals("empty"))&&
+
+                    (tempdryer.equals(dryer)||dryer.equals("empty"))&&
+                    (tempethe.equals(ethe)||ethe.equals("empty"))&&
+                    (tempFridge.equals(Fridge)||Fridge.equals("empty"))&&
+                    (tempoven.trim().equals(oven)||oven.equals("empty"))
+                    &&(tempcook.trim().equals(cook)||cook.equals("empty"))
+                    &&(tempplates.trim().equals(plates)||plates.equals("empty"))
+                    &&(tempdishwash.trim().equals(dishwash)||dishwash.equals("empty"))
+                    && (tempcaffe.trim().equals(caffe)||caffe.equals("empty"))
+                    &&(tempmicro.trim().equals(micro)||micro.equals("empty"))
+                    &&(tempbalcony.trim().equals(balcony)||balcony.equals("empty"))
+
+                    &&(tempyard.trim().equals(yard)||yard.equals("empty"))
+                    &&(tempprivateparking.trim().equals(privateparking)||privateparking.equals("empty"))
+                    &&(temproadparking.trim().equals(roadparking)||roadparking.equals("empty"))
+                    &&(tempTv.trim().equals(Tv)||Tv.equals("empty"))
+                    &&(tempfire.trim().equals(fire)||fire.equals("empty"))
+                    &&(tempfullheat.trim().equals(fullheat)||fullheat.equals("empty"))
+                    &&(tempair.trim().equals(air)||air.equals("empty")) &&( tempethe.trim().equals(ethe)||ethe.equals("empty"))
+                    &&(tempAddress.trim().equals(address)||address.equals("empty"))&&(tempCity.trim().equals(city)||city.equals("empty"))&&(tempPost.equals(post)||post.equals("empty"))
+            &&!(name.equals("empty")&&h.equals("empty")&&a.equals("empty")&&m.equals("empty")&&pool.equals("empty")&&road.equals("empty")&&beach.equals("empty")&&port.equals("empty")&&mount.equals("empty")&&
+                    sea.equals("empty")&&hair.equals("empty")&&wif.equals("empty")&&washmach.equals("empty")&&dryer.equals("empty")&&ethe.equals("empty")&&Fridge.equals("empty")&&oven.equals("empty")
+            &&cook.equals("empty")&&plates.equals("empty")&&dishwash.equals("empty")&&caffe.equals("empty")&&micro.equals("empty")&&balcony.equals("empty")&&yard.equals("empty")&&privateparking.equals("empty")
+            &&roadparking.equals("empty")&&city.equals("empty")&&address.equals("empty")&&post.equals("empty")))
 
 
             {
-                System.out.println("33");
                 String tempview=temppool +"," +tempbeach+"," +tempsea+"," +tempport+"," +tempmount +","+temproad;
               hotels.add(tempname+","+tempview+","+tempCity);
               found.add(lines);

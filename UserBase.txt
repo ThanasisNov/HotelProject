@@ -14,3 +14,6 @@ e,123,32,23,A
 ,,,,B
 a,,,,B
 B,,,,B
+Thanos,,,,B
+Pa,,,,B
+Pasas,,,,B

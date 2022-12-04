@@ -102,7 +102,7 @@ public class  ViewUserA implements ActionListener {
         Scanner check= new Scanner(line);
 
         check.useDelimiter("[,\n]");
-
+//In progress make an object that does all the check.next shit
         while (check.hasNext() )
         {
             realname=check.next();
