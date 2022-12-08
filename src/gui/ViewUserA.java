@@ -1,14 +1,14 @@
 package gui;
 
+import api.ReviewFile;
+import api.Submits;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Scanner;
-import java.util.stream.Stream;
 
 public class  ViewUserA implements ActionListener {
 
@@ -56,170 +56,106 @@ public class  ViewUserA implements ActionListener {
     {
         return frame;
     }
-
-    void ViewUserA(String hotels,int lineNumber) throws IOException {
-        String realname=null;
-        String tempname="";
-        String temph=null;
-        String tempa=null;
-        String tempm=null;
-        String tempAddress=null;
-        String tempCity=null;
-        String tempPost=null;
-        String tempDe =null;
-        String temppool=null;
-        String  tempbeach=null;
-        String tempsea=null;
-        String tempport=null;
-        String tempmount=null;
-        String temproad=null;
-        String temphair=null;
-        String tempTv=null;
-        String tempfire=null;
-        String tempair=null ;
-        String tempfullheat=null;
-        String tempwashmach=null;
-        String tempdryer=null;
-        String tempwif=null;
-        String tempethe=null;
-        String tempFridge=null;
-        String tempoven=null;
-        String tempcook=null;
-        String tempplates=null;
-        String tempdishwash=null;
-        String tempcaffe=null;
-        String tempmicro=null;
-        String tempbalcony=null;
-        String tempyard=null;
-        String tempprivateparking=null;
-        String temproadparking=null;
-
-        String line;
-
-        try (Stream<String> lines = Files.lines(Paths.get("AddBase.txt"))) {
-            line = lines.skip(lineNumber).findFirst().get();
-        }
-        Scanner check= new Scanner(line);
-
-        check.useDelimiter("[,\n]");
-//In progress make an object that does all the check.next shit
-        while (check.hasNext() )
-        {
-            realname=check.next();
-            tempname = check.next();
-            temph = check.next();
-            tempa=check.next();
-            tempm=check.next();
-            tempAddress=check.next();
-            tempCity=check.next();
-            tempPost=check.next();
-            tempDe=check.next();
-            temppool=check.next();
-            tempbeach=check.next();
-            tempsea=check.next();
-            tempport=check.next();
-            tempmount=check.next();
-            temproad=check.next();
-            temphair=check.next();
-            tempTv=check.next();
-            tempfire=check.next();
-            tempair= check.next();
-            tempfullheat = check.next();
-            tempwashmach=check.next();
-            tempdryer=check.next();
-            tempwif=check.next();
-            tempethe=check.next();
-            tempFridge=check.next();
-            tempoven=check.next();
-            tempcook=check.next();
-            tempplates=check.next();
-            tempdishwash=check.next();
-            tempcaffe=check.next();
-            tempmicro=check.next();
-            tempethe=check.next();
-            tempbalcony=check.next();
-            tempyard=check.next();
-            tempprivateparking=check.next();
-            temproadparking=check.next();
-        }
-System.out.println("WoW");
-            setFrame(frame);
+     private static   JFrame oldFrame;
+    private static  String[] all;
+    private static String username;
+    void ViewUserA(String hotels,JFrame old,String user) throws IOException {
+        setFrame(frame);
+        oldFrame=old;
+        username=user;
         JPanel panel = new JPanel();
-        frame.setMinimumSize(new Dimension(400,500));
+        frame.setMinimumSize(new Dimension(600,600));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Submits test= new Submits();
+ all=  test.SearchSubmit(hotels);
 
         frame.add(panel);
+int i=0;
+for(String x:all)
+{
+    if(x.equals("empty"))
+    {
+        all[i]="";
+    }
+    i++;
+}
+
         panel.setLayout(null);
-        nameLabel = new JLabel("Hotel:"+tempname);
+
+        nameLabel = new JLabel("Hotel:"+all[1]);
         nameLabel.setBounds(10, 20, 300, 25);
         panel.add(nameLabel);
-        typeLabel = new JLabel("Type:"+temph+" "+tempa+" "+tempm);
+        typeLabel = new JLabel("Type:"+all[2]+" "+all[3]+" "+all[4]);
         typeLabel.setBounds(10, 50, 300, 25);
         panel.add(typeLabel);
 
 
-        locationLabel = new JLabel("Location:"+tempAddress);
-        locationLabel.setBounds(10, 80, 300, 25);
+        locationLabel = new JLabel("Location:"+all[5] +" "+all[6]+" "+all[7]);
+        locationLabel.setBounds(10, 70, 300, 25);
         panel.add(locationLabel);
+        JLabel deLabel = new JLabel("Description:"+all[8]);
+        deLabel.setBounds(10, 90, 300, 25);
+        panel.add(deLabel);
 
 
 
-
-        viewLabel = new JLabel("View:"+temppool+" "+tempbeach+" "+tempsea+" "+ tempport+" "+tempmount+" "+temproad );
+        viewLabel = new JLabel("View:"+all[9]+" "+all[10]+" "+ all[11]+" "+all[12]+" "+all[13]+" "+ all[14]);
         viewLabel.setBounds(10, 110, 300, 25);
         panel.add(viewLabel);
 
-        bathroomLabel = new JLabel("Bathroom:"+temphair);
+
+
+        bathroomLabel = new JLabel("Bathroom:"+all[15]);
         bathroomLabel.setBounds(10, 140, 300, 25);
         panel.add(bathroomLabel);
 
 
-        washLabel = new JLabel("Wash Clothes:"+tempwashmach+" "+tempdryer);
+        washLabel = new JLabel("Wash Clothes:"+" "+all[20]+" "+all[21]);
         washLabel.setBounds(10, 170, 300, 25);
         panel.add(washLabel);
 
 
-        enLabel = new JLabel("Entertainment:"+tempTv);
+        enLabel = new JLabel("Entertainment:"+all[16]);
         enLabel.setBounds(10, 200, 300, 25);
         panel.add(enLabel);
 
 
-        heatLabel = new JLabel("Heat:"+tempfire+" "+tempair+" "+tempfullheat);
+        heatLabel = new JLabel("Heat:"+all[18]+" "+all[19]+" "+all[17]);
         heatLabel.setBounds(10, 230, 300, 25);
         panel.add(heatLabel);
 
 
 
-        WifiLabel = new JLabel("Wifi:"+tempwif+" "+tempethe);
+        WifiLabel = new JLabel("Wifi:"+all[22]+" "+all[23]);
         WifiLabel.setBounds(10, 260, 300, 25);
         panel.add(   WifiLabel);
 
 
-        areaLabel = new JLabel("Kitchen-Bath:"+tempFridge+" "+tempmicro+" "+tempcook+" "+tempplates+" "+tempdishwash+" "+tempcaffe);
-        areaLabel.setBounds(10, 290, 300, 25);
+        areaLabel = new JLabel("Kitchen-Bath:"+" "+all[24]+" "+all[25]+" "+all[26]+" "+all[27]+" "+all[28]+" "+all[29]+" "+all[30]);
+        areaLabel.setBounds(10, 290, 550, 25);
         panel.add(     areaLabel);
 
-        outsideLabel = new JLabel("Outside:"+tempbalcony+" "+tempyard);
+        outsideLabel = new JLabel("Outside:"+all[31]+" "+all[32]);
         outsideLabel .setBounds(10, 320, 300, 25);
         panel.add(     outsideLabel );
 
-        parkingLabel = new JLabel("Parking:"+tempprivateparking+" "+temproadparking);
+        parkingLabel = new JLabel("Parking:"+all[33]+" "+all[34]);
         parkingLabel .setBounds(10, 350, 300, 25);
         panel.add(     parkingLabel );
 
 
 
         button1 = new JButton("Add review");
-        button1.setBounds(0, 390, 100, 25);
-        button1.addActionListener(new Search());
+        button1.setBounds(0, 390, 150, 25);
+        button1.addActionListener(new ViewUserA());
         panel.add(button1);
         button2 = new JButton("Edit review");
-        button2.setBounds(135, 390, 150, 25);
-        button2.addActionListener(new Search());
+        button2.setBounds(155, 390, 150, 25);
+        button2.addActionListener(new ViewUserA());
         panel.add(button2);
         button3= new JButton("Delete review");
         button3.setBounds(0, 420, 150, 25);
-        button3.addActionListener(new Search());
+        button3.addActionListener(new ViewUserA());
         panel.add(button3);
         button4= new JButton("Back");
         button4.setBounds(155, 420, 150, 25);
@@ -227,7 +163,7 @@ System.out.println("WoW");
         panel.add(button4);
         frame.setSize(300, 300);
         success = new JLabel("");
-        success.setBounds(10, 395, 150, 25);
+        success.setBounds(10, 450, 150, 25);
         panel.add(success);
 
         frame.setVisible(true);
@@ -237,6 +173,47 @@ System.out.println("WoW");
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if(e.getActionCommand().equals(button4.getText()))
+        {
+            frame.setVisible(false);
+
+            oldFrame.setVisible(true);
+        }
+        else if(e.getActionCommand().equals(button1.getText()))
+        {
+            frame.setVisible(false
+            );
+            AddReview amazing= new AddReview();
+            amazing.AddReview(frame,all[0],all[1],username);
+        }
+        else if (e.getActionCommand().equals(button2.getText()))
+        {
+            frame.setVisible(false);
+            EditReview amazing1= new EditReview();
+            try {
+                amazing1.EditReview(frame,all[0],all[1],username);
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        else if( e.getActionCommand().equals(button3.getText()))
+        {
+            ReviewFile wow=new ReviewFile();
+            try {
+                if(wow.DeleteReview(all[0],all[1],username))
+                {
+                    success.setText("Review has been deleted");
+                }
+                else
+                {
+                    success.setText("Review not found");
+                }
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+
 
     }
 }

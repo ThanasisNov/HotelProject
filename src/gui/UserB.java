@@ -1,6 +1,6 @@
     package gui;
 
-    import api.start.App;
+    import api.App;
 
     import javax.swing.*;
     import java.awt.event.ActionEvent;

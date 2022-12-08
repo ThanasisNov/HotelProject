@@ -17,3 +17,10 @@ B,,,,B
 Thanos,,,,B
 Pa,,,,B
 Pasas,,,,B
+Nikos1,123,Nikos,,B
+Athanasios1,1,11,1,A
+Froso1,,,,A
+Amazing,1,1,2,A
+Wow,,,,B
+Test,,,,B
+Test2,,,,A

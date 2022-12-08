@@ -1,6 +1,6 @@
 package gui;
 
-import api.start.App;
+import api.App;
 
 import javax.swing.*;
 import java.awt.*;
@@ -90,7 +90,7 @@ public class  Search implements ActionListener {
 
 
 
-
+private static String logname;
     private static JFrame frame = new JFrame();
     void setFrame(JFrame frame)
     {
@@ -101,7 +101,8 @@ public class  Search implements ActionListener {
         return frame;
     }
 
-    void Search()    {
+    void Search(String log)    {
+        logname=log;
         setFrame(frame);
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(500, 500));
@@ -295,7 +296,44 @@ public class  Search implements ActionListener {
 
     JTextField getDescriptionText(){return descriptionText;}
 
+private static void Clear()
+{
+    username.setText("");
+    HNText.setText("");
+    addressText.setText("");
+    postCodeText.setText("");
+    cityText.setText("");
 
+    hotel.setSelected(false);
+    apartment.setSelected(false);
+    maisonette.setSelected(false);
+    pool.setSelected(false);
+    beach.setSelected(false);
+    sea.setSelected(false);
+    port.setSelected(false);
+    mountain.setSelected(false);
+    road.setSelected(false);
+    hair.setSelected(false);
+    tv.setSelected(false);
+    fireplace.setSelected(false);
+    aircondition.setSelected(false);
+    fullheat.setSelected(false);
+    washermachine.setSelected(false);
+    dryer.setSelected(false);
+    wifi.setSelected(false);
+    Ethernet.setSelected(false);
+    Fridge.setSelected(false);
+    oven.setSelected(false);
+    microwave.setSelected(false);
+    cookware.setSelected(false);
+    plates.setSelected(false);
+    dishwasher.setSelected(false);
+    caffe.setSelected(false);
+    balcony.setSelected(false);
+    courtyard.setSelected(false);
+    privateparking.setSelected(false);
+    roadparking.setSelected(false);
+}
     @Override
     public void actionPerformed(ActionEvent e) {
         String[] checkIfExists  =new String[30];
@@ -349,11 +387,12 @@ HotelList test= new HotelList();
             ,checkIfExists[13],checkIfExists[14],checkIfExists[15],checkIfExists[16],checkIfExists[17],checkIfExists[18],checkIfExists[19],checkIfExists[20]
             ,checkIfExists[21],checkIfExists[22],checkIfExists[23],checkIfExists[24],checkIfExists[25],checkIfExists[26],checkIfExists[27],checkIfExists[28]);
 
+          Clear();
             frame.setVisible(false);
             frame.getContentPane().removeAll();
 
             try {
-                test.HotelList(temp,object.getfound());
+                test.HotelList(temp,object.getfound(),logname);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
@@ -361,15 +400,17 @@ HotelList test= new HotelList();
         }
         else if (e.getActionCommand().equals(button2.getText())) {
 
+            Clear();
 
 
 
         }
         else if(e.getActionCommand().equals(button3.getText()))
         {
+            Clear();
 
             frame.setVisible(false);
-            frame.getContentPane().removeAll();
+
             UserA wow= new UserA();
             wow.getFrame().setVisible(true);
 

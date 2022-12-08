@@ -1,30 +1,30 @@
 package gui;
 
-import api.start.App;
+import api.App;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class UserA  implements ActionListener {
     private static JButton button1;
     private static JButton button2;
-    private static JButton button3;
-    private static JButton button4;
     private static JLabel Welcome;
-    private static JButton button5;
     private static JButton button6;
     private static JFrame frame = new JFrame();
     void setFrame(JFrame frame)
     {
         this.frame=frame;
     }
+    private static String name;
     JFrame getFrame()
     {
         return frame;
     }
 
     void UserA(String name2)    {
+        name=name2;
         setFrame(frame);
         JPanel panel = new JPanel();
         frame.setSize(100, 100);
@@ -79,27 +79,18 @@ public class UserA  implements ActionListener {
         {
             frame.setVisible(false);
            Search nice = new Search();
-           nice.Search();
-
-        }
-        else if (e.getActionCommand().equals(button3.getText()))
-        {
-            frame.setVisible(false);
-
-        }
-        else if (e.getActionCommand().equals(button4.getText()))
-        {
-            frame.setVisible(false);
-
-        }
-        else if (e.getActionCommand().equals(button5.getText()))
-        {
-            frame.setVisible(false);
+           nice.Search(name);
 
         }
         else if (e.getActionCommand().equals(button6.getText()))
         {
             frame.setVisible(false);
+            ReviewList test1= new ReviewList();
+            try {
+                test1.ReviewList(frame,name);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
 
         }
 

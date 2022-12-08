@@ -1,7 +1,7 @@
 package gui;
 
-import api.start.App;
-import api.start.room;
+import api.App;
+import api.room;
 
 import javax.swing.*;
 import java.awt.*;
@@ -316,63 +316,66 @@ public class  add implements ActionListener {
         String[] checkIfExists  =new String[30];
 
 
+
         if (e.getActionCommand().equals(button1.getText())) {
 
             try {
                 if (HNText.getText().isEmpty()||(!hotel.isSelected() &&!apartment.isSelected()&& !maisonette.isSelected())||cityText.getText().isEmpty()
                        ||postCodeText.getText().isEmpty()||addressText.getText().isEmpty() ||descriptionText.getText().isEmpty() ) {
+
                     success.setText("Please fill all the required (*) fields");
                 }
-                else
-                {
-                    int i=0;
-                    for(String x:checkIfExists)
-                    {
-                        name="";
-                        checkIfExists[i]="";
+
+                 else {
+
+
+                    int i = 0;
+                    for (String x : checkIfExists) {
+                        name = "";
+                        checkIfExists[i] = "empty";
                         i++;
                     }
-   if(hotel.isSelected())checkIfExists[0]= hotel.getText();
-   if(apartment.isSelected())checkIfExists[1]=apartment.getText();
-  if(maisonette.isSelected()) checkIfExists[2]=maisonette.getText();
-   if(pool.isSelected())checkIfExists[3]=pool.getText();
-  if(beach.isSelected()) checkIfExists[4]=beach.getText();
-  if(sea.isSelected()) checkIfExists[5]=sea.getText();
-  if(port.isSelected()) checkIfExists[6]=port.getText();
- if(mountain.isSelected())  checkIfExists[7]= mountain.getText();
-  if(road.isSelected()) checkIfExists[8]=road.getText();
-  if(hair.isSelected())checkIfExists[9]= hair.getText();
- if(tv.isSelected())  checkIfExists[10]=tv.getText();
- if(fireplace.isSelected())  checkIfExists[11]=fireplace.getText();
- if(aircondition.isSelected())  checkIfExists[12]=aircondition.getText();
-   if(fullheat.isSelected())checkIfExists[13]=fullheat.getText();
-   if(washermachine.isSelected()) checkIfExists[14]=washermachine.getText();
-   if(dryer.isSelected())  checkIfExists[15]=dryer.getText();
-  if(wifi.isSelected()) checkIfExists[16]=wifi.getText();
-   if(Ethernet.isSelected())checkIfExists[17]=Ethernet.getText();
-   if(Fridge.isSelected())checkIfExists[18]=Fridge.getText() ;
-   if(oven.isSelected()) checkIfExists[19]=oven.getText();
-   if(microwave.isSelected())checkIfExists[20]=microwave.getText();
-   if(cookware.isSelected())checkIfExists[21]=cookware.getText();
-   if(plates.isSelected())checkIfExists[22]=plates.getText();
-   if(dishwasher.isSelected())checkIfExists[23]=dishwasher.getText();
-   if(caffe.isSelected())checkIfExists[24]=caffe.getText();
-   if(balcony.isSelected())checkIfExists[25]=balcony.getText();
-   if(courtyard.isSelected())checkIfExists[26]=courtyard.getText();
-   if(privateparking.isSelected())checkIfExists[27]=privateparking.getText();
-  if(roadparking.isSelected()) checkIfExists[28]= roadparking.getText();
-        fac.setView(checkIfExists[3]+","+checkIfExists[4]+","+checkIfExists[5]+","+checkIfExists[6]+","+checkIfExists[7]+","+checkIfExists[8]);
-        fac.setBathroom(checkIfExists[9]);
-        fac.setClothes(checkIfExists[10]+","+checkIfExists[11]);
-        fac.setEntertainment(checkIfExists[12]);
-        fac.setHeat(checkIfExists[13]+","+checkIfExists[14]+","+checkIfExists[15]);
-        fac.setWifi(checkIfExists[16]+","+checkIfExists[17]);
-        fac.setKitchen(checkIfExists[18]+","+checkIfExists[19]+","+checkIfExists[20]+","+checkIfExists[21]+","+checkIfExists[22]+","+checkIfExists[23]+","+checkIfExists[24]);
-        fac.setOutside(checkIfExists[25]+","+checkIfExists[26]);
-        fac.setParking(checkIfExists[27]+","+checkIfExists[28]);
-                    object.add(HNText.getText(),checkIfExists[0]+","+checkIfExists[1]+","+checkIfExists[2]
-                            ,addressText.getText()+","+cityText.getText()+","+postCodeText.getText()
-                            ,descriptionText.getText(), fac, username.getText());
+                    if (hotel.isSelected()) checkIfExists[0] = hotel.getText();
+                    if (apartment.isSelected()) checkIfExists[1] = apartment.getText();
+                    if (maisonette.isSelected()) checkIfExists[2] = maisonette.getText();
+                    if (pool.isSelected()) checkIfExists[3] = pool.getText();
+                    if (beach.isSelected()) checkIfExists[4] = beach.getText();
+                    if (sea.isSelected()) checkIfExists[5] = sea.getText();
+                    if (port.isSelected()) checkIfExists[6] = port.getText();
+                    if (mountain.isSelected()) checkIfExists[7] = mountain.getText();
+                    if (road.isSelected()) checkIfExists[8] = road.getText();
+                    if (hair.isSelected()) checkIfExists[9] = hair.getText();
+                    if (tv.isSelected()) checkIfExists[10] = tv.getText();
+                    if (fireplace.isSelected()) checkIfExists[11] = fireplace.getText();
+                    if (aircondition.isSelected()) checkIfExists[12] = aircondition.getText();
+                    if (fullheat.isSelected()) checkIfExists[13] = fullheat.getText();
+                    if (washermachine.isSelected()) checkIfExists[14] = washermachine.getText();
+                    if (dryer.isSelected()) checkIfExists[15] = dryer.getText();
+                    if (wifi.isSelected()) checkIfExists[16] = wifi.getText();
+                    if (Ethernet.isSelected()) checkIfExists[17] = Ethernet.getText();
+                    if (Fridge.isSelected()) checkIfExists[18] = Fridge.getText();
+                    if (oven.isSelected()) checkIfExists[19] = oven.getText();
+                    if (microwave.isSelected()) checkIfExists[20] = microwave.getText();
+                    if (cookware.isSelected()) checkIfExists[21] = cookware.getText();
+                    if (plates.isSelected()) checkIfExists[22] = plates.getText();
+                    if (dishwasher.isSelected()) checkIfExists[23] = dishwasher.getText();
+                    if (caffe.isSelected()) checkIfExists[24] = caffe.getText();
+                    if (balcony.isSelected()) checkIfExists[25] = balcony.getText();
+                    if (courtyard.isSelected()) checkIfExists[26] = courtyard.getText();
+                    if (privateparking.isSelected()) checkIfExists[27] = privateparking.getText();
+                    if (roadparking.isSelected()) checkIfExists[28] = roadparking.getText();
+                    fac.setView(checkIfExists[3] + "," + checkIfExists[4] + "," + checkIfExists[5] + "," + checkIfExists[6] + "," + checkIfExists[7] + "," + checkIfExists[8]);
+                    fac.setBathroom(checkIfExists[9]);
+                    fac.setClothes(checkIfExists[10] + "," + checkIfExists[11]);
+                    fac.setEntertainment(checkIfExists[12]);
+                    fac.setHeat(checkIfExists[13] + "," + checkIfExists[14] + "," + checkIfExists[15]);
+                    fac.setWifi(checkIfExists[16] + "," + checkIfExists[17]);
+                    fac.setKitchen(checkIfExists[18] + "," + checkIfExists[19] + "," + checkIfExists[20] + "," + checkIfExists[21] + "," + checkIfExists[22] + "," + checkIfExists[23] + "," + checkIfExists[24]);
+                    fac.setOutside(checkIfExists[25] + "," + checkIfExists[26]);
+                    fac.setParking(checkIfExists[27] + "," + checkIfExists[28]);
+                    object.add(HNText.getText(), checkIfExists[0] + "," + checkIfExists[1] + "," + checkIfExists[2]
+                            , addressText.getText() + "," + cityText.getText() + "," + postCodeText.getText()
+                            , descriptionText.getText(), fac, username.getText());
                     success.setText("Add successful");
 
                 }
@@ -385,13 +388,42 @@ public class  add implements ActionListener {
         }
         else if (e.getActionCommand().equals(button2.getText()))
         {
+
             HNText.setText("");
 
             addressText.setText("");
             postCodeText.setText("");
             cityText.setText("");
             descriptionText.setText("");
-
+            hotel.setSelected(false);
+            apartment.setSelected(false);
+            maisonette.setSelected(false);
+            pool.setSelected(false);
+            beach.setSelected(false);
+            sea.setSelected(false);
+            port.setSelected(false);
+            mountain.setSelected(false);
+            road.setSelected(false);
+            hair.setSelected(false);
+            tv.setSelected(false);
+            fireplace.setSelected(false);
+            aircondition.setSelected(false);
+            fullheat.setSelected(false);
+            washermachine.setSelected(false);
+            dryer.setSelected(false);
+            wifi.setSelected(false);
+            Ethernet.setSelected(false);
+            Fridge.setSelected(false);
+            oven.setSelected(false);
+            microwave.setSelected(false);
+            cookware.setSelected(false);
+            plates.setSelected(false);
+            dishwasher.setSelected(false);
+            caffe.setSelected(false);
+            balcony.setSelected(false);
+            courtyard.setSelected(false);
+            privateparking.setSelected(false);
+            roadparking.setSelected(false);
 
 
 
@@ -399,12 +431,40 @@ public class  add implements ActionListener {
         else if(e.getActionCommand().equals(button3.getText()))
         {
             HNText.setText("");
+
             addressText.setText("");
             postCodeText.setText("");
             cityText.setText("");
             descriptionText.setText("");
-
-
+            hotel.setSelected(false);
+            apartment.setSelected(false);
+            maisonette.setSelected(false);
+            pool.setSelected(false);
+            beach.setSelected(false);
+            sea.setSelected(false);
+            port.setSelected(false);
+            mountain.setSelected(false);
+            road.setSelected(false);
+            hair.setSelected(false);
+            tv.setSelected(false);
+            fireplace.setSelected(false);
+            aircondition.setSelected(false);
+            fullheat.setSelected(false);
+            washermachine.setSelected(false);
+            dryer.setSelected(false);
+            wifi.setSelected(false);
+            Ethernet.setSelected(false);
+            Fridge.setSelected(false);
+            oven.setSelected(false);
+            microwave.setSelected(false);
+            cookware.setSelected(false);
+            plates.setSelected(false);
+            dishwasher.setSelected(false);
+            caffe.setSelected(false);
+            balcony.setSelected(false);
+            courtyard.setSelected(false);
+            privateparking.setSelected(false);
+            roadparking.setSelected(false);
             frame.setVisible(false);
             frame.getContentPane().removeAll();
             UserB wow= new UserB();

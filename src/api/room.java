@@ -1,8 +1,6 @@
-package api.start;
+package api;
 
-import javax.swing.*;
-
-public class room extends hotel {
+public class room {
     private  String view,bathroom,clothes,entertainment,heat,wifi,kitchen,outside,parking;
 
     /**

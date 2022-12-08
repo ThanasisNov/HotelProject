@@ -1,4 +1,4 @@
-package api.start;
+package api;
 
 import java.util.Scanner;
 
@@ -8,9 +8,14 @@ public class Feedback {
     private int numofwords = 0;
 
 
-    Feedback() {
+    public Feedback() {
         feedback = "";
         rating = -1;
+    }
+    public void Amazing(String feedback,int rating)
+    {
+        this.feedback=feedback;
+        this.rating=rating;
     }
 
     Scanner forinput = new Scanner(System.in);

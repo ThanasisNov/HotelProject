@@ -1,6 +1,6 @@
 package gui;
 
-import api.start.App;
+import api.App;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -117,6 +117,7 @@ void setUser(JTextField userText)
                 if (object.Login(user, pass) == true) {
                     getUserText().setText("");
                     getPasswordText().setText("");
+                    success.setText("");
                     getFrame().setVisible(false);
                     if(object.Type(user).trim().equals("A"))
                     {
@@ -141,7 +142,7 @@ void setUser(JTextField userText)
             } else if (e.getActionCommand().equals(button2.getText())) {
                 getUserText().setText("");
                 getPasswordText().setText("");
-
+                success.setText("");
                getFrame().setVisible(false);
                Register wow= new Register();
                 wow.Register();
@@ -151,6 +152,7 @@ void setUser(JTextField userText)
             }
             else if (e.getActionCommand().equals(button3.getText()))
             {
+                success.setText("");
                 getUserText().setText("");
                 getPasswordText().setText("");
 

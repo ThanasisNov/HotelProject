@@ -1,4 +1,4 @@
-package api.start;
+package api;
 
 public class hotel {
     private String name;
@@ -20,7 +20,7 @@ public class hotel {
     void setArea(String area)
     {
         this.area=area;
-        
+
     }
     void setDescription(String description)
     {

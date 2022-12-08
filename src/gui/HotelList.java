@@ -1,6 +1,6 @@
 package gui;
 
-import api.start.App;
+import api.App;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -22,11 +22,11 @@ public class  HotelList implements ActionListener, ListSelectionListener {
     {
         return f;
     }
-
-    void HotelList(ArrayList wow,ArrayList found) throws IOException {
+private static String username;
+    void HotelList(ArrayList wow,ArrayList found,String user) throws IOException {
 temp.clear();
 l1.removeAllElements();
-
+username=user;
 
         for(Object i :found)
         {
@@ -37,13 +37,16 @@ l1.removeAllElements();
 
           for(int i : temp)
           {
-              l1.addElement(test.ListMaker(i));
+              l1.addElement(test.StringMaker(i));
           }
 
           list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
           list.addListSelectionListener(this);
-          list.setBounds(0,0, 1000,110);
-          f.add(list);
+          list.setBounds(0,0, 400,110);
+        f.add(list);
+        JScrollPane scrollPne = new JScrollPane(list);
+        scrollPne.setBounds(0,0, 400,110);
+        f.add(scrollPne);
           f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
           f.setSize(500,500);
           button1= new JButton("Back");
@@ -62,12 +65,14 @@ l1.removeAllElements();
 
         App object = new App();
         if (e.getActionCommand().equals(button1.getText())) {
+
             f.setVisible(false);
-            l1.removeAllElements();
           f.getContentPane().removeAll();
           Search era= new Search();
-          era.Search();
+          era.Search(username);
         }
+
+
 
 
     }
@@ -76,14 +81,18 @@ l1.removeAllElements();
     @Override
     public void valueChanged(ListSelectionEvent e)
     {
-      //System.out.println(list.getSelectedValue()+"-->"+temp.get(list.getSelectedIndex()));
-       f.setVisible(false);
+
         ViewUserA t= new ViewUserA();
-      //  try {
-           //t.ViewUserA("",temp.get(list.getSelectedIndex()));
-       // } catch (IOException ex) {
-         //   throw new RuntimeException(ex);
-       // }
+        if(!list.isSelectionEmpty()) {
+            try {
+
+                String[] temp2 = list.getSelectedValue().split(" ");
+                t.ViewUserA(temp2[0], f,username);
+                f.setVisible(false);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 
 

@@ -1,11 +1,11 @@
-package api.start;
+package api;
 
 import gui.Login;
 
 public class Demo {
     /**
      *
-     * main για να ξεκινήσει το πρόγραμμα.
+     * main to start the program.
      */
     public static void main(String[] args){
 
