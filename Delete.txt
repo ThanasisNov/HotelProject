@@ -5,8 +5,8 @@ Athanasios1,Nikoleta,1,EWRWERWER,2
 Thanasis,Pa,Escape,Freak3,4
 Thanasis,Nikoleta,1,Amazing,3
 Amazing,Thanos,Heritage,Wow,5
-Amazing,Pasas,Xrystomalousa,Teleio,3
-Amazing,Nikoleta,1,PAPAPAP,4
+Amazing,Pasas,Xrystomalousa,Teleio,2
+Amazing,Nikoleta,1,PAPAPAP,5
 Thanasis,Wow,Teleio,Wow,5
 Test2,Pasas,Xrystomalousa,Amazing,5
 Test2,Wow,Teleio,Teleio,5

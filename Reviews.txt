@@ -8,5 +8,5 @@ Amazing,Thanos,Heritage,Wow,5
 Amazing,Pasas,Xrystomalousa,Teleio,3
 Amazing,Nikoleta,1,PAPAPAP,4
 Thanasis,Wow,Teleio,Wow,5
-Test2,Pasas,Xrystomalousa,Amazing,5
-Test2,Wow,Teleio,Teleio,5
+Test2,Pasas,Xrystomalousa,Amazing,4
+Test2,Wow,Teleio,Teleio,3
