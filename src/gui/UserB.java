@@ -5,6 +5,7 @@
     import javax.swing.*;
     import java.awt.event.ActionEvent;
     import java.awt.event.ActionListener;
+    import java.io.FileNotFoundException;
 
     public class UserB  implements ActionListener {
         private static JButton button1;
@@ -94,8 +95,12 @@
             else if (e.getActionCommand().equals(button3.getText()))
             {
                 frame.setVisible(false);
-                Login wow= new Login();
-                wow.getFrame().setVisible(true);
+                Edit wow= new Edit();
+                try {
+                    wow.Edit(username.getText());
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
             else if (e.getActionCommand().equals(button4.getText()))
             {

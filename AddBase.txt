@@ -11,3 +11,9 @@ Nikos1,Amazing,empty,Apartment,empty,32,4324,23423,234234,empty,Beach,empty,empt
 Nikos1,Amazing,Hotel,empty,empty,324323,423423,432432,3423423,empty,Beach,empty,empty,empty,empty,Hair Dryer,TV,empty,empty,empty,Wash Machine,empty,Wifi,empty,empty,empty,empty,empty,empty,empty,empty,balcony,empty,Private parking,empty,
 Wow,Teleio,Hotel,empty,empty,Isaia3,Greece,52100,Amazing,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,
 ,Heritage,Hotel,empty,empty,rewre,rw,rewrw,rwer,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,
+Nikos,ewrwe,Hotel,empty,empty,rewrwe,ewrew,wer,ewr,Pool,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,empty,
+Nikolaos,Herirage,Hotel,empty,empty,Limnioti 6,Kastoria,52100,Ήταν πολύ ωραία,Pool,empty,empty,empty,empty,empty,empty,empty,empty,empty,Full house Heat,empty,empty,Wifi,empty,empty,empty,empty,empty,empty,Dishwasher,empty,balcony,Courtyard,Private parking,Road Parking,
+5,o��+�l�,1,2,3,,null,null,null,null,null,null,null,null,null,
+5,�'��έ,1,2,3,,null,null,null,null,null,null,null,null,null,
+5,�d��Po�,1,2,3,,null,null,null,null,null,null,null,null,null,
+5,ܸ:γ�E,1,2,3,,null,null,null,null,null,null,null,null,null,

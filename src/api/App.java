@@ -237,8 +237,9 @@ public class App {
             }
         } catch (Exception e) {
 
-            System.out.println("Error App");
+            System.out.println("Error App Search");
         }
+
         return hotels;
 
     }
@@ -372,7 +373,7 @@ public class App {
 
             found = false;
         }
-        return tempType;
+        return tempType.trim();
     }
 
     /**Idk if we use that one xD
@@ -384,19 +385,25 @@ public class App {
      * @param n
      * @throws IOException
      */
-    public void add(String name, String tp, String loc, String des, room fac, String n) throws IOException {
+    public boolean add(String name, String tp, String loc, String des, room fac, String n) throws IOException {
 
 
         File file = new File("AddBase.txt");
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
 
-        br.write(n + "," + name + "," + tp + "," + loc + "," + des + "," + fac.getView() + "," + fac.getBathroom() + "," + fac.getClothes() + "," + fac.getEntertainment() + "," + fac.getHeat() + "," + fac.getWifi() + "," + fac.getKitchen() + "," + fac.getOutside() + "," + fac.getParking() + ",");
+        try {
+            br.write(n + "," + name + "," + tp + "," + loc + "," + des + "," + fac.getView() + "," + fac.getBathroom() + "," + fac.getClothes() + "," + fac.getEntertainment() + "," + fac.getHeat() + "," + fac.getWifi() + "," + fac.getKitchen() + "," + fac.getOutside() + "," + fac.getParking() + ",");
+
+        } catch (IOException e) {
+           return false;
+        }
         br.newLine();
 
 
         br.close();
         fr.close();
+        return true;
 
     }
 

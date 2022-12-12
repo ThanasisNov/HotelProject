@@ -382,6 +382,7 @@ if(name.equals("")) name="empty";
         App object = new App();
         if (e.getActionCommand().equals(button1.getText())) {
 HotelList test= new HotelList();
+
             ArrayList<String> temp=object.Search(name,checkIfExists[0],checkIfExists[1],checkIfExists[2],addressText.getText(),cityText.getText(),postCodeText.getText(),checkIfExists[3],checkIfExists[4]
             ,checkIfExists[5],checkIfExists[6],checkIfExists[7],checkIfExists[8],checkIfExists[9],checkIfExists[10],checkIfExists[11],checkIfExists[12]
             ,checkIfExists[13],checkIfExists[14],checkIfExists[15],checkIfExists[16],checkIfExists[17],checkIfExists[18],checkIfExists[19],checkIfExists[20]
