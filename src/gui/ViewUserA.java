@@ -60,6 +60,7 @@ public class  ViewUserA implements ActionListener {
     private static  String[] all;
     private static String username;
     void ViewUserA(String hotels,JFrame old,String user) throws IOException {
+
         setFrame(frame);
         oldFrame=old;
         username=user;
@@ -69,7 +70,7 @@ public class  ViewUserA implements ActionListener {
         Submits test= new Submits();
  all=  test.SearchSubmit(hotels);
 
-        frame.add(panel);
+
 int i=0;
 for(String x:all)
 {
@@ -165,7 +166,7 @@ for(String x:all)
         success = new JLabel("");
         success.setBounds(10, 450, 150, 25);
         panel.add(success);
-
+  frame.add(panel);
         frame.setVisible(true);
 
     }
@@ -176,8 +177,8 @@ for(String x:all)
 
         if(e.getActionCommand().equals(button4.getText()))
         {
+            frame.getContentPane().removeAll();
             frame.setVisible(false);
-
             oldFrame.setVisible(true);
         }
         else if(e.getActionCommand().equals(button1.getText()))

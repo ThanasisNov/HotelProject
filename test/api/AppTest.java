@@ -3,6 +3,7 @@ package api;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -32,14 +33,14 @@ public class AppTest {
     public void StringMaker() throws IOException {
 
 
-        assertEquals("Herirage" + " " + "Hotel" + " " + " " + " " + "Limnioti 6" + " " + "Kastoria" + " " + "52100" + " " + "0,00", test.StringMaker(14));
+        assertEquals("TheraHotel" + " " + "Hotel" + " " + " " + " " + "Era32" + " " + "Paris" + " " + "21324" + " " + "2.00", test.StringMaker(2));
     }
 
     @Test
     public void Search() {
 
         ArrayList wow = new ArrayList<>();
-        wow.add("Heritage,empty,empty,empty,empty,empty,empty,Serbia");
+        wow.add("Heritage,empty,empty,Sea,empty,empty,empty,Beligrad");
         assertEquals(wow,test.Search("Heritage","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty"));
     }
 
@@ -47,14 +48,15 @@ public class AppTest {
     @Test
     public void getfound() {
      ArrayList foundtest= new ArrayList();
-     foundtest.add(1);
+     foundtest.add(0);
+test.Search("Heritage","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty","empty");
      assertEquals(test.getfound(),foundtest);
 
     }
 
     @Test
     public void login() {
-     assertEquals(test.Login("Thanasis","123"),true);
+     assertEquals(test.Login("user1","password1"),true);
     }
 
     @Test
@@ -68,8 +70,8 @@ public class AppTest {
 
     @Test
     public void type() {
-     assertEquals(test.Type("Thanasis10011"),"A");//in case of error check type .trim in return
-     assertEquals(test.Type("Pasas"),"B");
+     assertEquals(test.Type("user1"),"A");//in case of error check type .trim in return
+     assertEquals(test.Type("provider1"),"B");
     }
 
     @Test

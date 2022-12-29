@@ -1,15 +1,5 @@
-Athanasios1,Nikoleta,Wow2332,WOW,2
-Athanasios1,Pa,Escape,3232,3
-Athanasios1,Nikoleta,1,EWRWERWER,2
-Thanasis,Nikoleta,1,Amazing,3
-Amazing,Thanos,Heritage,Wow,5
-Amazing,Pasas,Xrystomalousa,Teleio,3
-Amazing,Nikoleta,1,PAPAPAP,4
-Thanasis,Wow,Teleio,Wow,5
-Test2,Pasas,Xrystomalousa,Amazing,4
-Test2,Wow,Teleio,Teleio,3
-Thanasis,Pa,Hostage,Amazing,5
-�2�Mo�`,Nikolaos,Heritage,Teleio,5
-Wow,Nikolaos,Heritage,Teleio,5
-
-Thanasis,Nikolaos,Heritage,Teleio,5
+user1,provider1,Heritage,It was good,3
+user1,provider1,TheraHotel,I did not really like it sorry,2
+user1,provider1,Hostage,Great place.,4
+user1,provider1,LolaHotel,Well it could have been better,3
+user1,provider1,PopaiMais,Not so good  .My expectesios were higher,3

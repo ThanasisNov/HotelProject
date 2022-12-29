@@ -2,6 +2,8 @@ package api;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Hashtable;
 
 public class ReviewFile {
 private static double mo;
@@ -270,35 +272,66 @@ private static double average=0;
         String[] bookings = null;
         ArrayList r= new ArrayList<>();
         BufferedReader reader;
-        boolean check=false;
+
+        Hashtable<String,String > check=new Hashtable<>();
         double sum=0;
        double oc=0;
+
         try {
             reader = new BufferedReader(new FileReader("Reviews.txt"));
             String line = reader.readLine();
 
-            while (line != null) {
-                bookings=line.split(",");
-
-                if(bookings[0].equals(user))
+            while (line != null ) {
+                bookings = line.split(",");
+                if (bookings[0].equals(user))
                 {
-                    Submits test= new Submits();
-                    String[] temp= test.SearchSubmit(bookings[3]);
-                    if(temp[2].equals("empty")) temp[2]=""; if(temp[3].equals("empty")) temp[3]=""; if(temp[4].equals("empty")) temp[4]=""; if(temp[5].equals("empty")) temp[5]="";
-                r.add(bookings[2] + " "+temp[2]+" "+temp[3]+" "+temp[4]+" "+temp[5]+" "+temp[6]+" "+temp[7]+" "+bookings[4]);
 
-                sum+=Integer.valueOf(bookings[4]);
-            oc++;
+                 // System.out.println(bookings[2]+" "+bookings[4]);
+                    check.put(bookings[2],bookings[4]);
                 }
-                line = reader.readLine();
 
+line=reader.readLine();
             }
 
             reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-if (oc!=0) average=sum/oc;
+
+        BufferedReader reader2;
+        try {
+            reader2 = new BufferedReader(new FileReader("AddBase.txt"));
+            String line1 = reader2.readLine();
+
+            while (line1 != null) {
+
+                if (bookings[0].equals(user)) {
+
+                    if(bookings[0].equals(user))
+                    {
+
+                        String []temp = line1.split(",");
+                        if(temp[2].equals("empty")) temp[2]="";
+                        if(temp[3].equals("empty")) temp[3]="";
+                        if(temp[4].equals("empty")) temp[4]="";
+                        if(temp[5].equals("empty")) temp[5]="";
+                        r.add(temp[1] + " "+temp[2]+" "+temp[3]+" "+temp[4]+" "+temp[5]+" "+temp[6]+" "+temp[7]+" "+check.get(temp[1]));
+                        //System.out.println(bookings[2] + " "+temp[2]+" "+temp[3]+" "+temp[4]+" "+temp[5]+" "+temp[6]+" "+temp[7]+" "+bookings[4]);
+                        sum+=Integer.valueOf(bookings[4]);
+                        oc++;
+                    }
+                }
+                line1 = reader2.readLine();
+
+            }
+            reader2.close();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (oc!=0) average=sum/oc;
 
 
         return  r;

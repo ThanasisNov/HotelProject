@@ -39,7 +39,6 @@ username=user;
           {
               l1.addElement(test.StringMaker(i));
           }
-
           list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
           list.addListSelectionListener(this);
           list.setBounds(0,0, 400,110);
@@ -82,10 +81,10 @@ username=user;
     public void valueChanged(ListSelectionEvent e)
     {
 
-        ViewUserA t= new ViewUserA();
+
         if(!list.isSelectionEmpty()) {
             try {
-
+                ViewUserA t= new ViewUserA();
                 String[] temp2 = list.getSelectedValue().split(" ");
                 t.ViewUserA(temp2[0], f,username);
                 f.setVisible(false);

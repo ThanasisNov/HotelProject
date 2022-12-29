@@ -38,7 +38,7 @@ public class EditReview extends JFrame implements ActionListener
         String []all= wow2.SearchReviewforUser(Hostname,bookingname,user);
 
         this.setLayout(new FlowLayout());
-        this.setSize(new Dimension(550, 100));
+        this.setSize(new Dimension(550, 550));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         review= new JLabel("Review:");
         this.add(review);
