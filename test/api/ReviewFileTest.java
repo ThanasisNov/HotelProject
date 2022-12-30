@@ -13,33 +13,26 @@ import static org.junit.Assert.assertTrue;
 
 public class ReviewFileTest {
  ReviewFile check= new ReviewFile();
-    @Test
-    public void addR() throws IOException {
-       byte[] array = new byte[7]; // length is bounded by 7
-       new Random().nextBytes(array);
-       String generatedString = new String(array, Charset.forName("UTF-8"));
-        check.AddR(generatedString,"Nikolaos","Heritage","Teleio",5);
-    }
+
    @Test
    public void searchReview() throws FileNotFoundException {
-      ArrayList wow = new ArrayList<>();
-      wow.add("Heritage Hotel   Gout3 Beligrad 32423 3");
-      assertEquals(check.SearchReviewofUser("Thanasis"),wow);
+        String tline=check.SearchReview("provider1","Heritage").get(0).toString();
+         String[] test=tline.split(",");
+      assertEquals(test[2],"Heritage");
 
    }
     @Test
     public void getmo() throws IOException {
- check.SearchReview("Nikolaos","Heritage");
- System.out.println(check.getmo());
-       assertTrue(check.getmo()==5.0);
+ check.SearchReview("provider1","Heritage");
+       assertTrue(check.getmo()==3.0);
     }
 
 
 
     @Test
     public void searchReviewforUser() throws FileNotFoundException {
-      String[] wow=  check.SearchReviewforUser("Nikolaos","Heritage","Thanasis");
-      assertTrue(wow[0].equals("Thanasis") && wow[1].equals("Nikolaos")&& wow[2].equals("Heritage"));
+      String[] wow=  check.SearchReviewforUser("provider1","Heritage","user1");
+      assertTrue(wow[0].equals("user1") && wow[1].equals("provider1")&& wow[2].equals("Heritage"));
     }
 
 
@@ -49,26 +42,26 @@ public class ReviewFileTest {
     }
 
     @Test
-    public void deleteReview() throws IOException {
-     /*   byte[] array = new byte[7]; // length is bounded by 7
+    public void AddandDeleteReview() throws IOException {
+       byte[] array = new byte[7]; // length is bounded by 7
         new Random().nextBytes(array);
         String generatedString = new String(array, Charset.forName("UTF-8"));
         check.AddR(generatedString,"Nikos","Xeli","Perfect",3);
-       assertTrue( check.DeleteReview("Nikos","Xeli",generatedString));*/
+       assertTrue( check.DeleteReview("Nikos","Xeli",generatedString));
 
 
     }
 
     @Test
     public void getAverage() throws FileNotFoundException {
-        check.SearchReviewofUser("Thanasis");
+        check.SearchReviewofUser("user1");
         System.out.println(check.getAverage());
-        assertTrue(check.getAverage()==4.6);
+        assertTrue(check.getAverage()==3.0);
     }
 
     @Test
     public void searchReviewofUser() throws FileNotFoundException {
-      ArrayList wow=  check.SearchReviewofUser("Thanasis");
-     System.out.println(wow);
+      ArrayList wow=  check.SearchReviewofUser("user1");
+     assertTrue(wow.get(0).equals("Heritage Hotel   Gout3 Beligrad 32423 3"));
     }
 }

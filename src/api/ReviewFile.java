@@ -43,8 +43,9 @@ private static double mo;
      * @return an array which contains the reviews for the hotelname of the hostname
      * @throws FileNotFoundException Error
      */
-    public String[] SearchReview(String hostname,String hotelname) throws FileNotFoundException {
+    public ArrayList SearchReview(String hostname,String hotelname) throws FileNotFoundException {
         String[] bookings = null;
+        ArrayList<String> review= new ArrayList<>();
         BufferedReader reader;
         boolean check=false;
         double sum=0;
@@ -59,6 +60,9 @@ private static double mo;
                 if(bookings[2].equals(hotelname) && bookings[1].equals(hostname))
                 {
                     oc++;
+
+           review.add(line);
+
                     sum+=Integer.valueOf(bookings[4]);
                     check=true;
                 }
@@ -71,20 +75,13 @@ private static double mo;
             e.printStackTrace();
         }
 if(!check)
-        {
-            int i=0;
-           for(String x:bookings)
-           {
-               bookings[i]="";
-
-               i++;
-           }
+{
            mo=0;
-            return  bookings;
-        }
+            return  review;
+}
 mo=sum/oc;
 
-        return  bookings;
+        return  review;
 }
 
     /**Searches in file Reviews.txt for a line which contains the hostname,hotelname and user that are given.
@@ -229,6 +226,7 @@ boolean check=false;
                 bookings=line.split(",");
                 if(bookings[2].equals(hotelname) && bookings[1].equals(hostname) &&bookings[0].equals(user))
                 {
+
                     check=true;
                 }
                 else {
@@ -265,7 +263,7 @@ private static double average=0;
     /**
      *
      * @param user username
-     * @return ArrayList which containts
+     * @return ArrayList which containts all the reviews of a user
      * @throws FileNotFoundException
      */
     public ArrayList SearchReviewofUser(String user) throws FileNotFoundException {
@@ -283,10 +281,11 @@ private static double average=0;
 
             while (line != null ) {
                 bookings = line.split(",");
+
                 if (bookings[0].equals(user))
                 {
 
-                 // System.out.println(bookings[2]+" "+bookings[4]);
+                  //System.out.println(bookings[2]+"+"+bookings[4]);
                     check.put(bookings[2],bookings[4]);
                 }
 
@@ -305,31 +304,33 @@ line=reader.readLine();
 
             while (line1 != null) {
 
-                if (bookings[0].equals(user)) {
+                String[] temp = line1.split(",");
+                //System.out.println(check.toString()+"+"+temp[1] +"-->"+temp.length);
+                if (temp.length > 1) {
 
-                    if(bookings[0].equals(user))
-                    {
+                    if (check.containsKey(temp[1])) {
 
-                        String []temp = line1.split(",");
-                        if(temp[2].equals("empty")) temp[2]="";
-                        if(temp[3].equals("empty")) temp[3]="";
-                        if(temp[4].equals("empty")) temp[4]="";
-                        if(temp[5].equals("empty")) temp[5]="";
-                        r.add(temp[1] + " "+temp[2]+" "+temp[3]+" "+temp[4]+" "+temp[5]+" "+temp[6]+" "+temp[7]+" "+check.get(temp[1]));
+
+                        if (temp[2].equals("empty")) temp[2] = "";
+                        if (temp[3].equals("empty")) temp[3] = "";
+                        if (temp[4].equals("empty")) temp[4] = "";
+                        if (temp[5].equals("empty")) temp[5] = "";
+                        r.add(temp[1] + " " + temp[2] + " " + temp[3] + " " + temp[4] + " " + temp[5] + " " + temp[6] + " " + temp[7] + " " + check.get(temp[1]));
                         //System.out.println(bookings[2] + " "+temp[2]+" "+temp[3]+" "+temp[4]+" "+temp[5]+" "+temp[6]+" "+temp[7]+" "+bookings[4]);
-                        sum+=Integer.valueOf(bookings[4]);
+                        sum += Integer.valueOf(bookings[4]);
                         oc++;
+
                     }
+
+
                 }
                 line1 = reader2.readLine();
 
             }
             reader2.close();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            } catch(IOException e){
+                e.printStackTrace();
+            }
 
         if (oc!=0) average=sum/oc;
 

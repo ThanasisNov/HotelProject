@@ -50,7 +50,7 @@ public class App {
             check.nextLine();
         }
         ReviewFile test= new ReviewFile();
-        String[] check3 =test.SearchReview(realname,tempname);
+        ArrayList<String[]> check3 =test.SearchReview(realname,tempname);
         String temp=String.format("%.2f", test.getmo());
         if(temph.equals("empty")) temph="";     if(tempa.equals("empty")) tempa="";     if(tempm.equals("empty")) tempm="";     if(tempAddress.equals("empty")) tempAddress="";
         if(tempCity.equals("empty")) tempCity="";      if(tempPost.equals("empty")) tempPost="";
