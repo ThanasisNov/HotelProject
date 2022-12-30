@@ -237,7 +237,6 @@ public class App {
             }
         } catch (Exception e) {
 
-            System.out.println("Error App Search");
         }
 
         return hotels;

@@ -55,7 +55,6 @@ public class ReviewFileTest {
     @Test
     public void getAverage() throws FileNotFoundException {
         check.SearchReviewofUser("user1");
-        System.out.println(check.getAverage());
         assertTrue(check.getAverage()==3.0);
     }
 
