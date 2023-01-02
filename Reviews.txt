@@ -1,5 +1,5 @@
 user1,provider1,Heritage,It was good,3
-user1,provider1,TheraHotel,I did not really like it sorry,2
 user1,provider1,Hostage,Great place.,4
-user1,provider1,LolaHotel,Well it could have been better,3
-user1,provider1,PopaiMais,Not so good  .My expectesios were higher,3
+user1,provider1,LolaHotel,I do not know͵it was not what i had expected,2
+user1,provider1,PopaiMais,Meh͵my expectetions were higher,2
+user1,provider1,TheraHotel,I did not really like it ͵sorry,2

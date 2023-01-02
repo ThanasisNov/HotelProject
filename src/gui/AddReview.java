@@ -1,5 +1,6 @@
 package gui;
 
+import api.App;
 import api.Feedback;
 import api.JTextFieldLimit;
 import api.ReviewFile;
@@ -91,6 +92,7 @@ this.setVisible(true);
 
     @Override
     public void actionPerformed(ActionEvent e) {
+       App w= new App();
        if(e.getActionCommand().equals("Submit"))
        {
            Feedback object = new Feedback();
@@ -99,7 +101,7 @@ this.setVisible(true);
            try {
                if(file.AlreadyExists(host,bookingname_1,username)) {
                    try {
-                       file.AddR(username, host, bookingname_1, object.getFeedback(), object.getRating());
+                       file.AddR(w.CommaChanger(username), w.CommaChanger(host), w.CommaChanger(bookingname_1), w.CommaChanger(object.getFeedback()), object.getRating());
                        success.setText("Submit was successful");
                    } catch (IOException ex) {
                        System.out.println("Error in AddReview GUI");

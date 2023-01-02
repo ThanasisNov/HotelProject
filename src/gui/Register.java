@@ -105,13 +105,17 @@ public class  Register implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String user =  userText.getText();
-        String pass = passwordText.getText();
-        String name = nameText.getText();
-        String  surname = surnameText.getText();
-        String Type = AccountText.getText();
-        App object = new App();
 
+        App object = new App();
+        String user =  userText.getText();
+        user= object.CommaChanger(user);
+        String pass = passwordText.getText();
+        pass= object.CommaChanger(pass);
+        String name = nameText.getText();
+        name=object.CommaChanger(name);
+        String  surname = surnameText.getText();
+        surname= object.CommaChanger(surname);
+        String Type = AccountText.getText();
         if (e.getActionCommand().equals(button1.getText())) {
             try {
 

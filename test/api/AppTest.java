@@ -55,6 +55,12 @@ test.Search("Heritage","empty","empty","empty","empty","empty","empty","empty","
     }
 
     @Test
+    public void CommaTest() {
+   assertTrue(!",".equals(test.CommaChanger(",")));
+
+    }
+
+    @Test
     public void login() {
      assertEquals(test.Login("user1","password1"),true);
     }

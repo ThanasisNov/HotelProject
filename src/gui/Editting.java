@@ -474,9 +474,9 @@ public class Editting implements ActionListener {
                     fac.setKitchen(checkIfExists[18]+","+checkIfExists[19]+","+checkIfExists[20]+","+checkIfExists[21]+","+checkIfExists[22]+","+checkIfExists[23]+","+checkIfExists[24]);
                     fac.setOutside(checkIfExists[25]+","+checkIfExists[26]);
                     fac.setParking(checkIfExists[27]+","+checkIfExists[28]);
-                    object.add(HNText.getText(),checkIfExists[0]+","+checkIfExists[1]+","+checkIfExists[2]
-                            ,addressText.getText()+","+cityText.getText()+","+postCodeText.getText()
-                            ,descriptionText.getText(), fac, username.getText());
+                    object.add(object.CommaChanger(HNText.getText()),checkIfExists[0]+","+checkIfExists[1]+","+checkIfExists[2]
+                            ,object.CommaChanger(addressText.getText())+","+object.CommaChanger(cityText.getText())+","+object.CommaChanger(postCodeText.getText())
+                            ,object.CommaChanger(descriptionText.getText()), fac, object.CommaChanger(username.getText()));
                     success.setText("Add successful");
 
                 }

@@ -1,5 +1,6 @@
 package gui;
 
+import api.App;
 import api.Feedback;
 import api.JTextFieldLimit;
 import api.ReviewFile;
@@ -98,6 +99,7 @@ public class EditReview extends JFrame implements ActionListener
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        App ob1 = new App();
         if(e.getActionCommand().equals("Submit"))
         {
             Feedback object = new Feedback();
@@ -106,7 +108,7 @@ public class EditReview extends JFrame implements ActionListener
             try {
                 if(file.DeleteReview(host,bookingname_1,username)) {
                     try {
-                        file.AddR(username, host, bookingname_1, object.getFeedback(), object.getRating());
+                        file.AddR(ob1.CommaChanger(username), ob1.CommaChanger(host), ob1.CommaChanger(bookingname_1), ob1.CommaChanger(object.getFeedback()), object.getRating());
                     } catch (IOException ex) {
                         System.out.println("Error in AddReview GUI");
                         throw new RuntimeException(ex);

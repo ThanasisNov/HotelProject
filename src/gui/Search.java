@@ -298,7 +298,9 @@ private static String logname;
 
 private static void Clear()
 {
+
     username.setText("");
+
     HNText.setText("");
     addressText.setText("");
     postCodeText.setText("");
@@ -344,7 +346,9 @@ private static void Clear()
             checkIfExists[i]="empty";
             i++;
         }
+        App object1= new App();
         name=username.getText();
+        name= object1.CommaChanger(name);
         if(hotel.isSelected())checkIfExists[0]= hotel.getText();
         if(apartment.isSelected())checkIfExists[1]=apartment.getText();
         if(maisonette.isSelected()) checkIfExists[2]=maisonette.getText();
@@ -383,7 +387,7 @@ if(name.equals("")) name="empty";
         if (e.getActionCommand().equals(button1.getText())) {
 HotelList test= new HotelList();
 
-            ArrayList<String> temp=object.Search(name,checkIfExists[0],checkIfExists[1],checkIfExists[2],addressText.getText(),cityText.getText(),postCodeText.getText(),checkIfExists[3],checkIfExists[4]
+            ArrayList<String> temp=object.Search(name,checkIfExists[0],checkIfExists[1],checkIfExists[2],object.CommaChanger(addressText.getText()),object.CommaChanger(cityText.getText()),object.CommaChanger(postCodeText.getText()),checkIfExists[3],checkIfExists[4]
             ,checkIfExists[5],checkIfExists[6],checkIfExists[7],checkIfExists[8],checkIfExists[9],checkIfExists[10],checkIfExists[11],checkIfExists[12]
             ,checkIfExists[13],checkIfExists[14],checkIfExists[15],checkIfExists[16],checkIfExists[17],checkIfExists[18],checkIfExists[19],checkIfExists[20]
             ,checkIfExists[21],checkIfExists[22],checkIfExists[23],checkIfExists[24],checkIfExists[25],checkIfExists[26],checkIfExists[27],checkIfExists[28]);

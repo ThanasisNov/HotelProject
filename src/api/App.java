@@ -14,8 +14,27 @@ public class App {
     private static Scanner check;
     private static final ArrayList<Integer> found = new ArrayList<>();
 
-
-
+    /**
+     *
+     * @param x A given String
+     * @return Returns a String that contains a different type of ",".
+     */
+    public  String CommaChanger(String x)
+{
+    char[] myNameChars = x.toCharArray();
+    int i=0;
+    while(i<x.length())
+    {
+        Character test=x.charAt(i);
+        if(test.equals(','))
+        {
+            myNameChars[i]=Character.toChars(885)[0];
+        }
+        i++;
+    }
+    x = String.valueOf(myNameChars);
+    return x;
+}
     /**
      * Creates a string from a specific number(lineNumber) which points to a line of AddBase.txt  and to the end of the string it adds the average grade of
      * the hotel.
@@ -143,6 +162,7 @@ public class App {
         String temproadparking = null;
         BufferedWriter bw = null;
         ArrayList<String> hotels = new ArrayList<>();
+
         try {
             int lines = 0;
             check = new Scanner(new File("AddBase.txt"));

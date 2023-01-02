@@ -2,3 +2,14 @@ user1,password1,username,surname,A
 user2,password2,username,surname,A
 provider1,password1,username,surname,B
 provider2,password2,username,surname,B
+��⒨�,123,Athanasios,Novatsidis,A
+�
+����,123,Athanasios,Novatsidis,A
+>����,123,Athanasios,Novatsidis,A
+,�ඇ�,123,Athanasios,Novatsidis,A
+��G���,123,Athanasios,Novatsidis,A
+��j��A,123,Athanasios,Novatsidis,A
+X��V7�,123,Athanasios,Novatsidis,A
+?���]p�,123,Athanasios,Novatsidis,A
+�	<�.,123,Athanasios,Novatsidis,A
+Eimai͵blak͵,123,123,123,A

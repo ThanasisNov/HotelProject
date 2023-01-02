@@ -95,7 +95,7 @@ for(String x:all)
         locationLabel.setBounds(10, 70, 300, 25);
         panel.add(locationLabel);
         JLabel deLabel = new JLabel("Description:"+all[8]);
-        deLabel.setBounds(10, 90, 300, 25);
+        deLabel.setBounds(10, 90, 5000, 25);
         panel.add(deLabel);
 
 
