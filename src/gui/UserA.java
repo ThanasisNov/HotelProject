@@ -24,6 +24,7 @@ public class UserA  implements ActionListener {
     }
 
     void UserA(String name2)    {
+
         name=name2;
         setFrame(frame);
         JPanel panel = new JPanel();
@@ -68,7 +69,7 @@ public class UserA  implements ActionListener {
         App object = new App();
         if (e.getActionCommand().equals(button1.getText())) {
 
-
+frame.getContentPane().removeAll();
             frame.setVisible(false);
             Login wow= new Login();
             wow.getFrame().setVisible(true);

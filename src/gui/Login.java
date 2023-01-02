@@ -79,12 +79,17 @@ public class  Login implements ActionListener {
     String pass ;
 void setUser(JTextField userText)
 {
+    App object = new App();
     user=userText.getText();
+    user= object.CommaChanger(user);
 
 }
     void setPass(JTextField userText)
     {
+        App object = new App();
         pass=passwordText.getText();
+        pass=object.CommaChanger(pass);
+
 
     }
     void resetUserText()
@@ -119,14 +124,17 @@ void setUser(JTextField userText)
                     getPasswordText().setText("");
                     success.setText("");
                     getFrame().setVisible(false);
-                    if(object.Type(user).trim().equals("A"))
+                    if(object.Type(object.CommaChanger(user)).trim().equals("A"))
                     {
+                      //  System.out.println(user +"Here");
                         UserA normal= new UserA();
+
                             normal.UserA(user);
                     }
-                    else
+                    else if (object.Type(object.CommaChanger(user)).trim().equals("B"))
                     {
                  UserB special = new UserB();
+
                  special.UserB(user);
                     }
 

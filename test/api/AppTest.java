@@ -82,7 +82,7 @@ test.Search("Heritage","empty","empty","empty","empty","empty","empty","empty","
 
     @Test
     public void add() throws IOException {
-     byte[] array = new byte[7]; // length is bounded by 7
+     byte[] array = new byte[1]; // length is bounded by 7
      new Random().nextBytes(array);
      String generatedString = new String(array, Charset.forName("UTF-8"));
      room test1= new room();

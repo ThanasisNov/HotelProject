@@ -276,7 +276,7 @@ public class App {
 
         BufferedWriter bw = null;
 
-
+       App c= new App();
         boolean found = false;
 
         try {
