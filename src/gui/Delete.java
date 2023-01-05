@@ -5,35 +5,38 @@ import api.App;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.io.FileNotFoundException;
 
-public class Edit implements ActionListener, ListSelectionListener {
-
-    private static JButton buttonback ;
-    private JSplitPane splitpane = new JSplitPane();
-    private String username;
-
-    private JList <String>guihotelnames;
-    private static JFrame frame = new JFrame();
-    ArrayList<String> useradds = new ArrayList<String>();
-    private JTextField selected ;
-
-    void setFrame(JFrame frame)
+public class Delete implements ActionListener, ListSelectionListener
     {
-        this.frame=frame;
-    }
-    JFrame getFrame()
-    {
-        return frame;
-    }
-          void Edit(String name) throws FileNotFoundException {
+
+        private static JButton buttonback ;
+        private JSplitPane splitpane = new JSplitPane();
+        private String username;
+
+        private JList <String>guihotelnames;
+        private static JFrame frame = new JFrame();
+        ArrayList<String> useradds = new ArrayList<String>();
+        private JTextField selected ;
+
+
+
+        void setFrame(JFrame frame)
+        {
+            this.frame=frame;
+        }
+        JFrame getFrame()
+        {
+            return frame;
+        }
+
+
+        void Delete(String name) throws FileNotFoundException {
         String str ;
         username = name;
         DefaultListModel<String> hotelnames = new DefaultListModel<String>();
@@ -47,7 +50,7 @@ public class Edit implements ActionListener, ListSelectionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel);
         panel.setLayout(null);
-       // selected.setBounds(100,400,400,25);
+        // selected.setBounds(100,400,400,25);
         //panel.add(selected);
 
 
@@ -83,16 +86,16 @@ public class Edit implements ActionListener, ListSelectionListener {
 
 
 
-
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
 
         App object = new App();
         if (e.getActionCommand().equals(buttonback.getText())) {
             frame.setVisible(false);
-           // frame.getContentPane().removeAll();
+            // frame.getContentPane().removeAll();
             UserB wow= new UserB();
             wow.getFrame().setVisible(true);
         }
@@ -100,15 +103,19 @@ public class Edit implements ActionListener, ListSelectionListener {
     }
 
 
-    @Override
-    public void valueChanged(ListSelectionEvent e)
-    {
-        JPanel panel = new JPanel();
-        frame.add(panel);
-        Editing era = new Editing();
-        era.Editting(useradds.get(guihotelnames.getSelectedIndex()), username);
-        frame.setVisible(false);
+        @Override
+        public void valueChanged(ListSelectionEvent e)
+        {
+            JPanel panel = new JPanel();
+            frame.add(panel);
+            Deleting era = new Deleting();
+            try {
+                era.deleting(useradds.get(guihotelnames.getSelectedIndex()), username);
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+            frame.setVisible(false);
+
+        }
 
     }
-
-}

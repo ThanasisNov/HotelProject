@@ -2,19 +2,23 @@ package gui;
 
 
 import api.App;
+import api.EditFile;
 import api.room;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class Editting implements ActionListener {
+public class Editing implements ActionListener {
 
 
     private static JLabel HotelName;
     private static JTextField HNText;
+    private static JTextField newHNText;
+
     private static JLabel type;
     private static JLabel description;
     private static JTextField descriptionText;
@@ -75,7 +79,7 @@ public class Editting implements ActionListener {
     private static final JCheckBox roadparking = new JCheckBox("Road Parking");
 
 
-    private static JTextField username;
+    private static String username;
 
 
     private static JButton button1;
@@ -95,8 +99,11 @@ public class Editting implements ActionListener {
         return frame;
     }
 
-    void Editting(String selected) {
-
+    public static String stringForEdit ;
+    void Editting(String selected, String name) {
+        username = name ;
+        System.out.println("KOYRAMPIES");
+        stringForEdit = selected;
         String[] splited = selected.split(",");
 
 
@@ -104,8 +111,6 @@ public class Editting implements ActionListener {
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(500, 500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        username = new JTextField();
-        username.setText(name);
 
         frame.add(panel);
         panel.setLayout(null);
@@ -115,6 +120,8 @@ public class Editting implements ActionListener {
         HNText = new JTextField(splited[1]);
         HNText.setBounds(100, 20, 165, 25);
         panel.add(HNText);
+
+
 
         type = new JLabel("Type:*");
         type.setBounds(10, 50, 80, 25);
@@ -133,6 +140,10 @@ public class Editting implements ActionListener {
         panel.add(apartment);
         if(splited[3].equals("empty"))
         {
+            apartment.setSelected(false);
+        }
+        else
+        {
             apartment.setSelected(true);
         }
         maisonette.setBounds(210,50,100,25);
@@ -140,6 +151,10 @@ public class Editting implements ActionListener {
         if(splited[4].equals("empty"))
         {
             maisonette.setSelected(false);
+        }
+        else
+        {
+            maisonette.setSelected(true);
         }
 
 
@@ -178,11 +193,19 @@ public class Editting implements ActionListener {
         panel.add(pool);
         if(splited[9].equals("empty"))
         {
+            pool.setSelected(false);
+        }
+        else
+        {
             pool.setSelected(true);
         }
         beach.setBounds(120,195,80,25);
         panel.add(beach);
         if(splited[10].equals("empty"))
+        {
+            beach.setSelected(false);
+        }
+        else
         {
             beach.setSelected(true);
         }
@@ -190,11 +213,19 @@ public class Editting implements ActionListener {
         panel.add(sea);
         if(splited[11].equals("empty"))
         {
+            sea.setSelected(false);
+        }
+        else
+        {
             sea.setSelected(true);
         }
         port.setBounds(260,195,60,25);
         panel.add(port);
         if(splited[12].equals("empty"))
+        {
+            port.setSelected(false);
+        }
+        else
         {
             port.setSelected(true);
         }
@@ -202,11 +233,19 @@ public class Editting implements ActionListener {
         panel.add(mountain);
         if(splited[13].equals("empty"))
         {
+            mountain.setSelected(false);
+        }
+        else
+        {
             mountain.setSelected(true);
         }
         road.setBounds(430,195,100,25);
         panel.add(road);
         if(splited[14].equals("empty"))
+        {
+            road.setSelected(false);
+        }
+        else
         {
             road.setSelected(true);
         }
@@ -217,6 +256,10 @@ public class Editting implements ActionListener {
         panel.add(hair);
         if(splited[15].equals("empty"))
         {
+            hair.setSelected(false);
+        }
+        else
+        {
             hair.setSelected(true);
         }
         entertainment = new JLabel("Entertainment:");
@@ -224,6 +267,10 @@ public class Editting implements ActionListener {
         tv.setBounds(110,260,100,25);
         panel.add(tv);
         if(splited[16].equals("empty"))
+        {
+            tv.setSelected(false);
+        }
+        else
         {
             tv.setSelected(true);
         }
@@ -234,17 +281,29 @@ public class Editting implements ActionListener {
         panel.add(fireplace);
         if(splited[17].equals("empty"))
         {
+            fireplace.setSelected(false);
+        }
+        else
+        {
             fireplace.setSelected(true);
         }
         aircondition.setBounds(140,290,100,25);
         panel.add(aircondition);
         if(splited[18].equals("empty"))
         {
-            aircondition.setSelected(true);
+            maisonette.setSelected(false);
+        }
+        else
+        {
+            maisonette.setSelected(true);
         }
         fullheat.setBounds(280,290,200,25);
         panel.add(fullheat);
         if(splited[19].equals("empty"))
+        {
+            fullheat.setSelected(false);
+        }
+        else
         {
             fullheat.setSelected(true);
         }
@@ -255,11 +314,19 @@ public class Editting implements ActionListener {
         panel.add(washermachine);
         if(splited[20].equals("empty"))
         {
+            washermachine.setSelected(false);
+        }
+        else
+        {
             washermachine.setSelected(true);
         }
         dryer.setBounds(250,310,100,25);
         panel.add(dryer);
         if(splited[21].equals("empty"))
+        {
+            dryer.setSelected(false);
+        }
+        else
         {
             dryer.setSelected(true);
         }
@@ -270,11 +337,19 @@ public class Editting implements ActionListener {
         panel.add(wifi);
         if(splited[22].equals("empty"))
         {
+            wifi.setSelected(false);
+        }
+        else
+        {
             wifi.setSelected(true);
         }
         Ethernet.setBounds(250,330,100,25);
         panel.add(Ethernet);
         if(splited[23].equals("empty"))
+        {
+            Ethernet.setSelected(false);
+        }
+        else
         {
             Ethernet.setSelected(true);
         }
@@ -286,11 +361,19 @@ public class Editting implements ActionListener {
         panel.add(Fridge);
         if(splited[24].equals("empty"))
         {
+            Fridge.setSelected(false);
+        }
+        else
+        {
             Fridge.setSelected(true);
         }
         oven.setBounds(140,350,60,25);
         panel.add(oven);
         if(splited[25].equals("empty"))
+        {
+            oven.setSelected(false);
+        }
+        else
         {
             oven.setSelected(true);
         }
@@ -298,11 +381,19 @@ public class Editting implements ActionListener {
         panel.add(cookware);
         if(splited[26].equals("empty"))
         {
+            cookware.setSelected(false);
+        }
+        else
+        {
             cookware.setSelected(true);
         }
         plates.setBounds(300,350,160,25);
         panel.add(plates);
         if(splited[27].equals("empty"))
+        {
+            plates.setSelected(false);
+        }
+        else
         {
             plates.setSelected(true);
         }
@@ -310,17 +401,29 @@ public class Editting implements ActionListener {
         panel.add(dishwasher);
         if(splited[28].equals("empty"))
         {
+            dishwasher.setSelected(false);
+        }
+        else
+        {
             dishwasher.setSelected(true);
         }
         caffe.setBounds(600,350,140,25);
         panel.add(caffe);
         if(splited[29].equals("empty"))
         {
+            caffe.setSelected(false);
+        }
+        else
+        {
             caffe.setSelected(true);
         }
         microwave.setBounds(750,350,140,25);
         panel.add(microwave);
         if(splited[30].equals("empty"))
+        {
+            microwave.setSelected(false);
+        }
+        else
         {
             microwave.setSelected(true);
         }
@@ -333,14 +436,22 @@ public class Editting implements ActionListener {
         panel.add(balcony);
 
     if(splited[31].equals("empty"))
-        {
-            balcony.setSelected(true);
-        }
+    {
+        balcony.setSelected(false);
+    }
+    else
+    {
+        balcony.setSelected(true);
+    }
         courtyard.setBounds(250,370,140,25);
         panel.add(courtyard);
 
         if(splited[32].equals("empty"))
-    {
+        {
+            courtyard.setSelected(false);
+        }
+        else
+        {
             courtyard.setSelected(true);
         }
         parking = new JLabel("Parking:");
@@ -349,14 +460,22 @@ public class Editting implements ActionListener {
         panel.add(privateparking);
 
     if(splited[33].equals("empty"))
-        {
-            privateparking.setSelected(true);
-        }
+    {
+        privateparking.setSelected(false);
+    }
+    else
+    {
+        privateparking.setSelected(true);
+    }
         roadparking.setBounds(250,390,140,25);
         panel.add(roadparking);
         panel.add(parking);
 
         if(splited[34].equals("empty"))
+        {
+            roadparking.setSelected(false);
+        }
+        else
         {
             roadparking.setSelected(true);
         }
@@ -364,21 +483,22 @@ public class Editting implements ActionListener {
 //PURAHFPIEWRUHFpiwueh
         button1 = new JButton("Submit");
         button1.setBounds(10, 420, 80, 25);
-        button1.addActionListener(new add());
+        button1.addActionListener(new Editing());
         panel.add(button1);
         button2 = new JButton("Clear");
         button2.setBounds(195, 420, 85, 25);
-        button2.addActionListener(new Editting());
+        button2.addActionListener(new Editing());
         panel.add(button2);
         button3= new JButton("Back");
         button3.setBounds(100, 420, 85, 25);
-        button3.addActionListener(new Editting());
+        button3.addActionListener(new Editing());
         panel.add(button3);
         frame.setMinimumSize(new Dimension(900,700));
         success = new JLabel("");
         success.setBounds(110, 490, 300, 25);
         panel.add(success);
         frame.setVisible(true);
+
 
     }
     String name ;
@@ -428,43 +548,55 @@ public class Editting implements ActionListener {
 
 
         if (e.getActionCommand().equals(button1.getText())) {
+            System.out.println(HNText.getText() + "MOTHERFUCKER");
 
+            EditFile ef = new EditFile();
             try {
+                ef.remove(stringForEdit);
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
+           try {
                 if (HNText.getText().isEmpty()||(!hotel.isSelected() &&!apartment.isSelected()&& !maisonette.isSelected())||cityText.getText().isEmpty()
                         ||postCodeText.getText().isEmpty()||addressText.getText().isEmpty() ||descriptionText.getText().isEmpty() ) {
                     success.setText("Please fill all the required (*) fields");
                 }
                 else
                 {
-                    if(hotel.isSelected())checkIfExists[1]=hotel.getText();
-                    if(apartment.isSelected())checkIfExists[2]=apartment.getText();
-                    if(maisonette.isSelected()) checkIfExists[3]=maisonette.getText();
-                    if(pool.isSelected())checkIfExists[4]=pool.getText();
-                    if(beach.isSelected()) checkIfExists[5]=beach.getText();
-                    if(sea.isSelected()) checkIfExists[6]=sea.getText();
-                    if(port.isSelected()) checkIfExists[7]=port.getText();
-                    if(mountain.isSelected())  checkIfExists[8]= mountain.getText();
-                    if(road.isSelected()) checkIfExists[9]=road.getText();
-                    if(hair.isSelected())checkIfExists[10]= hair.getText();
-                    if(tv.isSelected())  checkIfExists[11]=tv.getText();
-                    if(fireplace.isSelected())  checkIfExists[12]=fireplace.getText();
-                    if(aircondition.isSelected())  checkIfExists[13]=aircondition.getText();
-                    if(fullheat.isSelected())checkIfExists[14]=fullheat.getText();
-                    if(washermachine.isSelected()) checkIfExists[15]=washermachine.getText();
-                    if(dryer.isSelected())  checkIfExists[16]=dryer.getText();
-                    if(wifi.isSelected()) checkIfExists[17]=wifi.getText();
-                    if(Ethernet.isSelected())checkIfExists[18]=Ethernet.getText();
-                    if(Fridge.isSelected())checkIfExists[19]=Fridge.getText() ;
-                    if(oven.isSelected()) checkIfExists[20]=oven.getText();
-                    if(microwave.isSelected())checkIfExists[21]=microwave.getText();
-                    if(cookware.isSelected())checkIfExists[22]=cookware.getText();
-                    if(plates.isSelected())checkIfExists[23]=plates.getText();
-                    if(dishwasher.isSelected())checkIfExists[24]=dishwasher.getText();
-                    if(caffe.isSelected())checkIfExists[25]=caffe.getText();
-                    if(balcony.isSelected())checkIfExists[26]=balcony.getText();
-                    if(courtyard.isSelected())checkIfExists[27]=courtyard.getText();
-                    if(privateparking.isSelected())checkIfExists[28]=privateparking.getText();
-                    if(roadparking.isSelected()) checkIfExists[29]= roadparking.getText();
+                    int i = 0;
+                    for (String x : checkIfExists) {
+                        name = "";
+                        checkIfExists[i] = "empty";
+                        i++;}
+                    if(hotel.isSelected())checkIfExists[0]=hotel.getText();
+                    if(apartment.isSelected())checkIfExists[1]=apartment.getText();
+                    if(maisonette.isSelected()) checkIfExists[2]=maisonette.getText();
+                    if(pool.isSelected())checkIfExists[3]=pool.getText();
+                    if(beach.isSelected()) checkIfExists[4]=beach.getText();
+                    if(sea.isSelected()) checkIfExists[5]=sea.getText();
+                    if(port.isSelected()) checkIfExists[6]=port.getText();
+                    if(mountain.isSelected())  checkIfExists[7]= mountain.getText();
+                    if(road.isSelected()) checkIfExists[8]=road.getText();
+                    if(hair.isSelected())checkIfExists[9]= hair.getText();
+                    if(tv.isSelected())  checkIfExists[10]=tv.getText();
+                    if(fireplace.isSelected())  checkIfExists[11]=fireplace.getText();
+                    if(aircondition.isSelected())  checkIfExists[12]=aircondition.getText();
+                    if(fullheat.isSelected())checkIfExists[13]=fullheat.getText();
+                    if(washermachine.isSelected()) checkIfExists[14]=washermachine.getText();
+                    if(dryer.isSelected())  checkIfExists[15]=dryer.getText();
+                    if(wifi.isSelected()) checkIfExists[16]=wifi.getText();
+                    if(Ethernet.isSelected())checkIfExists[17]=Ethernet.getText();
+                    if(Fridge.isSelected())checkIfExists[18]=Fridge.getText() ;
+                    if(oven.isSelected()) checkIfExists[19]=oven.getText();
+                    if(microwave.isSelected())checkIfExists[20]=microwave.getText();
+                    if(cookware.isSelected())checkIfExists[21]=cookware.getText();
+                    if(plates.isSelected())checkIfExists[22]=plates.getText();
+                    if(dishwasher.isSelected())checkIfExists[23]=dishwasher.getText();
+                    if(caffe.isSelected())checkIfExists[24]=caffe.getText();
+                    if(balcony.isSelected())checkIfExists[25]=balcony.getText();
+                    if(courtyard.isSelected())checkIfExists[26]=courtyard.getText();
+                    if(privateparking.isSelected())checkIfExists[27]=privateparking.getText();
+                    if(roadparking.isSelected()) checkIfExists[28]= roadparking.getText();
                     fac.setView(checkIfExists[3]+","+checkIfExists[4]+","+checkIfExists[5]+","+checkIfExists[6]+","+checkIfExists[7]+","+checkIfExists[8]);
                     fac.setBathroom(checkIfExists[9]);
                     fac.setClothes(checkIfExists[10]+","+checkIfExists[11]);
@@ -476,8 +608,8 @@ public class Editting implements ActionListener {
                     fac.setParking(checkIfExists[27]+","+checkIfExists[28]);
                     object.add(object.CommaChanger(HNText.getText()),checkIfExists[0]+","+checkIfExists[1]+","+checkIfExists[2]
                             ,object.CommaChanger(addressText.getText())+","+object.CommaChanger(cityText.getText())+","+object.CommaChanger(postCodeText.getText())
-                            ,object.CommaChanger(descriptionText.getText()), fac, object.CommaChanger(username.getText()));
-                    success.setText("Add successful");
+                            ,object.CommaChanger(descriptionText.getText()), fac, username);
+                    success.setText("Edit successfully");
 
                 }
 
@@ -490,7 +622,6 @@ public class Editting implements ActionListener {
         else if (e.getActionCommand().equals(button2.getText()))
         {
             HNText.setText("");
-
             addressText.setText("");
             postCodeText.setText("");
             cityText.setText("");
@@ -534,6 +665,35 @@ public class Editting implements ActionListener {
             addressText.setText("");
             postCodeText.setText("");
             cityText.setText("");
+            hotel.setSelected(false);
+            apartment.setSelected(false);
+            maisonette.setSelected(false);
+            pool.setSelected(false);
+            beach.setSelected(false);
+            sea.setSelected(false);
+            port.setSelected(false);
+            mountain.setSelected(false);
+            road.setSelected(false);
+            hair.setSelected(false);
+            tv.setSelected(false);
+            fireplace.setSelected(false);
+            aircondition.setSelected(false);
+            fullheat.setSelected(false);
+            washermachine.setSelected(false);
+            dryer.setSelected(false);
+            wifi.setSelected(false);
+            Ethernet.setSelected(false);
+            Fridge.setSelected(false);
+            oven.setSelected(false);
+            microwave.setSelected(false);
+            cookware.setSelected(false);
+            plates.setSelected(false);
+            dishwasher.setSelected(false);
+            caffe.setSelected(false);
+            balcony.setSelected(false);
+            courtyard.setSelected(false);
+            privateparking.setSelected(false);
+            roadparking.setSelected(false);
 
 
             frame.setVisible(false);
