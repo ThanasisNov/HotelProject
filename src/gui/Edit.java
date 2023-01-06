@@ -105,9 +105,11 @@ public class Edit implements ActionListener, ListSelectionListener {
     {
         JPanel panel = new JPanel();
         frame.add(panel);
+       // frame.getContentPane().removeAll();
+        frame.setVisible(false);
         Editing era = new Editing();
         era.Editting(useradds.get(guihotelnames.getSelectedIndex()), username);
-        frame.setVisible(false);
+
 
     }
 
