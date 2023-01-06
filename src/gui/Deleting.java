@@ -1,5 +1,6 @@
 package gui;
 import api.App;
+import api.EditFile;
 import org.w3c.dom.Text;
 
 import javax.swing.*;
@@ -50,10 +51,13 @@ public class Deleting  implements ActionListener {
     private static JLabel postcodeText= new JLabel("-");
     private static JButton buttonback ;
     private static JButton buttonDelete;
+
+    private static JLabel success;
     private JSplitPane splitpane = new JSplitPane();
     private String username;
+    private static String lineToDelete;
 
-    private JList <String>guihotelnames;
+
     private static JFrame frame = new JFrame();
     ArrayList<String> useradds = new ArrayList<String>();
     private JTextField selected ;
@@ -69,6 +73,8 @@ public class Deleting  implements ActionListener {
     void deleting( String line_to_delete,String name) throws FileNotFoundException {
         String str;
         username = name;
+        lineToDelete = line_to_delete;
+        System.out.println(lineToDelete);
         String[] splited = line_to_delete.split(",");
         setFrame(frame);
         JPanel panel = new JPanel();
@@ -260,13 +266,17 @@ public class Deleting  implements ActionListener {
 
 
         buttonback = new JButton("Back ");
-        buttonback.setBounds(1, 440, 100, 25);
+        buttonback.setBounds(1, 420, 100, 25);
         buttonback.addActionListener(new Deleting());
         panel.add(buttonback);
         buttonDelete = new JButton("Delete");
-        buttonDelete.setBounds(150,440,100,25);
+        buttonDelete.setBounds(150,420,100,25);
         buttonDelete.addActionListener(new Deleting());
         panel.add(buttonDelete);
+        success= new JLabel("");
+        success.setBounds(150,450,100,20);
+        panel.add(success);
+
 
 
         frame.setVisible(true);
@@ -285,6 +295,13 @@ public class Deleting  implements ActionListener {
             frame.setVisible(false);
             Delete wow= new Delete();
             wow.getFrame().setVisible(true);
+        }
+        else if (e.getActionCommand().equals(buttonDelete.getText())){
+            frame.setVisible(false);
+            YES_NO wow = new YES_NO();
+            System.out.println(lineToDelete);
+            wow.choice(lineToDelete);
+
         }
 
     }
