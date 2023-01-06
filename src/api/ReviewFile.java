@@ -188,7 +188,7 @@ boolean check=false;
 
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
             reader = new BufferedReader(new FileReader("Reviews.txt"));
-            BufferedWriter pw = new BufferedWriter(new OutputStreamWriter(fos));
+             BufferedWriter pw = new BufferedWriter(new OutputStreamWriter(fos));
             String line = reader.readLine();
 
             while (line != null) {

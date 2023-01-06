@@ -117,6 +117,7 @@ public class Editing implements ActionListener {
         HotelName = new JLabel("Name:*");
         HotelName.setBounds(10, 20, 80, 25);
         panel.add(HotelName);
+
         HNText = new JTextField(splited[1]);
         HNText.setBounds(100, 20, 165, 25);
         panel.add(HNText);
@@ -551,7 +552,7 @@ public class Editing implements ActionListener {
 
 
         if (e.getActionCommand().equals(button1.getText())) {
-            System.out.println(HNText.getText() + "MOTHERFUCKER");
+            System.out.println(name+ "MOTHERFUCKER");
 
             EditFile ef = new EditFile();
             try {

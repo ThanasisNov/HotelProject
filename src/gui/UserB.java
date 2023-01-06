@@ -105,8 +105,12 @@
             else if (e.getActionCommand().equals(button4.getText()))
             {
                 frame.setVisible(false);
-                Login wow= new Login();
-                wow.getFrame().setVisible(true);
+                Delete wow= new Delete();
+                try {
+                    wow.Delete(username.getText());
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
 
         }

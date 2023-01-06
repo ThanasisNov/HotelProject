@@ -71,6 +71,7 @@ public class Deleting  implements ActionListener {
         return frame;
     }
     void deleting( String line_to_delete,String name) throws FileNotFoundException {
+        System.out.println("DELETIIIIIIIIIIIIING");
         String str;
         username = name;
         lineToDelete = line_to_delete;

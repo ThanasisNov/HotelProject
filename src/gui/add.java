@@ -102,6 +102,7 @@ public class  add implements ActionListener {
     }
 
     void add(String name)    {
+        System.out.println("melomakarono");
         setFrame(frame);
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(500, 500));

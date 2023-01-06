@@ -13,30 +13,30 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Delete implements ActionListener, ListSelectionListener
+{
+
+    private static JButton buttonback ;
+    private JSplitPane splitpane = new JSplitPane();
+    private String username;
+
+    private JList <String>guihotelnames;
+    private static JFrame frame = new JFrame();
+    ArrayList<String> useradds = new ArrayList<String>();
+    private JTextField selected ;
+
+
+
+    void setFrame(JFrame frame)
     {
-
-        private static JButton buttonback ;
-        private JSplitPane splitpane = new JSplitPane();
-        private String username;
-
-        private JList <String>guihotelnames;
-        private static JFrame frame = new JFrame();
-        ArrayList<String> useradds = new ArrayList<String>();
-        private JTextField selected ;
+        this.frame=frame;
+    }
+    JFrame getFrame()
+    {
+        return frame;
+    }
 
 
-
-        void setFrame(JFrame frame)
-        {
-            this.frame=frame;
-        }
-        JFrame getFrame()
-        {
-            return frame;
-        }
-
-
-        void Delete(String name) throws FileNotFoundException {
+    void Delete(String name) throws FileNotFoundException {
         String str ;
         username = name;
         DefaultListModel<String> hotelnames = new DefaultListModel<String>();
@@ -57,7 +57,7 @@ public class Delete implements ActionListener, ListSelectionListener
 
         buttonback = new JButton("Back ");
         buttonback.setBounds(1, 400, 100, 25);
-        buttonback.addActionListener(new Edit());
+        buttonback.addActionListener(new Delete());
         frame.add(buttonback);
 
         while(myReader.hasNext())
@@ -88,8 +88,8 @@ public class Delete implements ActionListener, ListSelectionListener
 
     }
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
 
         App object = new App();
@@ -103,19 +103,22 @@ public class Delete implements ActionListener, ListSelectionListener
     }
 
 
-        @Override
-        public void valueChanged(ListSelectionEvent e)
-        {
-            JPanel panel = new JPanel();
-            frame.add(panel);
-            Deleting era = new Deleting();
-            try {
-                era.deleting(useradds.get(guihotelnames.getSelectedIndex()), username);
-            } catch (FileNotFoundException ex) {
-                throw new RuntimeException(ex);
-            }
-            frame.setVisible(false);
-
+    @Override
+    public void valueChanged(ListSelectionEvent e)
+    {
+        JPanel panel = new JPanel();
+        frame.add(panel);
+        frame.setVisible(false);
+        Deleting era = new Deleting();
+        try {
+            era.deleting(useradds.get(guihotelnames.getSelectedIndex()), username);
+        } catch (FileNotFoundException ex) {
+            throw new RuntimeException(ex);
         }
 
+
     }
+
+}
+
+
