@@ -148,13 +148,16 @@ public class Editing implements ActionListener {
         }
         maisonette.setBounds(210,50,100,25);
         panel.add(maisonette);
+        System.out.println(splited[4]);
         if(splited[4].equals("empty"))
         {
+            System.out.println("QQQQQQQQQQQQQQQQQ");
             maisonette.setSelected(false);
         }
         else
         {
             maisonette.setSelected(true);
+            System.out.println("PPPPPPPP");
         }
 
 
@@ -291,11 +294,11 @@ public class Editing implements ActionListener {
         panel.add(aircondition);
         if(splited[18].equals("empty"))
         {
-            maisonette.setSelected(false);
+            aircondition.setSelected(false);
         }
         else
         {
-            maisonette.setSelected(true);
+            aircondition.setSelected(true);
         }
         fullheat.setBounds(280,290,200,25);
         panel.add(fullheat);
