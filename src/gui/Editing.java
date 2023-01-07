@@ -102,7 +102,6 @@ public class Editing implements ActionListener {
     public static String stringForEdit ;
     void Editting(String selected, String name) {
         username = name ;
-        System.out.println("KOYRAMPIES");
         stringForEdit = selected;
         String[] splited = selected.split(",");
 
@@ -152,13 +151,11 @@ public class Editing implements ActionListener {
         System.out.println(splited[4]);
         if(splited[4].equals("empty"))
         {
-            System.out.println("QQQQQQQQQQQQQQQQQ");
             maisonette.setSelected(false);
         }
         else
         {
             maisonette.setSelected(true);
-            System.out.println("PPPPPPPP");
         }
 
 
@@ -562,7 +559,7 @@ public class Editing implements ActionListener {
             }
            try {
                 if (HNText.getText().isEmpty()||(!hotel.isSelected() &&!apartment.isSelected()&& !maisonette.isSelected())||cityText.getText().isEmpty()
-                        ||postCodeText.getText().isEmpty()||addressText.getText().isEmpty() ||descriptionText.getText().isEmpty() ) {
+                        ||postCodeText.getText().isEmpty()||addressText.getText().isEmpty() ) {
                     success.setText("Please fill all the required (*) fields");
                 }
                 else

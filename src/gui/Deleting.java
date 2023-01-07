@@ -71,11 +71,10 @@ public class Deleting  implements ActionListener {
         return frame;
     }
     void deleting( String line_to_delete,String name) throws FileNotFoundException {
-        System.out.println("DELETIIIIIIIIIIIIING");
         String str;
         username = name;
         lineToDelete = line_to_delete;
-        System.out.println(lineToDelete);
+       //System.out.println(lineToDelete);
         String[] splited = line_to_delete.split(",");
         setFrame(frame);
         JPanel panel = new JPanel();
@@ -96,31 +95,40 @@ public class Deleting  implements ActionListener {
         type = new JLabel("Type:");
         type.setBounds(10, 50, 150, 25);
         panel.add(type);
-        for(int i=2;i<5;i++)
-        {
-            if(!splited[i].equals("empty")){
-                typeText.setText(typeText.getText()+","+splited[i]);
+        int k=0;
+        for(int i=2;i<5;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    typeText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    typeText.setText(typeText.getText() + "," + splited[i]);
+                }
             }
-            splited[i]="";
         }
+        k=0;
+
         typeText.setBounds(150, 50, 200, 25);
         panel.add(typeText);
 
-        addressLabel = new JLabel("Address:*");
+        addressLabel = new JLabel("Address:");
         addressLabel.setBounds(10, 80, 80, 25);
         addressText.setText(splited[5]);
         addressText.setBounds(150, 80, 80, 25);
         panel.add(addressText);
         panel.add(addressLabel);
 
-        cityLabel = new JLabel("City:*");
+        cityLabel = new JLabel("City:");
         cityLabel.setBounds(10, 110, 150, 25);
         panel.add(cityLabel);
+        System.out.println(splited[6]+"ftoyxam");
         cityText.setText(splited[6]);
         cityText.setBounds(150, 110, 150, 25);
-        panel.add(cityLabel);
+        panel.add(cityText);
 
-        postcodeLabel = new JLabel("PostCode:*");
+        postcodeLabel = new JLabel("PostCode:");
         postcodeLabel.setBounds(10, 135, 150, 25);
         panel.add(postcodeLabel);
         postcodeText.setText(splited[7]);
@@ -137,22 +145,20 @@ public class Deleting  implements ActionListener {
         view = new JLabel("View:");
         view.setBounds(10, 195, 300, 25);
         panel.add(view);
-        if (splited[9].equals("empty")) {
-            viewText.setText(splited[10] + "," + splited[11] + "," + splited[12] + "," + splited[13] + "," + splited[14]);
-        } else if (splited[10].equals("empty")) {
-            viewText.setText(splited[9] + "," + splited[11] + "," + splited[12] + "," + splited[13] + "," + splited[14]);
-        } else if (splited[11].equals("empty")) {
-            viewText.setText(splited[9] + "," + splited[10] + "," + splited[12] + "," + splited[13] + "," + splited[14]);
-        } else if (splited[12].equals("empty")) {
-            viewText.setText(splited[9] + "," + splited[10] + "," + splited[11] + "," + splited[13] + "," + splited[14]);
-        } else if (splited[13].equals("empty")) {
-            viewText.setText(splited[9] + "," + splited[10] + "," + splited[11] + "," + splited[12] + "," + splited[14]);
-        } else if (splited[14].equals("empty")) {
-            viewText.setText(splited[9] + "," + splited[10] + "," + splited[11] + "," + splited[12] + "," + splited[13]);
-        } else{
-            viewText.setText(splited[9] + "," + splited[10] + "," + splited[11] + "," + splited[12] + "," + splited[13] + "," + splited[14]);
+        for(int i=9;i<15;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    viewText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    viewText.setText(viewText.getText() + "," + splited[i]);
+                }
+            }
         }
-        viewText.setBounds(150, 195, 150, 25);
+        k=0;
+        viewText.setBounds(150, 195, 300, 25);
         panel.add(viewText);
 
 
@@ -177,77 +183,95 @@ public class Deleting  implements ActionListener {
         heat = new JLabel("Heat:");
         heat.setBounds(10, 290, 40, 25);
         panel.add(heat);
-        if (splited[17].equals("empty")) {
-            heatText.setText(splited[18] + "," + splited[19]);
-        } else if (splited[18].equals("empty")) {
-            heatText.setText(splited[17] + "," +  splited[19]);
-        } else if (splited[19].equals("empty")) {
-            heatText.setText(splited[17] + "," + splited[18] );
-        } else {
-            heatText.setText(splited[17] + "," + splited[18] + "," + splited[19] );
+        for(int i=17;i<20;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    heatText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    heatText.setText(heatText.getText() + "," + splited[i]);
+                }
+            }
         }
+        k=0;
         heatText.setBounds(150,290,150,25);
         panel.add(heatText);
 
         clothingWash = new JLabel("Clothing Wash:");
         clothingWash.setBounds(10, 310, 110, 25);
         panel.add(clothingWash);
-        if (splited[20].equals("empty")) {
-            clothesText.setText(splited[21]);
-        } else if (splited[21].equals("empty")) {
-            clothesText.setText(splited[20]);
-        } else {
-            heatText.setText(splited[20] + "," + splited[21]);
+        for(int i=20;i<22;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    clothesText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    clothesText.setText(clothesText.getText() + "," + splited[i]);
+                }
+            }
         }
+        k=0;
         clothesText.setBounds(150,310,150,25);
         panel.add(clothesText);
 
         wif = new JLabel("Wifi:");
         wif.setBounds(10, 330, 80, 25);
         panel.add(wif);
-        if (splited[22].equals("empty")) {
-            wifiText.setText(splited[23]);
-        } else if (splited[23].equals("empty")) {
-            wifiText.setText(splited[22]);
-        } else {
-            wifiText.setText(splited[22] + "," + splited[23]);
+        for(int i=22;i<24;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    wifiText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    wifiText.setText(wifiText.getText() + "," + splited[i]);
+                }
+            }
         }
+        k=0;
+        wifiText.setBounds(150,350,300,25);
 
         kitchen = new JLabel("Kitchen:");
         kitchen.setBounds(10, 350, 80, 25);
         panel.add(kitchen);
-        if (splited[24].equals("empty")) {
-            kitchenText.setText(splited[25] + "," + splited[26] + "," + splited[27] + "," + splited[28] + "," + splited[29]+","+splited[30]);
-        } else if (splited[25].equals("empty")) {
-            kitchenText.setText(splited[24] + "," + splited[26] + "," + splited[27] + "," + splited[28] + "," + splited[29]+","+splited[30]);
-        } else if (splited[26].equals("empty")) {
-            kitchenText.setText(splited[24] + "," + splited[25] + "," + splited[27] + "," + splited[28] + "," + splited[29]+","+splited[30]);
-        } else if (splited[27].equals("empty")) {
-            kitchenText.setText(splited[24] + "," + splited[25] + "," + splited[26] + "," + splited[28] + "," + splited[29]+","+splited[30]);
-        } else if (splited[28].equals("empty")) {
-            kitchenText.setText(splited[24] + "," + splited[25] + "," + splited[26] + "," + splited[27] + "," + splited[29]+","+splited[30]);
-        } else if (splited[29].equals("empty")) {
-            kitchenText.setText(splited[24] + "," + splited[25] + "," + splited[26] + "," + splited[27] + "," + splited[28]+","+splited[30]);
-        }else if (splited[30].equals("empty")) {
-            kitchenText.setText(splited[24] + "," + splited[25] + "," + splited[26] + "," + splited[27] + "," + splited[28]+","+splited[29]);
+        for(int i=24;i<31;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    kitchenText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    kitchenText.setText(kitchenText.getText() + "," + splited[i]);
+                }
+            }
         }
-        else {
-            kitchenText.setText(splited[24] + "," + splited[25] + "," + splited[26] + "," + splited[27] + "," + splited[28] + "," + splited[29]+","+splited[30]);
-        }
-        kitchenText.setBounds(150,350,150,25);
-        panel.add(kitchen);
+        k=0;
+        kitchenText.setBounds(150,350,350,25);
+        panel.add(kitchenText);
 
 
         outside = new JLabel("Outside:");
         outside.setBounds(10, 370, 80, 25);
         panel.add(outside);
-        if (splited[31].equals("empty")) {
-            outsideText.setText(splited[32]);
-        } else if (splited[32].equals("empty")) {
-            outsideText.setText(splited[31]);
-        } else {
-            outsideText.setText(splited[31] + "," + splited[32]);
+        for(int i=31;i<33;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    outsideText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    outsideText.setText(outsideText.getText() + "," + splited[i]);
+                }
+            }
         }
+        k=0;
         outsideText.setBounds(150,370,150,25);
         panel.add(outsideText);
 
@@ -255,13 +279,19 @@ public class Deleting  implements ActionListener {
         parking = new JLabel("Parking:");
         parking.setBounds(10, 390, 80, 25);
         panel.add(parking);
-        if (splited[33].equals("empty")) {
-            parkingText.setText(splited[34]);
-        } else if (splited[34].equals("empty")) {
-            parkingText.setText(splited[33]);
-        } else {
-            parkingText.setText(splited[33] + "," + splited[34]);
+        for(int i=33;i<35;i++) {
+            if (k==0) {
+                if (!splited[i].equals("empty")) {
+                    parkingText.setText(splited[i]);
+                    k=1;
+                }
+            }else {
+                if (!splited[i].equals("empty")) {
+                    parkingText.setText(parkingText.getText() + "," + splited[i]);
+                }
+            }
         }
+        k=0;
         parkingText.setBounds(150,390,150,25);
         panel.add(parkingText);
 

@@ -1,6 +1,7 @@
 package gui;
 
 import api.App;
+import api.Exists;
 import api.room;
 
 import javax.swing.*;
@@ -315,6 +316,7 @@ public class  add implements ActionListener {
         setHotelName(HNText);
         setDescription(descriptionText);
         String[] checkIfExists  =new String[30];
+        Exists exst = new Exists();
 
 
 
@@ -322,15 +324,18 @@ public class  add implements ActionListener {
 
             try {
                 if (HNText.getText().isEmpty()||(!hotel.isSelected() &&!apartment.isSelected()&& !maisonette.isSelected())||cityText.getText().isEmpty()
-                       ||postCodeText.getText().isEmpty()||addressText.getText().isEmpty() ||descriptionText.getText().isEmpty() ) {
+                       ||postCodeText.getText().isEmpty()||addressText.getText().isEmpty()  ) {
 
                     success.setText("Please fill all the required (*) fields");
                 }
 
                  else {
+                    if (exst.exists(HNText.getText())) {
+                        System.out.println("penny eis ksefyg");
+                    } else
 
 
-                    int i = 0;
+                    { int i = 0;
                     for (String x : checkIfExists) {
                         name = "";
                         checkIfExists[i] = "empty";
@@ -378,6 +383,7 @@ public class  add implements ActionListener {
                             , addressText.getText() + "," + cityText.getText() + "," + postCodeText.getText()
                             , descriptionText.getText(), fac, username.getText());
                     success.setText("Add successful");
+                }
 
                 }
 
@@ -425,6 +431,7 @@ public class  add implements ActionListener {
             courtyard.setSelected(false);
             privateparking.setSelected(false);
             roadparking.setSelected(false);
+            success.setText("");
 
 
 
