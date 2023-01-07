@@ -2,14 +2,13 @@ package api;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Hashtable;
 
 public class ReviewFile {
 private static double mo;
 
     /**
-     *Adds the viriables given to Reviews.txt.
+     *Adds the viriables given to AddBase.txt.
      * @param user user that adds the review
      * @param host the owner of the hotel-apartment-me
      * @param booking the name of the hotel
@@ -18,7 +17,7 @@ private static double mo;
      * @throws IOException
      */
     public void AddR(String user,String host,String booking,String review,int grade) throws IOException {
-        File file = new File("Reviews.txt");
+        File file = new File("AddBase.txt");
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         br.write(user+","+host+","+booking+","+review+","+grade);
@@ -37,7 +36,7 @@ private static double mo;
 }
 
     /**
-     *Searches in file Reviews.txt for a line which contains the hostname and hotelname that are given.
+     *Searches in file AddBase.txt for a line which contains the hostname and hotelname that are given.
      * @param hostname owners name
      * @param hotelname name of the hotel-apartment-me
      * @return an array which contains the reviews for the hotelname of the hostname
@@ -51,7 +50,7 @@ private static double mo;
         double sum=0;
         int oc=0;
         try {
-            reader = new BufferedReader(new FileReader("Reviews.txt"));
+            reader = new BufferedReader(new FileReader("AddBase.txt"));
             String line = reader.readLine();
 
             while (line != null) {
@@ -84,7 +83,7 @@ mo=sum/oc;
         return  review;
 }
 
-    /**Searches in file Reviews.txt for a line which contains the hostname,hotelname and user that are given.
+    /**Searches in file AddBase.txt for a line which contains the hostname,hotelname and user that are given.
      *@param hostname The name of the userB that has the hotel-apartment-me
      * @param hotelname The name of the hotel-apartment-me
      * @param user the user who searches  the hotel-apartment-me
@@ -97,7 +96,7 @@ mo=sum/oc;
         boolean check=false;
 
         try {
-            reader = new BufferedReader(new FileReader("Reviews.txt"));
+            reader = new BufferedReader(new FileReader("AddBase.txt"));
             String line = reader.readLine();
 
             while (line != null) {
@@ -147,7 +146,7 @@ mo=sum/oc;
         BufferedReader reader;
 
         try {
-            reader = new BufferedReader(new FileReader("Reviews.txt"));
+            reader = new BufferedReader(new FileReader("AddBase.txt"));
             String line = reader.readLine();
 
             while (line != null) {
@@ -187,7 +186,7 @@ boolean check=false;
             FileOutputStream fos = new FileOutputStream(fout);
 
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-            reader = new BufferedReader(new FileReader("Reviews.txt"));
+            reader = new BufferedReader(new FileReader("AddBase.txt"));
              BufferedWriter pw = new BufferedWriter(new OutputStreamWriter(fos));
             String line = reader.readLine();
 
@@ -213,7 +212,7 @@ boolean check=false;
 
 
         try {
-            File fout = new File("Reviews.txt");
+            File fout = new File("AddBase.txt");
             FileOutputStream fos = new FileOutputStream(fout);
 
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
@@ -276,7 +275,7 @@ private static double average=0;
        double oc=0;
 
         try {
-            reader = new BufferedReader(new FileReader("Reviews.txt"));
+            reader = new BufferedReader(new FileReader("AddBase.txt"));
             String line = reader.readLine();
 
             while (line != null ) {

@@ -2,9 +2,3 @@ user1,password1,username,surname,A
 user2,password2,username,surname,A
 provider1,password1,username,surname,B
 provider2,password2,username,surname,B
-Eimai͵blak͵,123,123,123,A
-B͵,B͵,,,A
-A͵,A͵,,,A
-���\�`,123,Athanasios,Novatsidis,A
-C͵,C͵,,,A
-D͵,D͵,,,A

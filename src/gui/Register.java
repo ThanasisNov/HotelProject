@@ -3,6 +3,7 @@ package gui;
 import api.App;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class  Register implements ActionListener {
     private static JButton button1;
     private static JButton button2;
     private static JButton button3;
+    private static JButton button4;
     private static JLabel success;
     private static JFrame frame = new JFrame();
 
@@ -38,7 +40,7 @@ public class  Register implements ActionListener {
 
        setFrame(frame);
         JPanel panel = new JPanel();
-        frame.setSize(100, 100);
+        frame.setMinimumSize(new Dimension(500,500));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.add(panel);
@@ -94,6 +96,10 @@ public class  Register implements ActionListener {
         button3.setBounds(185, 170, 85, 25);
         button3.addActionListener(new Register());
         panel.add(button3);
+        button4= new JButton("Info");
+        button4.setBounds(265, 170, 85, 25);
+        button4.addActionListener(new Register());
+        panel.add(button4);
         frame.setSize(300, 300);
         success = new JLabel("");
         success.setBounds(10, 200, 300, 25);
@@ -158,6 +164,10 @@ public class  Register implements ActionListener {
 
 
 
+        }
+        else if(e.getActionCommand().equals(button4.getText()))
+        {
+            success.setText("A = normal user \n  B = owner ");
         }
 
     }
