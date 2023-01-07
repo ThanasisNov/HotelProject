@@ -74,7 +74,6 @@ public class Deleting  implements ActionListener {
         String str;
         username = name;
         lineToDelete = line_to_delete;
-       //System.out.println(lineToDelete);
         String[] splited = line_to_delete.split(",");
         setFrame(frame);
         JPanel panel = new JPanel();

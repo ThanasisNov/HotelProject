@@ -15,8 +15,10 @@ import java.io.FileNotFoundException;
 public class Edit implements ActionListener, ListSelectionListener {
 
     private static JButton buttonback ;
+    private static JButton buttonRefresh;
+
     private JSplitPane splitpane = new JSplitPane();
-    private String username;
+    private static String username;
 
     private JList <String>guihotelnames;
     private static JFrame frame = new JFrame();
@@ -54,6 +56,10 @@ public class Edit implements ActionListener, ListSelectionListener {
         buttonback.setBounds(1, 400, 100, 25);
         buttonback.addActionListener(new Edit());
         frame.add(buttonback);
+        buttonRefresh = new JButton("Refresh ");
+        buttonRefresh.setBounds(120, 400, 100, 25);
+        buttonRefresh.addActionListener(new Edit());
+        frame.add(buttonRefresh);
 
         while(myReader.hasNext())
         {
@@ -93,6 +99,18 @@ public class Edit implements ActionListener, ListSelectionListener {
            // frame.getContentPane().removeAll();
             UserB wow= new UserB();
             wow.getFrame().setVisible(true);
+        }
+        else  if (e.getActionCommand().equals(buttonRefresh.getText())) {
+
+            frame.getContentPane().removeAll();
+            frame.setVisible(false);
+            Edit test = new Edit();
+            try {
+
+                test.Edit(username);
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
     }

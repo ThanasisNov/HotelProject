@@ -148,7 +148,6 @@ public class Editing implements ActionListener {
         }
         maisonette.setBounds(210,50,100,25);
         panel.add(maisonette);
-        System.out.println(splited[4]);
         if(splited[4].equals("empty"))
         {
             maisonette.setSelected(false);
@@ -549,7 +548,7 @@ public class Editing implements ActionListener {
 
 
         if (e.getActionCommand().equals(button1.getText())) {
-            System.out.println(name+ "MOTHERFUCKER");
+
 
             EditFile ef = new EditFile();
             try {
