@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class  ReviewList  implements ActionListener, ListSelectionListener {
 
     private static JButton button1;
+    private static JButton button2;
     private static  JFrame f= new JFrame();
     private static DefaultListModel<String> l1 = new DefaultListModel<>();
     private static JList<String> list = new JList<>(l1);
@@ -57,7 +58,10 @@ public class  ReviewList  implements ActionListener, ListSelectionListener {
         button1= new JButton("Back");
         button1.setBounds(185, 170, 85, 25);
         button1.addActionListener(new ReviewList());
-
+        button2= new JButton("Refresh");
+        button2.setBounds(185, 170, 85, 25);
+        button2.addActionListener(new ReviewList());
+        f.add(button2);
         f.add(button1);
         f.setVisible(true);
 
@@ -74,6 +78,16 @@ public class  ReviewList  implements ActionListener, ListSelectionListener {
             old.setVisible(true);
             f.setVisible(false);
             f.getContentPane().removeAll();
+        }
+        else  if (e.getActionCommand().equals(button2.getText()))  {
+            f.setVisible(false);
+            f.getContentPane().removeAll();
+            ReviewList test1= new ReviewList();
+            try {
+                test1.ReviewList(old,username);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
 
