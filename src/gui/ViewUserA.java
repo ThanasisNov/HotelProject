@@ -164,7 +164,7 @@ for(String x:all)
         panel.add(button4);
         frame.setSize(300, 300);
         success = new JLabel("");
-        success.setBounds(10, 450, 150, 25);
+        success.setBounds(10, 450, 200, 25);
         panel.add(success);
   frame.add(panel);
         frame.setVisible(true);

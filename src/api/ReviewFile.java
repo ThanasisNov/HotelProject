@@ -17,7 +17,7 @@ private static double mo;
      * @throws IOException
      */
     public void AddR(String user,String host,String booking,String review,int grade) throws IOException {
-        File file = new File("AddBase.txt");
+        File file = new File("Reviews.txt");
         FileWriter fr = new FileWriter(file, true);
         BufferedWriter br = new BufferedWriter(fr);
         br.write(user+","+host+","+booking+","+review+","+grade);
@@ -96,7 +96,7 @@ mo=sum/oc;
         boolean check=false;
 
         try {
-            reader = new BufferedReader(new FileReader("AddBase.txt"));
+            reader = new BufferedReader(new FileReader("Reviews.txt"));
             String line = reader.readLine();
 
             while (line != null) {
@@ -146,7 +146,7 @@ mo=sum/oc;
         BufferedReader reader;
 
         try {
-            reader = new BufferedReader(new FileReader("AddBase.txt"));
+            reader = new BufferedReader(new FileReader("Reviews.txt"));
             String line = reader.readLine();
 
             while (line != null) {
@@ -186,7 +186,7 @@ boolean check=false;
             FileOutputStream fos = new FileOutputStream(fout);
 
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
-            reader = new BufferedReader(new FileReader("AddBase.txt"));
+            reader = new BufferedReader(new FileReader("Reviews.txt"));
              BufferedWriter pw = new BufferedWriter(new OutputStreamWriter(fos));
             String line = reader.readLine();
 
@@ -212,7 +212,7 @@ boolean check=false;
 
 
         try {
-            File fout = new File("AddBase.txt");
+            File fout = new File("Reviews.txt");
             FileOutputStream fos = new FileOutputStream(fout);
 
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
@@ -275,7 +275,7 @@ private static double average=0;
        double oc=0;
 
         try {
-            reader = new BufferedReader(new FileReader("AddBase.txt"));
+            reader = new BufferedReader(new FileReader("Reviews.txt"));
             String line = reader.readLine();
 
             while (line != null ) {
