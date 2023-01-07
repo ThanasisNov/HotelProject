@@ -17,12 +17,14 @@ public class Delete implements ActionListener, ListSelectionListener
 
     private static JButton buttonback ;
     private JSplitPane splitpane = new JSplitPane();
-    private String username;
+    private static String username;
 
     private JList <String>guihotelnames;
     private static JFrame frame = new JFrame();
     ArrayList<String> useradds = new ArrayList<String>();
     private JTextField selected ;
+    private static JButton buttonRefresh;
+
 
 
 
@@ -59,6 +61,10 @@ public class Delete implements ActionListener, ListSelectionListener
         buttonback.setBounds(1, 400, 100, 25);
         buttonback.addActionListener(new Delete());
         frame.add(buttonback);
+        buttonRefresh = new JButton("Refresh ");
+        buttonRefresh.setBounds(130, 400, 100, 25);
+        buttonRefresh.addActionListener(new Delete());
+        frame.add(buttonRefresh);
 
         while(myReader.hasNext())
         {
@@ -98,6 +104,18 @@ public class Delete implements ActionListener, ListSelectionListener
             // frame.getContentPane().removeAll();
             UserB wow= new UserB();
             wow.getFrame().setVisible(true);
+        }
+        else  if (e.getActionCommand().equals(buttonRefresh.getText())) {
+
+            frame.getContentPane().removeAll();
+            frame.setVisible(false);
+            Delete test = new Delete();
+            try {
+
+                test.Delete(username);
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
         }
 
     }

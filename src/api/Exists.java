@@ -4,7 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * class to check if a name of an accommodation already exists
+ */
 public class Exists {
+
+
+    /**
+     *
+     * @param name of the accommodation
+     * @return
+     * @throws FileNotFoundException
+     */
     public boolean exists(String name) throws FileNotFoundException
     {
         boolean temp = false;

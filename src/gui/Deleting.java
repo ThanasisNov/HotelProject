@@ -123,7 +123,6 @@ public class Deleting  implements ActionListener {
         cityLabel = new JLabel("City:");
         cityLabel.setBounds(10, 110, 150, 25);
         panel.add(cityLabel);
-        System.out.println(splited[6]+"ftoyxam");
         cityText.setText(splited[6]);
         cityText.setBounds(150, 110, 150, 25);
         panel.add(cityText);
@@ -323,14 +322,15 @@ public class Deleting  implements ActionListener {
 
 
         if (e.getActionCommand().equals(buttonback.getText())) {
+            frame.getContentPane().removeAll();
             frame.setVisible(false);
             Delete wow= new Delete();
             wow.getFrame().setVisible(true);
+
         }
         else if (e.getActionCommand().equals(buttonDelete.getText())){
             frame.setVisible(false);
             YES_NO wow = new YES_NO();
-            System.out.println(lineToDelete);
             wow.choice(lineToDelete);
 
         }

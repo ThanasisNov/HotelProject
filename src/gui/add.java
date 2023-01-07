@@ -103,7 +103,6 @@ public class  add implements ActionListener {
     }
 
     void add(String name)    {
-        System.out.println("melomakarono");
         setFrame(frame);
         JPanel panel = new JPanel();
         frame.setMinimumSize(new Dimension(500, 500));
@@ -267,7 +266,7 @@ public class  add implements ActionListener {
         panel.add(button3);
         frame.setMinimumSize(new Dimension(900,700));
         success = new JLabel("");
-        success.setBounds(110, 490, 300, 25);
+        success.setBounds(110, 490, 450, 25);
         panel.add(success);
         frame.setVisible(true);
 
@@ -331,7 +330,7 @@ public class  add implements ActionListener {
 
                  else {
                     if (exst.exists(HNText.getText())) {
-                        System.out.println("penny eis ksefyg");
+                        success.setText("The accommodation with name '"+HNText.getText()+"' already exists");
                     } else
 
 
@@ -379,9 +378,9 @@ public class  add implements ActionListener {
                     fac.setKitchen(checkIfExists[18] + "," + checkIfExists[19] + "," + checkIfExists[20] + "," + checkIfExists[21] + "," + checkIfExists[22] + "," + checkIfExists[23] + "," + checkIfExists[24]);
                     fac.setOutside(checkIfExists[25] + "," + checkIfExists[26]);
                     fac.setParking(checkIfExists[27] + "," + checkIfExists[28]);
-                    object.add(HNText.getText(), checkIfExists[0] + "," + checkIfExists[1] + "," + checkIfExists[2]
-                            , addressText.getText() + "," + cityText.getText() + "," + postCodeText.getText()
-                            , descriptionText.getText(), fac, username.getText());
+                        object.add(object.CommaChanger(HNText.getText()),checkIfExists[0]+","+checkIfExists[1]+","+checkIfExists[2]
+                                ,object.CommaChanger(addressText.getText())+","+object.CommaChanger(cityText.getText())+","+object.CommaChanger(postCodeText.getText())
+                                ,object.CommaChanger(descriptionText.getText()), fac, username.getText());
                     success.setText("Add successful");
                 }
 

@@ -55,6 +55,7 @@ public class YES_NO implements ActionListener{
 
         if (e.getActionCommand().equals(yes.getText())) {
             try {
+                frame.getContentPane().removeAll();
                 EditFile ef = new EditFile();
                 ef.remove(line);
             } catch (FileNotFoundException ex) {
@@ -65,6 +66,7 @@ public class YES_NO implements ActionListener{
             wow.getFrame().setVisible(true);
         }
         else if (e.getActionCommand().equals(no.getText())){
+            frame.getContentPane().removeAll();
              frame.setVisible(false);
             Deleting wow = new Deleting();
             wow.getFrame().setVisible(true);
