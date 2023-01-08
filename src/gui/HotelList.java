@@ -37,6 +37,7 @@ username=user;
 
           for(int i : temp)
           {
+
               l1.addElement(test.StringMaker(i));
           }
           list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -85,7 +86,8 @@ username=user;
         if(!list.isSelectionEmpty()) {
             try {
                 ViewUserA t= new ViewUserA();
-                String[] temp2 = list.getSelectedValue().split(" ");
+                String[] temp2 = list.getSelectedValue().split(",");
+
                 t.ViewUserA(temp2[0], f,username);
                 f.setVisible(false);
             } catch (IOException ex) {
