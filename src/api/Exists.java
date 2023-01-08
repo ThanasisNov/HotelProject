@@ -13,7 +13,7 @@ public class Exists {
     /**
      *
      * @param name of the accommodation
-     * @return
+     * @return true if the accommodation with this name exists, false if  it doesn't
      * @throws FileNotFoundException
      */
     public boolean exists(String name) throws FileNotFoundException

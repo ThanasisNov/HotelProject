@@ -9,7 +9,7 @@ public class EditFile {
 
     /**
      *
-     * @param line_to_remove
+     * @param line_to_remove is the line of the file 'AddBase',that we want to remove
      * @return true if the remove has been successfully and false if it hasn't
      * @throws FileNotFoundException
      */
