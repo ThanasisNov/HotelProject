@@ -29,7 +29,7 @@ public class AppTest {
     public void StringMaker() throws IOException {
 
 
-        assertEquals("TheraHotel" + " " + "Hotel" + " " + " " + " " + "Era32" + " " + "Paris" + " " + "21324" + " " + "2.00", test.StringMaker(2));
+        assertEquals("TheraHotel" + "," + "Hotel" + "," + "," + "," + "Era32" + "," + "Paris" + "," + "21324" + "," + "2.50", test.StringMaker(2));
     }
 
     @Test
