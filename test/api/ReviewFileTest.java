@@ -45,9 +45,8 @@ public class ReviewFileTest {
     public void AddandDeleteReview() throws IOException {
        byte[] array = new byte[7]; // length is bounded by 7
         new Random().nextBytes(array);
-        String generatedString = new String(array, Charset.forName("UTF-8"));
-        check.AddR(generatedString,"Nikos","Xeli","Perfect",3);
-       assertTrue( check.DeleteReview("Nikos","Xeli",generatedString));
+        check.AddR("test","Nikos","Xeli","Perfect",3);
+       assertTrue( check.DeleteReview("Nikos","Xeli","test"));
 
 
     }
@@ -55,7 +54,7 @@ public class ReviewFileTest {
     @Test
     public void getAverage() throws FileNotFoundException {
         check.SearchReviewofUser("user1");
-        assertTrue(check.getAverage()==2.0);
+        assertTrue(check.getAverage()==3.0);
     }
 
     @Test

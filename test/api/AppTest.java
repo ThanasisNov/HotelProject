@@ -23,11 +23,7 @@ public class AppTest {
 
     }
 
-    @Test
-    public void testMethod() {
-        assertTrue(true);
 
-    }
 
     @Test
     public void StringMaker() throws IOException {

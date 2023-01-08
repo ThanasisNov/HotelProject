@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class ReviewFile {
-private static double mo;
+private static float mo;
 
     /**
      *Adds the viriables given to AddBase.txt.
@@ -30,7 +30,7 @@ private static double mo;
      *
      * @return returns the average grade for a specific hotel
      */
-    public double getmo()
+    public float getmo()
 {
     return  mo;
 }
@@ -47,10 +47,10 @@ private static double mo;
         ArrayList<String> review= new ArrayList<>();
         BufferedReader reader;
         boolean check=false;
-        double sum=0;
-        int oc=0;
+        float sum=0;
+        float oc=0;
         try {
-            reader = new BufferedReader(new FileReader("AddBase.txt"));
+            reader = new BufferedReader(new FileReader("Reviews.txt"));
             String line = reader.readLine();
 
             while (line != null) {
@@ -78,7 +78,7 @@ if(!check)
            mo=0;
             return  review;
 }
-mo=sum/oc;
+mo=sum/(float)oc;
 
         return  review;
 }
@@ -248,7 +248,7 @@ boolean check=false;
         return  check;
     }
 
-private static double average=0;
+private static float average=0;
 
     /**
      *
@@ -271,7 +271,7 @@ private static double average=0;
         BufferedReader reader;
 
         Hashtable<String,String > check=new Hashtable<>();
-        double sum=0;
+        float sum=0;
        double oc=0;
 
         try {
@@ -304,7 +304,7 @@ line=reader.readLine();
             while (line1 != null) {
 
                 String[] temp = line1.split(",");
-                //System.out.println(check.toString()+"+"+temp[1] +"-->"+temp.length);
+
                 if (temp.length > 1) {
 
                     if (check.containsKey(temp[1])) {
@@ -315,8 +315,7 @@ line=reader.readLine();
                         if (temp[4].equals("empty")) temp[4] = "";
                         if (temp[5].equals("empty")) temp[5] = "";
                         r.add(temp[1] + " " + temp[2] + " " + temp[3] + " " + temp[4] + " " + temp[5] + " " + temp[6] + " " + temp[7] + " " + check.get(temp[1]));
-                        //System.out.println(bookings[2] + " "+temp[2]+" "+temp[3]+" "+temp[4]+" "+temp[5]+" "+temp[6]+" "+temp[7]+" "+bookings[4]);
-                        sum += Integer.valueOf(bookings[4]);
+                        sum += Integer.valueOf(check.get(temp[1]));
                         oc++;
 
                     }
@@ -331,7 +330,7 @@ line=reader.readLine();
                 e.printStackTrace();
             }
 
-        if (oc!=0) average=sum/oc;
+        if (oc!=0) average=sum/(float)oc;
 
 
         return  r;
