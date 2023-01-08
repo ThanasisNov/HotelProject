@@ -291,7 +291,7 @@ public class Deleting  implements ActionListener {
             }
         }
         k=0;
-        parkingText.setBounds(150,390,150,25);
+        parkingText.setBounds(150,390,500,25);
         panel.add(parkingText);
 
 
