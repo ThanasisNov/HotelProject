@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class  HotelList implements ActionListener, ListSelectionListener {
 
     private static JButton button1;
+    private static JButton Refresh;
   private static  JFrame f= new JFrame();
    private static DefaultListModel<String> l1 = new DefaultListModel<>();
     private static JList<String> list = new JList<>(l1);
@@ -22,12 +23,15 @@ public class  HotelList implements ActionListener, ListSelectionListener {
     {
         return f;
     }
+    private static ArrayList wow1,found1;
+
 private static String username;
     void HotelList(ArrayList wow,ArrayList found,String user) throws IOException {
 temp.clear();
 l1.removeAllElements();
 username=user;
-
+wow1=wow;
+found1=found;
         for(Object i :found)
         {
             temp.add((int)i);
@@ -52,6 +56,10 @@ username=user;
           button1= new JButton("Back");
           button1.setBounds(185, 170, 85, 25);
           button1.addActionListener(new HotelList());
+        Refresh= new JButton("Refresh");
+        Refresh.setBounds(110, 170, 85, 25);
+        Refresh.addActionListener(new HotelList());
+        f.add(Refresh);
           f.add(button1);
           f.setLayout(null);
           f.setVisible(true);
@@ -71,7 +79,17 @@ username=user;
           Search era= new Search();
           era.Search(username);
         }
-
+else if(e.getActionCommand().equals(Refresh.getText()))
+        {
+            f.setVisible(false);
+            f.getContentPane().removeAll();
+            HotelList era= new HotelList();
+            try {
+                era.HotelList(wow1,found1,username);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
 
 
 

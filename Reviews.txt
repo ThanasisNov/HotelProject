@@ -3,3 +3,9 @@ user1,provider1,PopaiMais,Meh͵my expectetions were higher,2
 user1,provider1,TheraHotel,I did not really like it ͵sorry,2
 user1,provider1,LolaHotel,I do not know͵it was not what i had in mind,3
 user1,provider1,Heritage,It was good,2
+user1,provider2,Haikos ,i do not recommend it.Very rude people,1
+user1,provider1,LolaHotels,Great place ͵ friendly people and very spacious,5
+user1,provider2,Ariadni,Well it was ok͵ we only stayed for 2 days,3
+user1,provider2,Hlektra,Not worth the money͵ really overpriced ,2
+user1,provider2,Elit city resort ,It was cool͵i guess͵near the center of the town!,1
+user1,provider2,Horizon Blue ,Very cozy place͵and good people,5
