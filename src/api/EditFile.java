@@ -2,11 +2,19 @@ package api;
 
 import java.io.*;
 
+/**
+ * class for editing (removing a line and adding a new with all the changes)
+ */
 public class EditFile {
 
+    /**
+     *
+     * @param line_to_remove
+     * @return true if the remove has been successfully and false if it hasn't
+     * @throws FileNotFoundException
+     */
     public boolean remove(String line_to_remove) throws FileNotFoundException
     {
-        //String[] splited = line_to_edit.split(",");
         boolean check = false;
         BufferedReader br;
         try
@@ -47,7 +55,6 @@ public class EditFile {
                 //bookings=line.split(",");
                 if(line.equals(line_to_remove))
                 {
-
                     check=true;
                 }
                 else {

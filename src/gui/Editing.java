@@ -184,7 +184,7 @@ public class Editing implements ActionListener {
         description.setBounds(10, 165, 150, 25);
         panel.add(description);
         descriptionText= new JTextField(splited[8]);
-        descriptionText.setBounds(100, 165, 190, 25);
+        descriptionText.setBounds(100, 165, 500, 25);
         panel.add(descriptionText);
         view= new JLabel("View:");
         view.setBounds(10, 195, 150, 25);

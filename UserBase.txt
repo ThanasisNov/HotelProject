@@ -1,4 +1,6 @@
 user1,password1,username,surname,A
-user2,password2,username,surname,A
 provider1,password1,username,surname,B
-provider2,password2,username,surname,B
+provider2,password2,Alexandros,Kalyvas,B
+user2,password2,Alexandros,Kalyvas,A
+�5�[-,123,Athanasios,Novatsidis,A
+�<�ɲ��,123,Athanasios,Novatsidis,A
