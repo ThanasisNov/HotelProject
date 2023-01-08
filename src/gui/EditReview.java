@@ -15,7 +15,7 @@ import java.io.IOException;
 public class EditReview extends JFrame implements ActionListener
 {
 
-    private static   JTextArea textArea_results;
+
     private static JLabel review;
     private static JLabel grade;
     private static JRadioButton  one,two,three,four,five;

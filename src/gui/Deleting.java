@@ -59,8 +59,8 @@ public class Deleting  implements ActionListener {
 
 
     private static JFrame frame = new JFrame();
-    ArrayList<String> useradds = new ArrayList<String>();
-    private JTextField selected ;
+
+
 
     void setFrame(JFrame frame)
     {
@@ -71,13 +71,14 @@ public class Deleting  implements ActionListener {
         return frame;
     }
     void deleting( String line_to_delete,String name) throws FileNotFoundException {
+
         String str;
         username = name;
         lineToDelete = line_to_delete;
         String[] splited = line_to_delete.split(",");
         setFrame(frame);
         JPanel panel = new JPanel();
-        frame.setSize(500, 500);
+        frame.setMinimumSize(new Dimension(1000,1000));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel);
         panel.setLayout(null);
@@ -120,28 +121,28 @@ public class Deleting  implements ActionListener {
         panel.add(addressLabel);
 
         cityLabel = new JLabel("City:");
-        cityLabel.setBounds(10, 110, 150, 25);
+        cityLabel.setBounds(10, 110, 500, 25);
         panel.add(cityLabel);
         cityText.setText(splited[6]);
-        cityText.setBounds(150, 110, 150, 25);
+        cityText.setBounds(150, 110, 500, 25);
         panel.add(cityText);
 
         postcodeLabel = new JLabel("PostCode:");
-        postcodeLabel.setBounds(10, 135, 150, 25);
+        postcodeLabel.setBounds(10, 135, 500, 25);
         panel.add(postcodeLabel);
         postcodeText.setText(splited[7]);
-        postcodeText.setBounds(150, 135, 150, 25);
+        postcodeText.setBounds(150, 135, 500, 25);
         panel.add(postcodeText);
 
         description = new JLabel("Description:");
-        description.setBounds(10, 165, 150, 25);
+        description.setBounds(10, 165, 500, 25);
         panel.add(description);
         descriptionText.setText(splited[8]);
-        descriptionText.setBounds(150, 165, 80, 25);
+        descriptionText.setBounds(150, 165, 500, 25);
         panel.add(descriptionText);
 
         view = new JLabel("View:");
-        view.setBounds(10, 195, 300, 25);
+        view.setBounds(10, 195, 500, 25);
         panel.add(view);
         for(int i=9;i<15;i++) {
             if (k==0) {
@@ -156,26 +157,26 @@ public class Deleting  implements ActionListener {
             }
         }
         k=0;
-        viewText.setBounds(150, 195, 300, 25);
+        viewText.setBounds(150, 195, 500, 25);
         panel.add(viewText);
 
 
         bathroom = new JLabel("Bathroom:");
-        bathroom.setBounds(10, 230, 80, 25);
+        bathroom.setBounds(10, 230, 500, 25);
         panel.add(bathroom);
         if (!splited[15].equals("empty")) {
             bathroomText.setText(splited[15]);
         }
-        bathroomText.setBounds(150, 230, 80, 25);
+        bathroomText.setBounds(150, 230, 500, 25);
         panel.add(bathroomText);
 
         entertainment = new JLabel("Entertainment:");
-        entertainment.setBounds(10, 260, 100, 25);
+        entertainment.setBounds(10, 260, 500, 25);
         panel.add(entertainment);
-        if (!splited[16].equals("epmty")) {
+        if (!splited[16].equals("empty")) {
             entertainmentText.setText(splited[16]);
         }
-        entertainmentText.setBounds(150,260,150,25);
+        entertainmentText.setBounds(150,260,500,25);
         panel.add(entertainmentText);
 
         heat = new JLabel("Heat:");
@@ -194,11 +195,11 @@ public class Deleting  implements ActionListener {
             }
         }
         k=0;
-        heatText.setBounds(150,290,150,25);
+        heatText.setBounds(150,290,500,25);
         panel.add(heatText);
 
         clothingWash = new JLabel("Clothing Wash:");
-        clothingWash.setBounds(10, 310, 110, 25);
+        clothingWash.setBounds(10, 310, 500, 25);
         panel.add(clothingWash);
         for(int i=20;i<22;i++) {
             if (k==0) {
@@ -213,7 +214,7 @@ public class Deleting  implements ActionListener {
             }
         }
         k=0;
-        clothesText.setBounds(150,310,150,25);
+        clothesText.setBounds(150,310,500,25);
         panel.add(clothesText);
 
         wif = new JLabel("Wifi:");
@@ -232,10 +233,10 @@ public class Deleting  implements ActionListener {
             }
         }
         k=0;
-        wifiText.setBounds(150,350,300,25);
+        wifiText.setBounds(150,350,500,25);
 
         kitchen = new JLabel("Kitchen:");
-        kitchen.setBounds(10, 350, 80, 25);
+        kitchen.setBounds(10, 350, 500, 25);
         panel.add(kitchen);
         for(int i=24;i<31;i++) {
             if (k==0) {
@@ -270,12 +271,12 @@ public class Deleting  implements ActionListener {
             }
         }
         k=0;
-        outsideText.setBounds(150,370,150,25);
+        outsideText.setBounds(150,370,500,25);
         panel.add(outsideText);
 
 
         parking = new JLabel("Parking:");
-        parking.setBounds(10, 390, 80, 25);
+        parking.setBounds(10, 390, 500, 25);
         panel.add(parking);
         for(int i=33;i<35;i++) {
             if (k==0) {
@@ -328,6 +329,7 @@ public class Deleting  implements ActionListener {
 
         }
         else if (e.getActionCommand().equals(buttonDelete.getText())){
+            frame.getContentPane().removeAll();
             frame.setVisible(false);
             YES_NO wow = new YES_NO();
             wow.choice(lineToDelete);

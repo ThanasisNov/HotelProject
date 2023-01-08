@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Submits {
-    private static Scanner check;
+
 
     /**
      * @param name the name of the place you are searching for
@@ -23,7 +23,7 @@ public class Submits {
 
             while (line != null) {
                 bookings = line.split(",");
-                //System.out.println(bookings[1] +"-->"+name);
+
                 if (bookings[1].equals(name)) {
 
                     break;

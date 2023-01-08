@@ -16,31 +16,29 @@ public class  ViewUserA implements ActionListener {
 
 
     private static JLabel nameLabel;
-    private static JTextField nameText;
+
     private static JLabel typeLabel;
-    private static JTextField typeText;
+
     private static JLabel locationLabel;
-    private static JTextField locationText;
-    private static JLabel facilitiesLabel;
-    private static JTextField facilitiesText;
+
     private static JLabel viewLabel;
-    private static JTextField viewText;
+
     private static JLabel bathroomLabel;
-    private static JTextField bathroomText;
+
     private static JLabel washLabel;
-    private static JTextField washText;
+
     private static JLabel enLabel;
-    private static JTextField enText;
+
     private static JLabel heatLabel;
-    private static JTextField heatText;
+
     private static JLabel WifiLabel;
-    private static JTextField WifiText;
+
     private static JLabel areaLabel;
-    private static JTextField areaText;
+
     private static JLabel outsideLabel;
-    private static JTextField outsideText;
+
     private static JLabel parkingLabel;
-    private static JTextField  parkingText;
+
     private static JButton button1;
     private static JButton button2;
     private static JButton button3;

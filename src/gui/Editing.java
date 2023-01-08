@@ -17,7 +17,7 @@ public class Editing implements ActionListener {
 
     private static JLabel HotelName;
     private static JTextField HNText;
-    private static JTextField newHNText;
+
 
     private static JLabel type;
     private static JLabel description;

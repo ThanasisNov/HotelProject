@@ -16,13 +16,13 @@ public class Delete implements ActionListener, ListSelectionListener
 {
 
     private static JButton buttonback ;
-    private JSplitPane splitpane = new JSplitPane();
+
     private static String username;
 
     private JList <String>guihotelnames;
     private static JFrame frame = new JFrame();
     ArrayList<String> useradds = new ArrayList<String>();
-    private JTextField selected ;
+
     private static JButton buttonRefresh;
 
 
@@ -52,8 +52,6 @@ public class Delete implements ActionListener, ListSelectionListener
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.add(panel);
         panel.setLayout(null);
-        // selected.setBounds(100,400,400,25);
-        //panel.add(selected);
 
 
 
@@ -98,10 +96,10 @@ public class Delete implements ActionListener, ListSelectionListener
     public void actionPerformed(ActionEvent e) {
 
 
-        App object = new App();
+
         if (e.getActionCommand().equals(buttonback.getText())) {
             frame.setVisible(false);
-            // frame.getContentPane().removeAll();
+
             UserB wow= new UserB();
             wow.getFrame().setVisible(true);
         }

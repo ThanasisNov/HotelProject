@@ -15,7 +15,7 @@ public class  Search implements ActionListener {
     private static JLabel HotelName;
     private static JTextField HNText;
     private static JLabel type;
-    private static JLabel description;
+
     private static JTextField descriptionText;
     private static JLabel view;
 
