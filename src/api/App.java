@@ -73,7 +73,9 @@ public class App {
         String temp=String.format("%.2f", test.getmo());
         if(temph.equals("empty")) temph="";     if(tempa.equals("empty")) tempa="";     if(tempm.equals("empty")) tempm="";     if(tempAddress.equals("empty")) tempAddress="";
         if(tempCity.equals("empty")) tempCity="";      if(tempPost.equals("empty")) tempPost="";
-        return tempname + " " + temph + " " + tempa + " " + tempm + " " + tempAddress + " " + tempCity + " " + tempPost+" "+temp;
+     //  System.out.println(tempname);
+        return tempname + "," + temph + "," + tempa + "," + tempm + "," + tempAddress + "," + tempCity + "," + tempPost+","+temp;
+
     }
 
 

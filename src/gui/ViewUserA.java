@@ -68,6 +68,7 @@ public class  ViewUserA implements ActionListener {
         frame.setMinimumSize(new Dimension(600,600));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Submits test= new Submits();
+
  all=  test.SearchSubmit(hotels);
 
 

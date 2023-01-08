@@ -23,7 +23,9 @@ public class Submits {
 
             while (line != null) {
                 bookings = line.split(",");
+                //System.out.println(bookings[1] +"-->"+name);
                 if (bookings[1].equals(name)) {
+
                     break;
                 }
                 line = reader.readLine();
