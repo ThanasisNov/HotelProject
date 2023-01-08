@@ -1,10 +1,20 @@
 user1,provider1,Hostage,Great place.,4
 user1,provider1,PopaiMais,Meh͵my expectetions were higher,2
 user1,provider1,TheraHotel,I did not really like it ͵sorry,2
-user1,provider1,LolaHotel,I do not know͵it was not what I had in mind,3
 user1,provider1,Heritage,It was good,2
-user2,provider1,Heritage,It was not as good as I expected,3
-user2,provider1,TheraHotel,The best room service I have ever experienced,5
-user2,provider1,PopaiMais,It was ok , not something special,3
-user2,provider1,LolaHotel,I am very satisfied,4
-user2,provider,Hostage,It was a new room , I liked so much the architecture and also the breakfast was outstanding!!!
+user1,provider2,Haikos ,I do not recommend it.Very rude people,1
+user1,provider1,LolaHotels,Great place ͵ friendly people and very spacious,5
+user1,provider2,Ariadni,Well it was ok͵ we only stayed for 2 days,3
+user1,provider2,Hlektra,Not worth the money͵ really overpriced ,2
+user1,provider2,Elit city resort ,It was cool͵i guess͵near the center of the town!,1
+user1,provider2,Horizon Blue ,Very cozy place͵and good people,5
+user2,provider1,Hostage,It was ok ͵but nothing special,3
+user2,provider1,PopaiMais,It was nothing like it seem to be ... Very bad experience,1
+user2,provider1,TheraHotel,It was a beautiful room ͵ but nothing more,3
+user2,provider1,LolaHotels,I loved the view ͵ it was breathtaking,4
+user2,provider2,Horizon Blue ,The best days in my holidays . The view was nice͵ the room service excellent but the best of all was the breakfast,5
+user2,provider2,Haikos ,Good experience,4
+user2,provider2,Elit city resort ,It was perfect . I loved the fact that every place in town was 10 minutes far,4
+user2,provider2,Ariadni,Not the best,2
+user2,provider2,Hlektra,It was overrated for the price,1
+user2,provider1,Heritage,I want my money back,2
