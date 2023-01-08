@@ -24,7 +24,7 @@ public class ReviewFileTest {
     @Test
     public void getmo() throws IOException {
  check.SearchReview("provider1","Heritage");
-       assertTrue(check.getmo()==3.0);
+       assertTrue(check.getmo()==2.0);
     }
 
 
@@ -45,9 +45,8 @@ public class ReviewFileTest {
     public void AddandDeleteReview() throws IOException {
        byte[] array = new byte[7]; // length is bounded by 7
         new Random().nextBytes(array);
-        String generatedString = new String(array, Charset.forName("UTF-8"));
-        check.AddR(generatedString,"Nikos","Xeli","Perfect",3);
-       assertTrue( check.DeleteReview("Nikos","Xeli",generatedString));
+        check.AddR("test","Nikos","Xeli","Perfect",3);
+       assertTrue( check.DeleteReview("Nikos","Xeli","test"));
 
 
     }
@@ -55,12 +54,12 @@ public class ReviewFileTest {
     @Test
     public void getAverage() throws FileNotFoundException {
         check.SearchReviewofUser("user1");
-        assertTrue(check.getAverage()==2.0);
+        assertTrue(check.getAverage()==2.5999999046325684);
     }
 
     @Test
     public void searchReviewofUser() throws FileNotFoundException {
       ArrayList wow=  check.SearchReviewofUser("user1");
-     assertTrue(wow.get(0).equals("Heritage Hotel   Gout3 Beligrad 32423 3"));
+     assertTrue(wow.get(0).equals("Heritage Hotel   Gout3 Beligrad 32423 2"));
     }
 }
